@@ -1,9 +1,11 @@
 <script setup lang="ts">
+const { brandInfo } = useSiteData()
+
 useSeoMeta({
-  title: 'Aperture — 摄影艺术与视觉叙事',
-  ogTitle: 'Aperture — 摄影艺术与视觉叙事',
-  description: 'Aperture 专注于商业摄影、人像写真与品牌视觉叙事。用光影捕捉情绪，让每一帧都成为永恒。',
-  ogDescription: 'Aperture 专注于商业摄影、人像写真与品牌视觉叙事。用光影捕捉情绪，让每一帧都成为永恒。',
+  title: () => `${brandInfo.value.name} — ${brandInfo.value.slogan}`,
+  ogTitle: () => `${brandInfo.value.name} — ${brandInfo.value.slogan}`,
+  description: () => brandInfo.value.description,
+  ogDescription: () => brandInfo.value.description,
 })
 </script>
 

@@ -1,0 +1,13 @@
+[data-theme="emerald"] {
+  --accent: #059669;
+  --accent-hover: #047857;
+  --accent-soft-bg: #ecfdf5;
+  --accent-soft-text: #065f46;
+}
+.dark[data-theme="emerald"],
+[data-theme="emerald"].dark {
+  --accent: #34d399;
+  --accent-hover: #10b981;
+  --accent-soft-bg: rgba(6, 78, 59, 0.3);
+  --accent-soft-text: #6ee7b7;
+}

@@ -1,0 +1,13 @@
+[data-theme="violet"] {
+  --accent: #7c3aed;
+  --accent-hover: #6d28d9;
+  --accent-soft-bg: #f5f3ff;
+  --accent-soft-text: #6d28d9;
+}
+.dark[data-theme="violet"],
+[data-theme="violet"].dark {
+  --accent: #a855f7;
+  --accent-hover: #c084fc;
+  --accent-soft-bg: rgba(88, 28, 135, 0.3);
+  --accent-soft-text: #d8b4fe;
+}

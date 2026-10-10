@@ -122,8 +122,12 @@ export const useApi = () => {
       const currentId = idRef.value
       const all = siteArticles.value.length ? siteArticles.value : []
       const index = all.findIndex((a) => a.id === currentId)
-      const article: ArticleItem =
-        (index >= 0 ? all[index] : all[0]) ?? { ...DEFAULT_FALLBACK_ARTICLE, id: currentId }
+      
+      if (index < 0) {
+        throw createError({ statusCode: 404, statusMessage: '文章不存在或已删除', fatal: true })
+      }
+      
+      const article: ArticleItem = all[index]!
       const prev = index > 0 ? (all[index - 1] ?? null) : null
       const next = index >= 0 && index < all.length - 1 ? (all[index + 1] ?? null) : null
 
@@ -225,10 +229,14 @@ export const useApi = () => {
     const computeFallback = (): ApiResponse<ProductDetailData> => {
       const currentId = idRef.value
       const all = siteProducts.value.length ? siteProducts.value : []
-      const product: ProductItem =
-        all.find((p) => p.id === currentId) ?? all[0] ?? { ...DEFAULT_FALLBACK_PRODUCT, id: currentId }
+      const product = all.find((p) => p.id === currentId)
+      
+      if (!product) {
+        throw createError({ statusCode: 404, statusMessage: '商品不存在或已下架', fatal: true })
+      }
+      
       const related = all
-        .filter((p) => p.id !== (product.id || currentId))
+        .filter((p) => p.id !== product.id)
         .sort((a, b) => (a.category === product.category ? -1 : 1))
         .slice(0, 4)
 
@@ -332,8 +340,12 @@ export const useApi = () => {
     const computeFallback = (): ApiResponse<CourseItem> => {
       const currentId = idRef.value
       const all = siteCourses.value.length ? siteCourses.value : []
-      const course: CourseItem =
-        all.find((c) => c.id === currentId) ?? all[0] ?? { ...DEFAULT_FALLBACK_COURSE, id: currentId }
+      const course = all.find((c) => c.id === currentId)
+      
+      if (!course) {
+        throw createError({ statusCode: 404, statusMessage: '课程不存在或已下架', fatal: true })
+      }
+      
       return {
         code: 200,
         message: 'success',

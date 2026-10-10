@@ -58,7 +58,7 @@ onUnmounted(() => {
     <!-- 1. 微信公众号二维码悬浮弹窗 -->
     <div class="relative group">
       <button type="button" aria-label="关注微信公众号"
-        class="w-12 h-12 flex items-center justify-center text-gray-300 hover:text-white hover:bg-accent rounded-tl-2xl transition-colors cursor-pointer">
+        class="w-12 h-12 flex items-center justify-center text-gray-300 hover:text-on-accent hover:bg-accent rounded-tl-2xl transition-colors cursor-pointer">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <rect width="5" height="5" x="3" y="3" rx="1" />
           <rect width="5" height="5" x="16" y="3" rx="1" />
@@ -95,7 +95,7 @@ onUnmounted(() => {
     <!-- 2. 主题模式切换 (Dark/Light) -->
     <div class="relative group">
       <button type="button" aria-label="切换浅色/深色模式"
-        class="w-12 h-12 flex items-center justify-center text-gray-300 hover:text-white hover:bg-accent transition-colors cursor-pointer"
+        class="w-12 h-12 flex items-center justify-center text-gray-300 hover:text-on-accent hover:bg-accent transition-colors cursor-pointer"
         @click="toggleTheme">
         <!-- 太阳（深色模式显示） -->
         <svg class="w-5 h-5 text-accent group-hover:text-white transition-colors hidden dark:block" viewBox="0 0 24 24"
@@ -132,8 +132,8 @@ onUnmounted(() => {
       <button type="button" aria-label="切换设计配色主题"
         class="w-12 h-12 flex items-center justify-center transition-colors cursor-pointer" :class="[
           isThemeMenuOpen
-            ? 'bg-accent text-white'
-            : 'text-gray-300 hover:text-white hover:bg-accent'
+            ? 'bg-accent text-on-accent'
+            : 'text-gray-300 hover:text-on-accent hover:bg-accent'
         ]" @click.stop="toggleThemeMenu">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
@@ -182,7 +182,7 @@ onUnmounted(() => {
       <button type="button" aria-label="返回顶部" :class="[
         'w-12 h-12 flex items-center justify-center transition-all cursor-pointer rounded-bl-2xl',
         isScrolled
-          ? 'text-gray-300 hover:text-white hover:bg-accent opacity-100'
+          ? 'text-gray-300 hover:text-on-accent hover:bg-accent opacity-100'
           : 'text-gray-500 opacity-40 hover:opacity-80'
       ]" @click="scrollToTop">
         <svg class="w-5 h-5 stroke-[2.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor">

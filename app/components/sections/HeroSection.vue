@@ -65,7 +65,7 @@
               height="32"
               loading="lazy"
             />
-            <span class="w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold text-white bg-accent border-2 border-canvas">
+            <span class="w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold text-on-accent bg-accent border-2 border-canvas">
               +2k
             </span>
           </div>

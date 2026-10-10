@@ -3,10 +3,10 @@ const { stats } = useSiteData()
 </script>
 
 <template>
-  <section class="py-16 md:py-20 lg:py-24 bg-accent text-white relative overflow-hidden transition-colors duration-300">
+  <section class="py-16 md:py-20 lg:py-24 bg-accent text-on-accent relative overflow-hidden transition-colors duration-300">
     <!-- 背景柔和光晕装饰 -->
     <div
-      class="absolute top-[-50%] left-[20%] w-[400px] md:w-[500px] h-[400px] md:h-[500px] rounded-full blur-3xl bg-white/15 pointer-events-none"
+      class="absolute top-[-50%] left-[20%] w-[400px] md:w-[500px] h-[400px] md:h-[500px] rounded-full blur-3xl bg-on-accent/15 pointer-events-none"
     ></div>
     <div
       class="absolute bottom-[-50%] right-[10%] w-[400px] h-[400px] rounded-full blur-3xl bg-black/15 pointer-events-none"
@@ -21,11 +21,11 @@ const { stats } = useSiteData()
           :class="`delay-${(idx + 1) * 100}`"
         >
           <div
-            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white font-display"
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-on-accent font-display"
           >
             {{ stat.value }}
           </div>
-          <div class="mt-2 md:mt-3 text-xs md:text-sm text-white/85 font-medium tracking-wide">
+          <div class="mt-2 md:mt-3 text-xs md:text-sm text-on-accent/85 font-medium tracking-wide">
             {{ stat.label }}
           </div>
         </div>

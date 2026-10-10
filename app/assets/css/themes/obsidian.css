@@ -1,0 +1,16 @@
+[data-theme="obsidian"] {
+  --canvas: #09090b;
+  --surface: #141416;
+  --card: #1c1c1f;
+  --subtle: #27272a;
+  --text-main: #fafafa;
+  --text-muted: #a1a1aa;
+  --text-caption: #71717a;
+  --border-line: #27272a;
+  --border-line-strong: #3f3f46;
+  --accent: #e4e4e7;
+  --on-accent: #09090b;
+  --accent-hover: #ffffff;
+  --accent-soft-bg: #27272a;
+  --accent-soft-text: #fafafa;
+}

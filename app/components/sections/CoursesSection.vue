@@ -55,7 +55,7 @@ const displayedCourses = computed(() => (courses.value || []).slice(0, props.lim
               height="500"
             />
             <span
-              class="absolute top-3 left-3 text-xs font-semibold px-2.5 py-1 rounded-md bg-accent text-white shadow-sm"
+              class="absolute top-4 left-4 text-xs font-semibold px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white shadow-sm"
             >
               {{ course.levelLabel }}
             </span>

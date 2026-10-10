@@ -1,0 +1,26 @@
+@theme {
+  --font-display: "Playfair Display", "Songti SC", "Noto Serif SC", serif;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  
+  /* 语义背景/表面映射 */
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-subtle: var(--subtle);
+
+  /* 语义文字映射 */
+  --color-main: var(--text-main);
+  --color-muted: var(--text-muted);
+  --color-caption: var(--text-caption);
+
+  /* 语义边框映射 */
+  --color-line: var(--border-line);
+  --color-line-strong: var(--border-line-strong);
+
+  /* 语义品牌色映射 */
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft-bg);
+  --color-accent-soft-text: var(--accent-soft-text);
+}

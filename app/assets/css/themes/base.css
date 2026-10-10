@@ -1,0 +1,45 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* 背景/表面体系 */
+  --canvas: #faf9f7;
+  --surface: #f3f0eb;
+  --card: #ffffff;
+  --subtle: #e8e4dd;
+
+  /* 文字体系 */
+  --text-main: #1a1816;
+  --text-muted: #4a4540;
+  --text-caption: #6b655d;
+
+  /* 边框体系 */
+  --border-line: #ddd8cf;
+  --border-line-strong: #c4bdb1;
+
+  /* 品牌/强调体系 (暖金琥珀) */
+  --accent: #b45309;
+  --on-accent: #ffffff;
+  --accent-hover: #92400e;
+  --accent-soft-bg: #fef3c7;
+  --accent-soft-text: #92400e;
+}
+
+.dark {
+  --canvas: #12100e;
+  --surface: #1a1816;
+  --card: #211f1c;
+  --subtle: #2d2a26;
+
+  --text-main: #f5f2ed;
+  --text-muted: #c4bdb1;
+  --text-caption: #8a8378;
+
+  --border-line: #2d2a26;
+  --border-line-strong: #4a4540;
+
+  --accent: #f59e0b;
+  --on-accent: #12100e;
+  --accent-hover: #fbbf24;
+  --accent-soft-bg: rgba(120, 53, 15, 0.25);
+  --accent-soft-text: #fcd34d;
+}

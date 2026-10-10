@@ -85,12 +85,12 @@ const isPurchasedModalOpen = ref(false)
               <div class="absolute top-4 left-4 flex flex-wrap gap-2">
                 <span
                   v-if="currentProduct.tag"
-                  class="px-3 py-1 text-xs font-bold rounded-full bg-accent text-white shadow-md tracking-wide"
+                  class="px-3 py-1 text-xs font-bold rounded-full bg-black/60 backdrop-blur-md text-white shadow-sm tracking-wide"
                 >
                   {{ currentProduct.tag }}
                 </span>
                 <span
-                  class="px-3 py-1 text-xs font-semibold rounded-full bg-black/70 backdrop-blur-md text-white border border-white/20"
+                  class="px-3 py-1 text-xs font-semibold rounded-full bg-black/60 backdrop-blur-md text-white shadow-sm"
                 >
                   {{ currentProduct.categoryLabel }}
                 </span>

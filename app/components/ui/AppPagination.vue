@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
 interface Props {
   currentPage: number
   totalPages: number
@@ -15,6 +17,25 @@ const setPage = (page: number) => {
     emit('update:currentPage', page)
   }
 }
+
+const visiblePages = computed(() => {
+  const current = props.currentPage
+  const total = props.totalPages
+  
+  if (total <= 7) {
+    return Array.from({ length: total }, (_, i) => i + 1)
+  }
+  
+  if (current <= 4) {
+    return [1, 2, 3, 4, 5, '...', total]
+  }
+  
+  if (current >= total - 3) {
+    return [1, '...', total - 4, total - 3, total - 2, total - 1, total]
+  }
+  
+  return [1, '...', current - 1, current, current + 1, '...', total]
+})
 </script>
 
 <template>
@@ -50,36 +71,37 @@ const setPage = (page: number) => {
 
     <!-- 页码数字 -->
     <div class="flex items-center gap-1.5">
-      <template v-if="getPageUrl">
-        <NuxtLink
-          v-for="p in totalPages"
-          :key="p"
-          :to="getPageUrl(p)"
-          class="w-9 h-9 rounded-xl text-xs md:text-sm font-semibold transition cursor-pointer flex items-center justify-center"
-          :class="[
-            currentPage === p
-              ? 'bg-accent text-white shadow-md'
-              : 'bg-card border border-line text-muted hover:border-accent',
-          ]"
-        >
-          {{ p }}
-        </NuxtLink>
-      </template>
-      <template v-else>
-        <button
-          v-for="p in totalPages"
-          :key="p"
-          type="button"
-          class="w-9 h-9 rounded-xl text-xs md:text-sm font-semibold transition cursor-pointer flex items-center justify-center"
-          :class="[
-            currentPage === p
-              ? 'bg-accent text-white shadow-md'
-              : 'bg-card border border-line text-muted hover:border-accent',
-          ]"
-          @click="setPage(p)"
-        >
-          {{ p }}
-        </button>
+      <template v-for="(p, index) in visiblePages" :key="index">
+        <span v-if="p === '...'" class="w-9 h-9 flex items-center justify-center text-muted text-sm font-medium">
+          ...
+        </span>
+        <template v-else-if="getPageUrl">
+          <NuxtLink
+            :to="getPageUrl(Number(p))"
+            class="w-9 h-9 rounded-xl text-xs md:text-sm font-semibold transition cursor-pointer flex items-center justify-center"
+            :class="[
+              currentPage === p
+                ? 'bg-accent text-on-accent shadow-md'
+                : 'bg-card border border-line text-muted hover:border-accent',
+            ]"
+          >
+            {{ p }}
+          </NuxtLink>
+        </template>
+        <template v-else>
+          <button
+            type="button"
+            class="w-9 h-9 rounded-xl text-xs md:text-sm font-semibold transition cursor-pointer flex items-center justify-center"
+            :class="[
+              currentPage === p
+                ? 'bg-accent text-on-accent shadow-md'
+                : 'bg-card border border-line text-muted hover:border-accent',
+            ]"
+            @click="setPage(Number(p))"
+          >
+            {{ p }}
+          </button>
+        </template>
       </template>
     </div>
 

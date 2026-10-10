@@ -79,8 +79,8 @@ const isActive = (path: string) => {
       <NuxtLink to="/"
         class="flex items-center gap-2.5 font-bold text-lg font-display text-main flex-shrink-0">
         <span
-          class="w-9 h-9 rounded-xl bg-accent flex items-center justify-center text-white shadow-md flex-shrink-0">
-          <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          class="w-9 h-9 rounded-xl bg-accent flex items-center justify-center text-on-accent shadow-md flex-shrink-0">
+          <svg class="w-5 h-5 text-on-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10" />
             <line x1="14.31" y1="8" x2="20.05" y2="17.94" />
             <line x1="9.69" y1="8" x2="21.17" y2="8" />

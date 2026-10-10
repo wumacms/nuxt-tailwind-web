@@ -1,28 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { staticFeatures } from '~/constants/features'
 
 const { services } = useSiteData()
 
 const featureList = computed(() => [
   ...(services.value || []),
-  {
-    id: 'creative',
-    title: '创意策划',
-    description: '从概念到执行，为品牌量身定制完整的视觉方案与情绪板。',
-    icon: 'aperture',
-  },
-  {
-    id: 'consultant',
-    title: '专属顾问',
-    description: '一对一沟通，从拍摄档期确认到最终文件交付全程贴心跟进。',
-    icon: 'headphones',
-  },
-  {
-    id: 'delivery',
-    title: '极速交付',
-    description: '支持云端专属画廊在线快速审片与无损原片下载，保障项目准时高效落地。',
-    icon: 'sparkles',
-  },
+  ...staticFeatures,
 ])
 </script>
 
@@ -43,21 +27,13 @@ const featureList = computed(() => [
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
-        <div v-for="(item, idx) in featureList" :key="item.id"
-          class="p-6 md:p-7 rounded-2xl border border-line bg-card transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-on-scroll"
-          :class="`delay-${(idx % 5 + 1) * 100}`">
+        <AppCard v-for="(item, idx) in featureList" :key="item.id"
+          class="animate-on-scroll"
+          :class="`delay-${(idx % 5 + 1) * 100}`"
+          padding="lg">
           <div
             class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-accent-soft text-accent-soft-text shadow-xs">
-            <!-- Camera / Aperture generic icon -->
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <path d="m14.3 8 5.7 9.9" />
-              <path d="M9.7 8h11.5" />
-              <path d="M7.4 12 13.1 2.1" />
-              <path d="M9.7 16 4 6.1" />
-              <path d="M14.3 16H2.8" />
-              <path d="m16.6 12-5.7 9.9" />
-            </svg>
+            <AppIcon :name="item.icon || 'aperture'" size="24" />
           </div>
           <h3 class="font-semibold text-lg md:text-xl mb-2.5 text-main">
             {{ item.title }}
@@ -65,7 +41,7 @@ const featureList = computed(() => [
           <p class="text-muted text-sm leading-relaxed">
             {{ item.description }}
           </p>
-        </div>
+        </AppCard>
       </div>
     </AppContainer>
   </section>

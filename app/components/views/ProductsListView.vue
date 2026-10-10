@@ -108,7 +108,7 @@ const tabs = computed(() =>
               />
               <span
                 v-if="product.tag"
-                class="absolute top-3 left-3 text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-accent text-white shadow-md"
+                class="absolute top-4 left-4 text-[11px] font-semibold px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white shadow-sm"
               >
                 {{ product.tag }}
               </span>

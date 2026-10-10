@@ -62,7 +62,7 @@
           class="relative flex flex-col p-6 md:p-8 rounded-2xl bg-gray-900 dark:bg-gray-800 text-white shadow-2xl lg:-translate-y-4 border-2 border-accent animate-on-scroll delay-200"
         >
           <span
-            class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-accent text-xs font-semibold inline-flex items-center gap-1 shadow-md whitespace-nowrap text-white"
+            class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-accent text-xs font-semibold inline-flex items-center gap-1 shadow-md whitespace-nowrap text-on-accent"
           >
             ★ 最受欢迎
           </span>

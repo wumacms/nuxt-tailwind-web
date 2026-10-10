@@ -1,7 +1,9 @@
 <script setup lang="ts">
+const { brandInfo } = useSiteData()
+
 useSeoMeta({
-  title: '关于我们 - Aperture 摄影艺术与视觉叙事',
-  description: '了解 Aperture 的创办理念、发展历程与核心团队。用光影捕捉情绪，让画面替你说话。',
+  title: () => `关于我们 - ${brandInfo.value.name} ${brandInfo.value.slogan}`,
+  description: () => `了解 ${brandInfo.value.name} 的创办理念、发展历程与核心团队。用光影捕捉情绪，让画面替你说话。`,
 })
 
 const breadcrumbs = [{ label: '关于我们' }]

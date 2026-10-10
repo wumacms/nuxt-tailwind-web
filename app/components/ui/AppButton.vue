@@ -28,9 +28,9 @@ const variantClasses: Record<ButtonVariant, string> = {
   primary:
     'bg-main text-canvas hover:opacity-90 shadow-md hover:shadow-lg active:scale-[0.98]',
   secondary:
-    'bg-accent text-white hover:bg-accent-hover shadow-md active:scale-[0.98]',
+    'bg-accent text-on-accent hover:bg-accent-hover shadow-md active:scale-[0.98]',
   accent:
-    'bg-accent text-white hover:bg-accent-hover shadow-md active:scale-[0.98]',
+    'bg-accent text-on-accent hover:bg-accent-hover shadow-md active:scale-[0.98]',
   outline:
     'border border-line-strong text-main hover:border-main bg-transparent active:scale-[0.98]',
   ghost:

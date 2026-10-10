@@ -1,0 +1,13 @@
+[data-theme="ocean"] {
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft-bg: #eff6ff;
+  --accent-soft-text: #1d4ed8;
+}
+.dark[data-theme="ocean"],
+[data-theme="ocean"].dark {
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-soft-bg: rgba(30, 58, 138, 0.3);
+  --accent-soft-text: #93c5fd;
+}
