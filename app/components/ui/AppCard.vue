@@ -21,8 +21,8 @@ const paddingClasses = {
 }
 
 const computedClasses = computed(() => [
-  'bg-white dark:bg-[#211f1c] rounded-2xl transition-all duration-300',
-  props.bordered ? 'border border-[#ddd8cf] dark:border-[#2d2a26]' : '',
+  'bg-card text-main rounded-2xl transition-all duration-300',
+  props.bordered ? 'border border-line' : '',
   props.hoverable ? 'hover:shadow-xl hover:-translate-y-1' : 'shadow-sm',
   paddingClasses[props.padding],
 ])

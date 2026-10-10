@@ -1,6 +1,6 @@
 [
   {
-    "id": "photography-intro",
+    "id": "24dc0903-5459-46b9-9370-4c13dbdf521b",
     "title": "摄影基础：从零开始学会看光与构图",
     "description": "曝光三要素、测光原理、镜头焦段选择与经典构图法则，轻松告别手机随手乱拍。",
     "level": "beginner",
@@ -19,7 +19,7 @@
     ]
   },
   {
-    "id": "portrait-lighting",
+    "id": "f4b2e1ab-65b7-41b8-8d3e-e875a1295be8",
     "title": "人像摄影用光全攻略：从自然光到棚拍多灯系统",
     "description": "掌握顺光、侧光、轮廓逆光及闪光灯系统，用光线塑造富有立体感与情感深度的人像大片。",
     "level": "intermediate",
@@ -38,7 +38,7 @@
     ]
   },
   {
-    "id": "lightroom-mastery",
+    "id": "81486319-1c5a-49c3-a628-d55080cb0343",
     "title": "Lightroom 调色体系课：打造属于你的风格签名",
     "description": "RGB曲线进阶、色调分离、局部蒙版精修与色彩理论，建立可复用的专业数码后期调色工作流。",
     "level": "intermediate",
@@ -57,7 +57,7 @@
     ]
   },
   {
-    "id": "commercial-workflow",
+    "id": "6b3a08a9-8c0d-4cbf-ac51-ef8a007ccf0e",
     "title": "商业摄影实战大师班：从商务接单到交付闭环",
     "description": "商业报价体系、合同条款避坑、方案提案脚本、现场客户沟通与售后版权授权全链路。",
     "level": "advanced",
@@ -76,7 +76,7 @@
     ]
   },
   {
-    "id": "food-photography-pro",
+    "id": "3da43430-2057-4b97-b5f0-8fd9c668c395",
     "title": "美食摄影精修班：拍出令人垂涎的食物温度",
     "description": "食材保鲜技巧、微型反光板精准勾勒油光、法式明亮风与复古暗调静物摆盘美学。",
     "level": "intermediate",
@@ -95,7 +95,7 @@
     ]
   },
   {
-    "id": "landscape-golden-hour",
+    "id": "f7f6a8c8-b1b0-4b88-bcb8-aa2ceab1ebc1",
     "title": "风光摄影大师课：捕捉天地间的极致光线",
     "description": "滤镜系统配合、超焦距合焦、全景接片与极端天气下的安全摄影防护指南。",
     "level": "intermediate",
@@ -114,7 +114,7 @@
     ]
   },
   {
-    "id": "street-photography-secrets",
+    "id": "a2852465-dfdf-4ad1-a66b-76f7abe666c3",
     "title": "城市街头纪实抓拍：捕捉决定性瞬间",
     "description": "隐藏相机存在感、预判行进步伐轨迹、几何光影分割线与人文纪实故事挖掘。",
     "level": "beginner",
@@ -124,7 +124,7 @@
     "studentsCount": 3810,
     "price": 0,
     "isFree": true,
-    "coverImage": "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?w=800&h=500&fit=crop",
+    "coverImage": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&h=500&fit=crop",
     "syllabus": [
       "街道隐形拍摄礼仪与心理脱敏训练",
       "定焦 35mm 与 28mm 视角的叙事距离",
@@ -133,7 +133,7 @@
     ]
   },
   {
-    "id": "black-and-white-fine-art",
+    "id": "bbe2572c-2eeb-47b7-891a-da69eeb140fe",
     "title": "黑白摄影精修课：灰阶与影调的高级克制美学",
     "description": "剥离色彩诱惑，专注质感、纹理、对比度与情绪张力，打造具有收藏级艺术感的黑白杰作。",
     "level": "intermediate",
@@ -152,7 +152,7 @@
     ]
   },
   {
-    "id": "studio-product-masterclass",
+    "id": "fe6f9e1e-5f3d-4c48-8047-bd5c0f773f34",
     "title": "商业静物高光课：手表珠宝与金属倒影精修棚拍",
     "description": "反光材质终极布光方案，亚克力漫射箱搭设、微距景深合成与极致无尘倒影呈现。",
     "level": "advanced",
@@ -171,7 +171,7 @@
     ]
   },
   {
-    "id": "travel-mobile-photography",
+    "id": "91b6eedd-7641-4d3f-b403-61bcc109bf38",
     "title": "旅途视觉随笔：手机摄影与短视频叙事速成",
     "description": "告别沉重设备，用便携手机创作专业水准的旅途纪实、色彩情绪板与生活美学。",
     "level": "beginner",
@@ -190,7 +190,7 @@
     ]
   },
   {
-    "id": "cinematic-video-production",
+    "id": "31d11034-e09c-40f9-b1e1-3676aead76bd",
     "title": "电影感视听语言：商业短片运镜与色彩节奏",
     "description": "分镜脚本、轨道斯坦尼康稳定器运镜、三点式电影布光与 DaVinci Resolve 调色全案。",
     "level": "advanced",
@@ -200,7 +200,7 @@
     "studentsCount": 1150,
     "price": 599,
     "isFree": false,
-    "coverImage": "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=500&fit=crop",
+    "coverImage": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=500&fit=crop",
     "syllabus": [
       "商业广告短片视听脚本与情绪板推敲",
       "电影级轴线原则与动感摇移运镜实战",
@@ -209,7 +209,7 @@
     ]
   },
   {
-    "id": "portrait-retouching-pro",
+    "id": "640aadbf-a854-4d71-b562-d3a1e6406f17",
     "title": "高级时尚人像精修：高低频与中性灰质感重塑",
     "description": "拒绝假面塑料皮！保留真实皮肤肌理，掌握一线时尚大刊级别的皮肤修饰与骨相微雕心法。",
     "level": "intermediate",

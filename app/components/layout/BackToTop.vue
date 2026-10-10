@@ -37,7 +37,7 @@ onUnmounted(() => {
       v-if="isVisible"
       type="button"
       aria-label="返回顶部"
-      class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-2xl hover:opacity-90 transition flex items-center justify-center cursor-pointer border border-white/10 dark:border-black/10"
+      class="fixed bottom-6 right-6 md:hidden z-40 w-11 h-11 rounded-full bg-main text-canvas shadow-2xl hover:opacity-90 transition flex items-center justify-center cursor-pointer border border-line"
       @click="scrollToTop"
     >
       <svg class="w-5 h-5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

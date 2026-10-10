@@ -1,24 +1,60 @@
-# Nuxt dev/build outputs
+# Nuxt dev / build outputs
 .output
 .data
 .nuxt
 .nitro
 .cache
 dist
+*.tsbuildinfo
 
 # Node dependencies
 node_modules
+.pnpm-store
 
 # Logs
 logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Misc
+# OS metadata
 .DS_Store
-.fleet
-.idea
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE & Editors
+.idea/
+.fleet/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
 
 # Local env files
 .env
 .env.*
+.env.local
+.env.*.local
 !.env.example
+
+# Test & Coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.bak

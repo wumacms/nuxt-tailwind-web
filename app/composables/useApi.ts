@@ -5,6 +5,7 @@ import type {
   PaginatedData,
   ArticleItem,
   ProductItem,
+  ProductDetailData,
   CourseItem,
   ArticleDetailData,
 } from '~/types'
@@ -55,22 +56,25 @@ export const useApi = () => {
   // 获取商品详情
   const fetchProductById = (id: Ref<string> | string) => {
     const idRef = isRef(id) ? id : ref(id)
-    return useFetch<ApiResponse<ProductItem>>(() => `/api/products/${idRef.value}`)
+    return useFetch<ApiResponse<ProductDetailData>>(() => `/api/products/${idRef.value}`)
   }
 
-  // 获取课程列表（难度等级、分页联动）
+  // 获取课程列表（难度等级/分类、分页联动）
   const fetchCourses = (params: {
-    level: Ref<string>
+    level?: Ref<string>
+    category?: Ref<string>
     page: Ref<number>
     pageSize?: number
   }) => {
+    const filterRef = params.category || params.level || ref('all')
     return useFetch<ApiResponse<PaginatedData<CourseItem>>>('/api/courses', {
       query: {
-        level: params.level,
+        category: filterRef,
+        level: filterRef,
         page: params.page,
         pageSize: params.pageSize || 4,
       },
-      watch: [params.level, params.page],
+      watch: [filterRef, params.page],
     })
   }
 

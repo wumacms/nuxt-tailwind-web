@@ -1,9 +1,10 @@
+import { defineEventHandler, getQuery } from 'nuxt/server'
 import courses from '../../data/courses.json'
 import type { CourseItem, PaginatedData } from '~/types'
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
-  const level = (query.level as string) || 'all'
+  const level = (query.category as string) || (query.level as string) || 'all'
   const page = Math.max(1, parseInt((query.page as string) || '1', 10))
   const pageSize = Math.max(1, parseInt((query.pageSize as string) || '4', 10))
 

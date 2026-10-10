@@ -1,18 +1,30 @@
-import { onMounted, nextTick } from 'vue'
+import { onMounted, onBeforeUnmount, nextTick } from 'vue'
 
 export const useScrollAnimation = () => {
+  let observerInstance: IntersectionObserver | null = null
+
+  const cleanup = () => {
+    if (observerInstance) {
+      observerInstance.disconnect()
+      observerInstance = null
+    }
+  }
+
   const initObserver = () => {
     if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return
+
+    // Clean up previous observer instance to prevent memory leaks across page navigations
+    cleanup()
 
     const elements = document.querySelectorAll('.animate-on-scroll:not(.is-visible)')
     if (!elements.length) return
 
-    const observer = new IntersectionObserver(
+    observerInstance = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible')
-            observer.unobserve(entry.target)
+            observerInstance?.unobserve(entry.target)
           }
         })
       },
@@ -22,7 +34,7 @@ export const useScrollAnimation = () => {
       }
     )
 
-    elements.forEach((el) => observer.observe(el))
+    elements.forEach((el) => observerInstance?.observe(el))
   }
 
   onMounted(() => {
@@ -31,7 +43,12 @@ export const useScrollAnimation = () => {
     })
   })
 
+  onBeforeUnmount(() => {
+    cleanup()
+  })
+
   return {
     initObserver,
+    cleanup,
   }
 }

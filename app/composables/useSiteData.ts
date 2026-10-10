@@ -7,6 +7,7 @@ import type {
   TestimonialItem,
   TimelineItem,
   FaqItem,
+  ApiResponse,
 } from '~/types'
 
 export interface SiteDataBundle {
@@ -85,8 +86,10 @@ export const useSiteData = () => {
     stats,
     partners,
     refresh: async () => {
-      const freshData = await $fetch<SiteDataBundle>('/api/site-data')
-      siteData.value = freshData
+      const res = await $fetch<ApiResponse<SiteDataBundle>>('/api/site-data')
+      if (res?.data) {
+        siteData.value = res.data
+      }
     },
   }
 }

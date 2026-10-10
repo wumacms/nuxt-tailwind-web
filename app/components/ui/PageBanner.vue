@@ -34,7 +34,7 @@ const props = withDefaults(defineProps<Props>(), {
         <nav aria-label="Breadcrumb">
           <ol class="flex items-center space-x-2 text-xs md:text-sm text-gray-300">
             <li>
-              <NuxtLink to="/" class="hover:text-amber-400 transition-colors">
+              <NuxtLink to="/" class="hover:text-accent transition-colors">
                 首页
               </NuxtLink>
             </li>
@@ -44,7 +44,7 @@ const props = withDefaults(defineProps<Props>(), {
                 <NuxtLink
                   v-if="item.to && index < breadcrumbs.length - 1"
                   :to="item.to"
-                  class="hover:text-amber-400 transition-colors"
+                  class="hover:text-accent transition-colors"
                 >
                   {{ item.label }}
                 </NuxtLink>
@@ -60,7 +60,7 @@ const props = withDefaults(defineProps<Props>(), {
       <div class="max-w-3xl">
         <span
           v-if="badge"
-          class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 uppercase tracking-wider mb-4"
+          class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-accent/20 text-accent border border-accent/30 uppercase tracking-wider mb-4"
         >
           {{ badge }}
         </span>

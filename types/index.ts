@@ -44,16 +44,43 @@ export interface CaseItem {
   date?: string
 }
 
+export interface ProductDetailData {
+  product: ProductItem
+  related: ProductItem[]
+}
+
+export interface ProductSpecItem {
+  label: string
+  value: string
+}
+
+export interface ProductHighlight {
+  title: string
+  description: string
+  icon?: string
+}
+
 export interface ProductItem {
   id: string
   title: string
   description: string
   price: number
+  originalPrice?: number
   tag?: string
   category: 'presets' | 'gear' | 'book'
   categoryLabel: string
   coverImage: string
   features?: string[]
+  gallery?: string[]
+  content?: string
+  detailDescription?: string
+  specs?: ProductSpecItem[]
+  highlights?: ProductHighlight[]
+  packageIncludes?: string[]
+  usageGuide?: string[]
+  faqs?: FaqItem[]
+  rating?: number
+  salesCount?: number
 }
 
 export interface ArticleItem {

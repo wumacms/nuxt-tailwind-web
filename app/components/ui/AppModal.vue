@@ -33,24 +33,24 @@ const close = () => {
         @click.self="close"
       >
         <div
-          class="w-full max-w-lg bg-white dark:bg-[#211f1c] rounded-3xl border border-[#ddd8cf] dark:border-[#2d2a26] shadow-2xl overflow-hidden p-6 md:p-8 animate-float-slow"
+          class="w-full max-w-lg bg-card rounded-3xl border border-line shadow-2xl overflow-hidden p-6 md:p-8 animate-float-slow"
         >
           <div class="flex items-center justify-between mb-4">
-            <h3 v-if="title" class="text-xl font-bold font-display text-[#1a1816] dark:text-[#f5f2ed]">
+            <h3 v-if="title" class="text-xl font-bold font-display text-main">
               {{ title }}
             </h3>
             <button
               type="button"
-              class="w-8 h-8 rounded-lg flex items-center justify-center text-[#6b655d] dark:text-[#8a8378] hover:bg-black/5 dark:hover:bg-white/5 transition"
+              class="w-8 h-8 rounded-lg flex items-center justify-center text-caption hover:bg-black/5 dark:hover:bg-white/5 transition"
               @click="close"
             >
               ✕
             </button>
           </div>
-          <div class="text-[#4a4540] dark:text-[#c4bdb1] text-sm leading-relaxed">
+          <div class="text-muted text-sm leading-relaxed">
             <slot />
           </div>
-          <div v-if="$slots.footer" class="mt-6 flex justify-end gap-3 pt-4 border-t border-[#ddd8cf] dark:border-[#2d2a26]">
+          <div v-if="$slots.footer" class="mt-6 flex justify-end gap-3 pt-4 border-t border-line">
             <slot name="footer" />
           </div>
         </div>

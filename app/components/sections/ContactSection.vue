@@ -52,25 +52,25 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <section id="contact" class="py-20 md:py-28 lg:py-32 bg-[#f3f0eb] dark:bg-[#1a1816]">
+  <section id="contact" class="py-20 md:py-28 lg:py-32 bg-surface">
     <AppContainer>
       <div class="grid md:grid-cols-2 gap-10 md:gap-12 lg:gap-20">
         <!-- 左侧联系信息 -->
         <div class="animate-on-scroll delay-100">
-          <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">
+          <span class="text-sm font-semibold text-accent uppercase tracking-wider">
             联系我们
           </span>
-          <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+          <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display">
             让我们聊聊你的拍摄想法
           </h2>
-          <p class="mt-4 text-base md:text-lg text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed">
+          <p class="mt-4 text-base md:text-lg text-muted leading-relaxed">
             无论是产品商业广告、私人肖像记录还是品牌长期合作，我们的顾问团队都将在 1 个工作日内给予细致回复。
           </p>
 
           <div class="mt-8 md:mt-10 space-y-6">
             <div class="flex items-start gap-4">
               <div
-                class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]"
+                class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 bg-accent-soft text-accent"
               >
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect width="20" height="16" x="2" y="4" rx="2" />
@@ -78,28 +78,28 @@ const handleSubmit = async () => {
                 </svg>
               </div>
               <div>
-                <div class="font-bold text-[#1a1816] dark:text-[#f5f2ed]">官方邮箱</div>
-                <div class="text-[#4a4540] dark:text-[#c4bdb1] text-sm mt-0.5">{{ brandInfo.email }}</div>
+                <div class="font-bold text-main">官方邮箱</div>
+                <div class="text-muted text-sm mt-0.5">{{ brandInfo.email }}</div>
               </div>
             </div>
 
             <div class="flex items-start gap-4">
               <div
-                class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]"
+                class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 bg-accent-soft text-accent"
               >
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
               </div>
               <div>
-                <div class="font-bold text-[#1a1816] dark:text-[#f5f2ed]">预约咨询热线</div>
-                <div class="text-[#4a4540] dark:text-[#c4bdb1] text-sm mt-0.5">{{ brandInfo.phone }}（{{ brandInfo.hours }}）</div>
+                <div class="font-bold text-main">预约咨询热线</div>
+                <div class="text-muted text-sm mt-0.5">{{ brandInfo.phone }}（{{ brandInfo.hours }}）</div>
               </div>
             </div>
 
             <div class="flex items-start gap-4">
               <div
-                class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]"
+                class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 bg-accent-soft text-accent"
               >
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
@@ -107,8 +107,8 @@ const handleSubmit = async () => {
                 </svg>
               </div>
               <div>
-                <div class="font-bold text-[#1a1816] dark:text-[#f5f2ed]">工作室空间地址</div>
-                <div class="text-[#4a4540] dark:text-[#c4bdb1] text-sm mt-0.5">{{ brandInfo.address }}</div>
+                <div class="font-bold text-main">工作室空间地址</div>
+                <div class="text-muted text-sm mt-0.5">{{ brandInfo.address }}</div>
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@ const handleSubmit = async () => {
         <!-- 右侧表单 -->
         <div class="animate-on-scroll delay-200">
           <form
-            class="p-6 md:p-8 rounded-3xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] shadow-lg space-y-5"
+            class="p-6 md:p-8 rounded-3xl border border-line bg-card shadow-lg space-y-5"
             @submit.prevent="handleSubmit"
           >
             <div
@@ -180,7 +180,7 @@ const handleSubmit = async () => {
               提交拍摄预约 &rarr;
             </AppButton>
 
-            <p class="text-xs text-[#6b655d] dark:text-[#8a8378] text-center">
+            <p class="text-xs text-caption text-center">
               提交即代表您同意我们的隐私政策。我们严格保护客户信息不向第三方透露。
             </p>
           </form>

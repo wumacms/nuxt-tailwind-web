@@ -6,10 +6,23 @@ useSeoMeta({
   description: '选购 Aperture 精选调色预设、联名摄影配件包及典藏精装摄影集。',
 })
 
+const route = useRoute()
+const router = useRouter()
+
 const breadcrumbs = [{ label: '摄影商店' }]
 
-const currentTab = ref('all')
-const currentPage = ref(1)
+// 从 URL 查询参数中读取初始分类与页码
+const parseCategory = (cat: unknown): string => {
+  return typeof cat === 'string' && cat.trim() ? cat.trim() : 'all'
+}
+
+const parsePage = (p: unknown): number => {
+  const pageNum = parseInt(String(p), 10)
+  return !isNaN(pageNum) && pageNum > 0 ? pageNum : 1
+}
+
+const currentTab = ref(parseCategory(route.query.category))
+const currentPage = ref(parsePage(route.query.page))
 const pageSize = 8
 
 // 模拟真实后端接口获取商品分页数据
@@ -20,9 +33,55 @@ const { data: response, status } = await fetchProducts({
   pageSize,
 })
 
+// 将筛选与分页状态同步至 URL Query 参数
+const syncUrl = () => {
+  const query: Record<string, string> = {}
+  if (currentTab.value && currentTab.value !== 'all') {
+    query.category = currentTab.value
+  }
+  if (currentPage.value > 1) {
+    query.page = String(currentPage.value)
+  }
+
+  const currentQueryCat = (route.query.category as string) || ''
+  const targetQueryCat = query.category || ''
+  const currentQueryPage = (route.query.page as string) || ''
+  const targetQueryPage = query.page || ''
+
+  if (currentQueryCat !== targetQueryCat || currentQueryPage !== targetQueryPage) {
+    router.push({
+      path: route.path,
+      query,
+    })
+  }
+}
+
+// 当分类切换时，重置当前页码到第 1 页并更新 URL
 watch(currentTab, () => {
   currentPage.value = 1
+  syncUrl()
 })
+
+// 当页码变化时，更新 URL
+watch(currentPage, () => {
+  syncUrl()
+})
+
+// 监听浏览器前进/后退等路由 URL Query 变化，保持响应式同步
+watch(
+  () => route.query,
+  (newQuery) => {
+    const nextTab = parseCategory(newQuery.category)
+    const nextPage = parsePage(newQuery.page)
+
+    if (currentTab.value !== nextTab) {
+      currentTab.value = nextTab
+    }
+    if (currentPage.value !== nextPage) {
+      currentPage.value = nextPage
+    }
+  }
+)
 
 const products = computed(() => response.value?.data?.list || [])
 const total = computed(() => response.value?.data?.total || 0)
@@ -49,18 +108,18 @@ const tabs = computed(() => [
     />
 
     <!-- 网格分页列表主体 -->
-    <section class="py-16 md:py-24 bg-[#faf9f7] dark:bg-[#12100e]">
+    <section class="py-16 md:py-24 bg-canvas">
       <AppContainer>
         <!-- 分类筛选条件 -->
         <div class="mb-10 flex flex-wrap items-center justify-between gap-4">
           <AppTabs v-model="currentTab" :tabs="tabs" />
-          <div class="text-xs text-[#6b655d] dark:text-[#8a8378]">
-            共找到 <span class="font-bold text-amber-600 dark:text-amber-400">{{ total }}</span> 件严选商品
+          <div class="text-xs text-caption">
+            共找到 <span class="font-bold text-accent">{{ total }}</span> 件严选商品
           </div>
         </div>
 
         <!-- 加载中微状态提示 -->
-        <div v-if="status === 'pending'" class="py-12 text-center text-sm text-[#6b655d] dark:text-[#8a8378]">
+        <div v-if="status === 'pending'" class="py-12 text-center text-sm text-caption">
           <span class="inline-block animate-spin mr-2">◌</span> 正在从接口获取商品列表...
         </div>
 
@@ -70,9 +129,9 @@ const tabs = computed(() => [
             v-for="product in products"
             :key="product.id"
             :to="`/products/${product.id}`"
-            class="group flex flex-col rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            class="group flex flex-col rounded-2xl border border-line bg-card overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
-            <div class="relative aspect-[16/10] overflow-hidden bg-[#e8e4dd] dark:bg-[#2d2a26]">
+            <div class="relative aspect-[16/10] overflow-hidden bg-subtle">
               <img
                 :src="product.coverImage"
                 :alt="product.title"
@@ -83,7 +142,7 @@ const tabs = computed(() => [
               />
               <span
                 v-if="product.tag"
-                class="absolute top-3 left-3 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-600 text-white shadow-md"
+                class="absolute top-3 left-3 text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-accent text-white shadow-md"
               >
                 {{ product.tag }}
               </span>
@@ -94,30 +153,30 @@ const tabs = computed(() => [
 
             <div class="p-5 flex flex-col flex-1 justify-between">
               <div>
-                <h2 class="font-bold text-base md:text-lg text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-amber-600 dark:group-hover:text-amber-400 transition font-display line-clamp-1">
+                <h2 class="font-bold text-base md:text-lg text-main group-hover:text-accent transition font-display line-clamp-1">
                   {{ product.title }}
                 </h2>
-                <p class="mt-1.5 text-xs sm:text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed line-clamp-2">
+                <p class="mt-1.5 text-xs sm:text-sm text-muted leading-relaxed line-clamp-2">
                   {{ product.description }}
                 </p>
 
                 <!-- 特色清单 -->
-                <ul v-if="product.features" class="mt-3 space-y-1 text-xs text-[#6b655d] dark:text-[#8a8378]">
+                <ul v-if="product.features" class="mt-3 space-y-1 text-xs text-caption">
                   <li v-for="(feat, fIdx) in product.features.slice(0, 2)" :key="fIdx" class="flex items-center gap-1.5">
-                    <span class="text-amber-600 dark:text-amber-400 font-bold">✓</span>
+                    <span class="text-accent font-bold">✓</span>
                     <span class="truncate">{{ feat }}</span>
                   </li>
                 </ul>
               </div>
 
-              <div class="mt-4 pt-3.5 border-t border-[#ddd8cf]/60 dark:border-[#2d2a26] flex items-center justify-between">
+              <div class="mt-4 pt-3.5 border-t border-line/60 flex items-center justify-between">
                 <div class="flex items-baseline gap-1">
-                  <span class="text-[11px] text-[#6b655d] dark:text-[#8a8378]">售价</span>
-                  <span class="text-lg md:text-xl font-extrabold text-[#1a1816] dark:text-[#f5f2ed] font-display">
+                  <span class="text-[11px] text-caption">售价</span>
+                  <span class="text-lg md:text-xl font-extrabold text-main font-display">
                     ¥{{ product.price }}
                   </span>
                 </div>
-                <span class="text-amber-700 dark:text-amber-400 text-xs font-semibold group-hover:translate-x-1 transition-transform">
+                <span class="text-accent text-xs font-semibold group-hover:translate-x-1 transition-transform">
                   查看详情 &rarr;
                 </span>
               </div>
@@ -128,12 +187,12 @@ const tabs = computed(() => [
         <!-- 空状态 -->
         <div
           v-if="status !== 'pending' && products.length === 0"
-          class="text-center py-20 bg-white dark:bg-[#211f1c] rounded-3xl border border-[#ddd8cf] dark:border-[#2d2a26]"
+          class="text-center py-20 bg-card rounded-3xl border border-line"
         >
-          <p class="text-base text-[#6b655d] dark:text-[#8a8378]">当前分类下暂无商品</p>
+          <p class="text-base text-caption">当前分类下暂无商品</p>
           <button
             type="button"
-            class="mt-4 text-sm font-medium text-amber-600 dark:text-amber-400 hover:underline cursor-pointer"
+            class="mt-4 text-sm font-medium text-accent hover:underline cursor-pointer"
             @click="currentTab = 'all'"
           >
             查看全部商品

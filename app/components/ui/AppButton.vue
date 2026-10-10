@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger'
+export type ButtonVariant = 'primary' | 'secondary' | 'accent' | 'outline' | 'ghost' | 'danger'
 export type ButtonSize = 'sm' | 'md' | 'lg'
 
 interface Props {
@@ -26,13 +26,15 @@ const props = withDefaults(defineProps<Props>(), {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 shadow-md hover:shadow-lg active:scale-[0.98]',
+    'bg-main text-canvas hover:opacity-90 shadow-md hover:shadow-lg active:scale-[0.98]',
   secondary:
-    'bg-amber-600 text-white hover:bg-amber-700 dark:bg-amber-500 dark:hover:bg-amber-600 shadow-md active:scale-[0.98]',
+    'bg-accent text-white hover:bg-accent-hover shadow-md active:scale-[0.98]',
+  accent:
+    'bg-accent text-white hover:bg-accent-hover shadow-md active:scale-[0.98]',
   outline:
-    'border border-[#c4bdb1] dark:border-[#4a4540] text-[#1a1816] dark:text-[#f5f2ed] hover:border-gray-900 dark:hover:border-white bg-transparent active:scale-[0.98]',
+    'border border-line-strong text-main hover:border-main bg-transparent active:scale-[0.98]',
   ghost:
-    'text-[#4a4540] dark:text-[#c4bdb1] hover:text-[#1a1816] dark:hover:text-[#f5f2ed] hover:bg-black/5 dark:hover:bg-white/5',
+    'text-muted hover:text-main hover:bg-subtle',
   danger:
     'bg-rose-600 text-white hover:bg-rose-700 shadow-md active:scale-[0.98]',
 }
@@ -44,7 +46,7 @@ const sizeClasses: Record<ButtonSize, string> = {
 }
 
 const computedClasses = computed(() => [
-  'inline-flex items-center justify-center font-medium transition-all duration-200 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500',
+  'inline-flex items-center justify-center font-medium transition-all duration-200 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-accent',
   variantClasses[props.variant],
   sizeClasses[props.size],
   props.block ? 'w-full' : '',

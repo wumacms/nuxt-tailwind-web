@@ -1,258 +1,1110 @@
 [
   {
-    "id": "retro-film-preset",
+    "id": "d2e213cf-8aaf-4abb-89ca-ff3658187895",
     "title": "复古胶片 LR 预设包（全能典藏版）",
     "description": "30 款精心调校的 Lightroom 预设，一键还原柯达 Portra、富士 Pro400H 经典胶片色调与有机颗粒。",
     "price": 199,
+    "originalPrice": 299,
     "tag": "畅销榜首",
     "category": "presets",
     "categoryLabel": "调色预设",
     "coverImage": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop",
+    "rating": 4.9,
+    "salesCount": 3840,
+    "gallery": [
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop"
+    ],
     "features": [
       "支持 Lightroom Classic、CC 及手机端 DNG 格式",
       "附赠 5 组黑白纪实高对比银盐胶片颗粒 LUT",
       "包含 45 分钟后期调色实战视频解析",
       "终身免费升级与调色交流社群权益"
+    ],
+    "detailDescription": "Aperture 实验室历时 18 个月，对数十种停产及现行经典胶卷（如 Kodak Portra 160/400/800、Fuji Pro 400H、Tri-X 400 等）在自然光与影棚光环境下的光谱响应进行了精密采样。通过非破坏性色调曲线重构、高光滚降优化与自适应颗粒算法，让数码 RAW 文件也能轻松获得胶片特有的呼吸感与温润质感。预设内置智能曝光平衡，即使面对复杂光比也能一键得到电影级色彩。",
+    "specs": [
+      { "label": "支持格式", "value": ".xmp (桌面端) / .dng (移动端)" },
+      { "label": "兼容软件", "value": "Lightroom Classic 7.3+ / LR CC / PS ACR / LR Mobile" },
+      { "label": "适用机型", "value": "Sony / Canon / Nikon / Fuji / Leica / Apple ProRAW 全系列" },
+      { "label": "交付方式", "value": "支付后系统自动发送网盘下载链接至注册邮箱" },
+      { "label": "商用授权", "value": "单人终身个人与商业拍摄授权" },
+      { "label": "售后支持", "value": "终身免费小版本调优更新 + 微信社群技术答疑" }
+    ],
+    "highlights": [
+      {
+        "title": "色彩纯正自然",
+        "description": "基于经典胶卷化学显影曲线深度测绘，告别生硬偏色，精准还原自然通透的亚洲肤色与青绿胶片调。"
+      },
+      {
+        "title": "一键极速套用",
+        "description": "无需繁琐手动微调，套用后仅需微调曝光与色温滑块即可完成 90% 的调色工序，大幅提高出片效率。"
+      },
+      {
+        "title": "多终端全面覆盖",
+        "description": "桌面端与移动端双格式同步提供，外出手机抓拍修图或影棚工作站精修都能无缝衔接。"
+      },
+      {
+        "title": "赠送配套实战课",
+        "description": "包含 45 分钟高级调色师录制的实战工作流视频教程与 10 张 RAW 练习原片，新手也能快速上手。"
+      }
+    ],
+    "packageIncludes": [
+      "30 款经典胶片色彩风格预设 (.xmp 格式)",
+      "30 款移动端直装预设 (.dng 原片格式)",
+      "5 组黑白纪实银盐高对比 LUT (.cube 格式)",
+      "45 分钟 4K 调色实战技法视频教学课程",
+      "10 张高宽容度商业实拍 RAW 练习素材",
+      "图文版 Lightroom 电脑端与手机端导入指引手册"
+    ],
+    "usageGuide": [
+      "下载并解压获取预设安装包文件及指引文档。",
+      "打开 Lightroom Classic，点击「预设」面板中的「+」号并选择「导入预设」。",
+      "导入对应 .xmp 文件夹，预设将自动出现在「Aperture 胶片典藏」分组中。",
+      "移动端用户可通过手机 LR 批量导入 .dng 文件并存储为用户预设。"
+    ],
+    "faqs": [
+      {
+        "question": "手机端没有购买 Lightroom 会员可以使用吗？",
+        "answer": "可以！我们专门打包了无需会员即可使用的 .dng 单张预设原片格式，免费版 Lightroom Mobile 即可正常导入使用。"
+      },
+      {
+        "question": "预设购买后如何接收？",
+        "answer": "支付成功后，下载链接将立即显示在页面上，同时系统会自动发送一份高速下载链接及解压密码至您的联系邮箱。"
+      },
+      {
+        "question": "支持哪些相机拍摄的照片？",
+        "answer": "支持索尼、佳能、尼康、富士、徕卡、松下、哈苏以及 iPhone ProRAW 等所有主流相机的 RAW 格式及 JPG 格式。"
+      }
     ]
   },
   {
-    "id": "aperture-camera-bag",
+    "id": "82a58e4f-9ba9-4329-afdd-91b9933c80cc",
     "title": "Aperture 联名复古摄影单肩包",
     "description": "军工级防水涂层帆布与头层植鞣牛皮拼接，可轻松容纳一机三镜及 14 英寸笔记本电脑，日常通勤亦显优雅。",
     "price": 899,
+    "originalPrice": 1199,
     "tag": "手工精制",
     "category": "gear",
     "categoryLabel": "摄影配件",
     "coverImage": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=600&fit=crop",
+    "rating": 4.9,
+    "salesCount": 1420,
+    "gallery": [
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520390138845-fd2d229dd553?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&h=600&fit=crop"
+    ],
     "features": [
       "高密度防撕裂防泼水涂层重磅帆布",
       "YKK 防水密封拉链与黄铜复古五金配件",
       "可拆卸高回弹魔术贴防震厚内胆",
       "隐形护照与电池专用防盗快取插袋"
+    ],
+    "detailDescription": "由 Aperture 设计团队与资深匠人联合打造，选用 16 盎司重磅加密有机棉帆布，结合环保石蜡防水浸润工艺与托斯卡纳头层植鞣牛皮。兼顾摄影师高强度外拍防护需求与都市街头通勤审美。内胆采用 12mm 加厚珍珠棉与高密绒布，可自由调整隔层空间，取出内胆即刻变身优雅工装复古日常挎包。",
+    "specs": [
+      { "label": "外部尺寸", "value": "38cm × 16cm × 27cm (长×宽×高)" },
+      { "label": "自重重量", "value": "约 1.25 kg" },
+      { "label": "主面料", "value": "16oz 重磅油蜡防水棉质帆布 + 意大利植鞣牛皮" },
+      { "label": "五金件", "value": "实心做旧复古黄铜合金扣具 + YKK 防水拉链" },
+      { "label": "容纳容量", "value": "1机3镜 + 14英寸 MacBook Pro + 水杯/三脚架侧绑" },
+      { "label": "质保服务", "value": "非人为损坏 2 年免费换新与终身保修" }
+    ],
+    "highlights": [
+      {
+        "title": "全天候防泼溅防护",
+        "description": "特制石蜡浸润涂层遇水凝珠滑落，搭配封闭式拉链雨檐，阴雨天外拍器材安全无忧。"
+      },
+      {
+        "title": "快取侧拉链设计",
+        "description": "侧边专设快取相机开口，无需完全卸下背包即可在 3 秒内抓取相机定格精彩瞬间。"
+      },
+      {
+        "title": "可拆卸模块化内胆",
+        "description": "附赠 4 块可调节魔术贴隔板，拍照出行与日常上班通勤两种模式一秒自由切换。"
+      },
+      {
+        "title": "人体工学减压宽肩带",
+        "description": "加宽真皮活动肩垫分散重负，长时间背负外拍依然轻松舒适。"
+      }
+    ],
+    "packageIncludes": [
+      "Aperture 联名复古摄影单肩包主包 × 1",
+      "加厚防震防刮可拆卸内胆 × 1",
+      "魔术贴加厚活动隔板 × 4",
+      "真皮可调节减压肩带垫 × 1",
+      "户外防雨防尘罩 × 1",
+      "真皮养护保养手册与收藏证书 × 1"
+    ],
+    "usageGuide": [
+      "初次使用可根据所携带的相机机身与镜头焦段自由粘合隔板位置。",
+      "遇雨雪天气，外层帆布请用干布轻柔擦拭并在通风处自然阴干。",
+      "植鞣真皮部分建议定期使用少量专业皮革滋养膏轻拭保养，色泽会随时间愈加温润。"
+    ],
+    "faqs": [
+      {
+        "question": "可以放下 70-200mm f/2.8 长焦镜头吗？",
+        "answer": "可以！主仓高度达到 27cm，70-200mm 镜头可以立放或横向放置在主仓内。"
+      },
+      {
+        "question": "发货使用的是什么快递？几天能收到？",
+        "answer": "实物商品均由上海工作室顺丰特快（包邮）发出，全国大部分核心城市次日或隔日达。"
+      },
+      {
+        "question": "支持退换货吗？",
+        "answer": "支持 7 天无理由退换货（需保证吊牌齐全、商品无污损使用痕迹）。"
+      }
     ]
   },
   {
-    "id": "between-light-shadow-book",
+    "id": "b08c752a-270e-4148-972b-5243dc7c42ac",
     "title": "《光影之间》十年典藏精装摄影集",
     "description": "Aperture 创立十年精选代表作画册，收录 200 余幅殿堂级大片，德国海德堡六色特种纸高精全彩印刷。",
     "price": 299,
+    "originalPrice": 399,
     "tag": "限量编号",
     "category": "book",
     "categoryLabel": "摄影画册",
     "coverImage": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&h=600&fit=crop",
+    "rating": 5.0,
+    "salesCount": 960,
+    "gallery": [
+      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop"
+    ],
     "features": [
       "大 16 开进口布面手工烫金锁线装订",
       "日本富士特种艺术超感纸全彩打样",
       "附赠主理人手写签名收藏证书与编号藏书票",
       "特约艺术评论家万字学术序言专论"
+    ],
+    "detailDescription": "本书汇聚了 Aperture 摄影工作室成立十年来最具代表性的 200 余幅作品，涵盖时尚大刊、纪实人像、建筑静物与暗调胶片等多个篇章。全书由知名书籍装帧设计师操刀，封面采用荷兰进口典雅粗纹布面，覆哑光立体烫金工艺；内页采用 170g 日本王子特种艺术纸，以海德堡六色高精调频网点印刷，最大程度还原原作丰富的灰阶与细腻反差。",
+    "specs": [
+      { "label": "开本尺寸", "value": "240mm × 310mm (大 16 开超大画幅)" },
+      { "label": "页数规格", "value": "268 页精装全彩" },
+      { "label": "印刷工艺", "value": "德国海德堡六色调频高精网点印刷" },
+      { "label": "纸张材质", "value": "170g 进口王子超感特种艺术纸 + 荷兰布面精装" },
+      { "label": "限量发行", "value": "全球限量 2000 册，每册附独一无二手写钢印编号" },
+      { "label": "装订方式", "value": "180 度全景平摊锁线精装（跨页无缝观赏）" }
+    ],
+    "highlights": [
+      {
+        "title": "博物馆级印刷品质",
+        "description": "六色高精印刷与特制环保油墨，高光不反光，暗部层次深邃沉稳，十年不褪色。"
+      },
+      {
+        "title": "180 度平摊无缝跨页",
+        "description": "锁线硬壳装订，可完全平展于桌面，超广角大画幅作品一览无余，带来沉浸式视觉震撼。"
+      },
+      {
+        "title": "附赠专属收藏附件",
+        "description": "每本均夹带主理人亲笔签名收藏证书、限量黄铜书签与 6 张精选艺术明信片。"
+      },
+      {
+        "title": "深度图文创作手记",
+        "description": "收录每张作品背后的布光图解、机位思考与创作心境札记，极具学习与收藏价值。"
+      }
+    ],
+    "packageIncludes": [
+      "《光影之间》十年典藏精装摄影集 × 1",
+      "限量独立编号手写签名收藏证书 × 1",
+      "Aperture 独家定制复古黄铜刻字书签 × 1",
+      "典藏级艺术微喷明信片套装 (6张) × 1",
+      "定制硬壳抗震礼盒外包装 × 1"
+    ],
+    "usageGuide": [
+      "建议存放于干燥避光处，避免长时间阳光直射以保持纸张与油墨的最佳状态。",
+      "翻阅时推荐平放于桌面，享受 180 度平摊带来的无界视觉体验。"
+    ],
+    "faqs": [
+      {
+        "question": "画册是否带有作者签名？",
+        "answer": "是的！本批次所有画册均包含主理人亲笔签名的限量编号证书。"
+      },
+      {
+        "question": "发货时包装是否有防压保护？",
+        "answer": "每本画册均采用加厚气泡柱 + 定制高强度硬瓦楞纸箱双层严密加固，确保边角无损送达。"
+      }
     ]
   },
   {
-    "id": "master-macro-light",
+    "id": "5c34c97a-0853-4a76-8137-c5c4f61c2308",
     "title": "专业微距环形双色温补光灯",
     "description": "Ra 98 高显色指数，2500K - 8500K 无极色温微调，专为商业静物、珠宝首饰与微距特写打造。",
     "price": 459,
+    "originalPrice": 599,
     "tag": "摄影师推荐",
     "category": "gear",
     "categoryLabel": "摄影配件",
     "coverImage": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&h=600&fit=crop",
+    "rating": 4.8,
+    "salesCount": 1150,
+    "gallery": [
+      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=600&fit=crop"
+    ],
     "features": [
       "Ra 98 电影级精准还原晶片",
       "内置 4000mAh 大容量锂电池支持 Type-C 快充",
       "支持磁吸滤镜与全向冷靴热靴扩展",
       "无频闪无波纹数字恒流调光电路"
+    ],
+    "detailDescription": "专为商业静物摄影、珠宝微距与美妆特写设计的环形专业影视补光灯。采用 180 颗超高显色无频闪 LED 灯珠，显色指数 Ra 高达 98+，CRI/TLCI 98+，真实还原物体材质纹理与微小细节。配备无级双色温调节与多功能 OLED 状态屏，即使在高速快门连拍下也绝无频闪黑纹。",
+    "specs": [
+      { "label": "色温范围", "value": "2500K - 8500K (±200K 无级微调)" },
+      { "label": "显色指数", "value": "CRI ≥ 98, TLCI ≥ 98" },
+      { "label": "最大功率", "value": "12W (高亮恒流输出)" },
+      { "label": "电池容量", "value": "4000mAh 锂电池 (满电最高亮度续航约 2.5 小时)" },
+      { "label": "接口规格", "value": "Type-C 快充口 + 标准 1/4 螺口 + 冷靴接口" },
+      { "label": "机身重量", "value": "仅重 185g (轻量化铝合金中框)" }
+    ],
+    "highlights": [
+      {
+        "title": "电影级真实显色",
+        "description": "Ra 98 高色彩还原，拍摄金属、珠宝、宝石及人像皮肤时不泛青、不泛红。"
+      },
+      {
+        "title": "全向柔光无死角",
+        "description": "专业级光学漫反射磨砂柔光板，直视不刺眼，光斑柔和均匀无重影。"
+      },
+      {
+        "title": "磁吸配件扩展",
+        "description": "标配蜂巢网格与 4 色磁吸滤光片，1 秒快速安装，自由塑造各种创意光效。"
+      },
+      {
+        "title": "长续航支持边充边用",
+        "description": "支持 PD 快充协议，可连接充电宝持续供电，应对全天候超长外拍任务。"
+      }
+    ],
+    "packageIncludes": [
+      "专业微距环形补光灯主机 × 1",
+      "磁吸柔光蜂巢罩 × 1",
+      "磁吸四色创意色片组 × 1",
+      "全金属冷靴球形云台 × 1",
+      "Type-C 编织快充线 × 1",
+      "防震收纳保护便携硬包 × 1"
+    ],
+    "usageGuide": [
+      "长按电源键 2 秒开机，旋转调节波轮可切换色温与亮度数值。",
+      "通过底部的标准 1/4 螺孔或冷靴底座，可安装在相机热靴、三脚架或灯架上使用。"
+    ],
+    "faqs": [
+      {
+        "question": "拍摄微距时会有耀斑或反光点吗？",
+        "answer": "补光灯配备了多层纳米雾化漫射罩，光线极度均匀柔和，能有效抑制高反光物体的刺眼白斑。"
+      },
+      {
+        "question": "充满电需要多久？",
+        "answer": "使用 18W 以上 PD 快充头，约 1.5 小时即可完全充满。"
+      }
     ]
   },
   {
-    "id": "cinematic-lut-pack",
+    "id": "ec9f8406-de05-4c41-9cc3-4fe0fc98be31",
     "title": "电影级 4K 视频调色 LUTs 预设包",
     "description": "24 款专为 Sony S-Log3、Canon C-Log 及 Apple Log 调校的专业电影调色方块，一键赋予画面好莱坞质感。",
     "price": 259,
+    "originalPrice": 359,
     "tag": "数字资产",
     "category": "presets",
     "categoryLabel": "调色预设",
     "coverImage": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop",
+    "rating": 4.9,
+    "salesCount": 2180,
+    "gallery": [
+      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&fit=crop"
+    ],
     "features": [
       "兼容 Final Cut Pro、Premiere 与 DaVinci Resolve",
       "包含 .cube 33x 与 65x 高精度三维色彩网格",
       "还原自然胶片肤色高光缓冲曲线",
       "附带 Log 转 Rec.709 标准矫正 LUT"
+    ],
+    "detailDescription": "由资深电影调色师根据 ARRI Alexa 胶片色彩矩阵深度打造。专门针对当前主流相机的 Log 灰片曲线（Sony S-Log3 / S-Cinetone、Canon C-Log2/3、Apple Log 等）进行阶调映射。通过精准的青橙对比色分离、高光高动态压制与阴影冷暖调分离，轻松实现好莱坞院线电影级别的厚重故事感与高级质感。",
+    "specs": [
+      { "label": "文件格式", "value": ".cube (包含 33×33×33 与 65×65×65 两个版本)" },
+      { "label": "适配软件", "value": "DaVinci Resolve / Premiere Pro / Final Cut Pro / CapCut剪映 / PS" },
+      { "label": "支持设备", "value": "Sony FX/Alpha 系列, Canon EOS R 系列, iPhone 15/16 Pro Log" },
+      { "label": "色彩空间", "value": "Rec.709 / DaVinci Wide Gamut / Log 转换" },
+      { "label": "交付形式", "value": "网盘即时下载 + 永久云端更新" }
+    ],
+    "highlights": [
+      {
+        "title": "专业 65 点 3D LUT 网格",
+        "description": "极高计算精度，彻底告别色彩断层与色块溢出，渐变细腻丝滑。"
+      },
+      {
+        "title": "电影级高光滚降",
+        "description": "模拟真实胶片在过曝边缘的柔和漫射，天空与高反光区域不再生硬死白。"
+      },
+      {
+        "title": "智能保护亚洲肤色",
+        "description": "在强化背景冷色调的同时，自动锚定人体肤色矢量范围，确保人脸红润健康。"
+      },
+      {
+        "title": "含达芬奇完整节点树",
+        "description": "提供调色师工程节点示范，新手可逐层学习降噪、曝光定标与色彩微调。"
+      }
+    ],
+    "packageIncludes": [
+      "24 款电影级风格化 3D LUT (.cube 格式)",
+      "4 款标准 Log 转 Rec.709 色彩校正还原 LUT",
+      "DaVinci Resolve 18/19 调色工程节点模板 (.drx)",
+      "60 分钟视频调色全流程教学示范视频",
+      "多软件导入与套用全图文说明 PDF"
+    ],
+    "usageGuide": [
+      "在剪辑软件（如 Premiere / FCPX / 达芬奇）中找到 Lumetri 色彩或 LUT 面板。",
+      "选择「浏览」并载入对应的 .cube 文件。",
+      "调整基础曝光与对比度至画面直方图均衡，适当降低 LUT 混合浓度至 70%-90% 获得最佳效果。"
+    ],
+    "faqs": [
+      {
+        "question": "手机剪映可以使用这套 LUT 吗？",
+        "answer": "可以！剪映手机版及电脑版均支持导入 .cube 格式的 LUT 滤镜。"
+      },
+      {
+        "question": "如果拍摄时没有开 Log 模式可以用吗？",
+        "answer": "可以，我们专门提供了针对常规标准色彩（Rec.709）的直套版本。"
+      }
     ]
   },
   {
-    "id": "carbon-fiber-tripod",
+    "id": "8c242aaf-a811-4de9-87d8-9fc3e2ebccdc",
     "title": "超轻碳纤维便携旅行三脚架",
     "description": "仅重 1.1kg，折叠后全长仅 34cm，承重高达 12kg，风景旅拍与风光长时间曝光的坚固拍档。",
     "price": 1199,
+    "originalPrice": 1599,
     "tag": "户外旗舰",
     "category": "gear",
     "categoryLabel": "摄影配件",
     "coverImage": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop",
+    "rating": 4.9,
+    "salesCount": 780,
+    "gallery": [
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520390138845-fd2d229dd553?w=800&h=600&fit=crop"
+    ],
     "features": [
       "日本东丽 10 层菱形编织碳纤维管",
       "低重心双凹槽精密数控阻尼球形云台",
       "中轴倒置支持贴地微距低角度仰拍",
       "快拆阿卡（Arca-Swiss）标准快装板"
+    ],
+    "detailDescription": "采用进口日本东丽 10 层交织碳纤维管材，兼具超高刚性与轻量化表现。自重仅 1.1kg，折合后可轻松塞入 20 寸登机箱或双肩包侧袋。搭载 36mm 大球径低重心阻尼云台，支持双全景旋转与横竖构图一秒锁定，即使在 8 级强风或海浪长曝光中也能稳固如磐石。",
+    "specs": [
+      { "label": "管节材质", "value": "10 层交叉菱形编织纯碳纤维" },
+      { "label": "脚架自重", "value": "1.1 kg (含云台)" },
+      { "label": "安全承重", "value": "12 kg (可稳固架设 400mm 超长焦镜头)" },
+      { "label": "收纳长度", "value": "34 cm" },
+      { "label": "展开最大高度", "value": "158 cm (升中轴) / 132 cm (不升中轴)" },
+      { "label": "最低工作高度", "value": "14 cm (支持中轴倒置贴地拍摄)" }
+    ],
+    "highlights": [
+      {
+        "title": "极致便携抗风",
+        "description": "10 层碳纤维管有效吸收高频微震，风光延时摄影画面锐利清晰。"
+      },
+      {
+        "title": "CNC 数控低重心云台",
+        "description": "阻尼细腻无虚位，360 度双全景刻度，全景接片构图更精准。"
+      },
+      {
+        "title": "一秒快拧锁紧系统",
+        "description": "1/4 圈快速旋转锁紧设计，双手同时旋转单手即可在 5 秒内完成四节展开。"
+      },
+      {
+        "title": "全地形橡胶与脚钉互换",
+        "description": "底部橡胶脚垫可旋转旋出不锈钢金属脚钉，在泥地、冰雪与沙滩中稳如泰山。"
+      }
+    ],
+    "packageIncludes": [
+      "超轻碳纤维三脚架主机 × 1",
+      "36mm 低重心双全景阻尼云台 × 1",
+      "Arca 标准快装板 × 1",
+      "不锈钢户外地钉 × 3",
+      "专用调节六角扳手 × 2",
+      "加厚防水防震肩背脚架包 × 1"
+    ],
+    "usageGuide": [
+      "握住脚管锁紧旋钮逆时针旋转 90 度，拉伸至所需高度后顺时针锁紧。",
+      "如需微距低角度拍摄，可旋下中轴底部配重挂钩，拔出中轴并倒置重新插入锁紧。"
+    ],
+    "faqs": [
+      {
+        "question": "可以带上飞机随身行李吗？",
+        "answer": "由于折叠后长度仅 34cm，符合绝大多数国内外航空公司随身行李规格（具体以航空公司现场安检为准）。"
+      },
+      {
+        "question": "快装板兼容其他品牌的云台吗？",
+        "answer": "兼容！采用国际通用的 Arca-Swiss（阿卡）标准尺寸，可通用于所有主流阿卡夹座。"
+      }
     ]
   },
   {
-    "id": "monochrome-noir-preset",
+    "id": "866874d6-9d48-48a2-a6e5-c8d1247e8e90",
     "title": "黑白暗房银盐颗粒 LR 预设",
     "description": "专注于反差灰阶与电影暗调氛围，模拟传统暗房柯达 Tri-X 与伊尔福 HP5 胶卷粗颗粒。",
     "price": 159,
+    "originalPrice": 229,
     "tag": "大师黑白",
     "category": "presets",
     "categoryLabel": "调色预设",
     "coverImage": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&h=600&fit=crop",
+    "rating": 4.9,
+    "salesCount": 1670,
+    "gallery": [
+      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop"
+    ],
     "features": [
       "18 款黑白阶调高精预设",
       "自定义可微调颗粒强度模块",
       "保留高光与暗部细腻呼吸感",
       "适合纪实、建筑与情绪人像"
+    ],
+    "detailDescription": "剥离色彩的干扰，让光影与质感直击心灵。Aperture 暗房工坊深入研究了 1960 年代至今的经典黑白银盐冲洗配方，特别调校了 18 款跨越不同反差、颗粒粗细与灰阶延展度的黑白预设。无论是森山大道式的强反差粗颗粒街头张力，还是亚当斯式的细腻分区曝光风光，都能一键生成。",
+    "specs": [
+      { "label": "文件格式", "value": ".xmp (桌面端) / .dng (移动端)" },
+      { "label": "适用题材", "value": "街头纪实 / 建筑线条 / 情绪黑白人像 / 舞台剧照" },
+      { "label": "兼容版本", "value": "Lightroom Classic / CC / Photoshop ACR / 移动版" },
+      { "label": "授权方式", "value": "终身单人商业与个人使用授权" }
+    ],
+    "highlights": [
+      {
+        "title": "九级分区灰阶控制",
+        "description": "基于亚当斯区域曝光法精心映射，亮部通透不溢出，暗部深邃有细节。"
+      },
+      {
+        "title": "有机银盐物理颗粒",
+        "description": "拒绝数码噪点的生硬感，模拟真实胶卷化学卤化银晶体的随机自然分布。"
+      },
+      {
+        "title": "模块化颗粒工具包",
+        "description": "预设包含「微颗粒 / 经典颗粒 / 重磅颗粒」独立开关，随心搭配不同画幅。"
+      },
+      {
+        "title": "高光微暖微冷调色板",
+        "description": "支持传统硒调（Selenium Tone）与金调配方，赋予黑白作品典藏画廊质感。"
+      }
+    ],
+    "packageIncludes": [
+      "18 款核心黑白暗房风格预设 (.xmp)",
+      "18 款手机端免会员 .dng 文件",
+      "6 款独立银盐颗粒强度与反差辅助预设",
+      "黑白摄影光影反差处理实战视频教学",
+      "PDF 版安装与操作指导"
+    ],
+    "usageGuide": [
+      "导入预设包至 Lightroom 预设库中。",
+      "选择作品并点击应用心仪的黑白风格。",
+      "根据原片光比调整曝光与阴影提亮，点击颗粒辅助预设微调胶片质感。"
+    ],
+    "faqs": [
+      {
+        "question": "彩色原片套用后可以随时恢复吗？",
+        "answer": "可以，预设均为非破坏性参数调整，不会修改原始 RAW 文件，可随时重置或撤销。"
+      }
     ]
   },
   {
-    "id": "leather-camera-strap",
+    "id": "fdc232ed-b15f-4cac-9fb4-eb77c49e9bda",
     "title": "意大利植鞣牛皮手工减压肩带",
     "description": "进口托斯卡纳植鞣牛皮纯手工切削封边，随使用时间呈现温润琥珀色包浆，配防磨皮垫与黄铜快拆扣。",
     "price": 269,
+    "originalPrice": 369,
     "tag": "头层皮料",
     "category": "gear",
     "categoryLabel": "摄影配件",
     "coverImage": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&h=600&fit=crop",
+    "rating": 4.9,
+    "salesCount": 1890,
+    "gallery": [
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1520390138845-fd2d229dd553?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&h=600&fit=crop"
+    ],
     "features": [
       "天然植物鞣制无重金属染色",
       "宽边加厚减压肩垫有效分散机身自重",
       "赠送机身防刮擦圆形保护真皮垫片",
       "承重测试超过 25kg 安全坚固"
+    ],
+    "detailDescription": "甄选意大利托斯卡纳产区头层牛皮，经天然植物栲胶长达数周慢速浸鞣而成。保留天然皮纹与呼吸感，随着摄影师的常年佩戴与手掌温热，皮革将逐渐氧化出独特的复古琥珀光泽。纯手工双波浪马鞍针法缝线，坚固抗拉，配以复古黄铜五金与圆形防磨皮垫，彻底杜绝金属环划伤相机机身。",
+    "specs": [
+      { "label": "皮料材质", "value": "意大利进口头层植鞣牛皮 (厚度 3.2mm)" },
+      { "label": "肩带总长", "value": "95cm - 120cm (多档孔位自由调节)" },
+      { "label": "肩垫宽度", "value": "3.5cm (舒适减压受力面积)" },
+      { "label": "五金扣件", "value": "实心黄铜防氧化冲压扣具" },
+      { "label": "适用机型", "value": "富士、徕卡、索尼、佳能、尼康等所有带穿绳/双环孔机型" },
+      { "label": "极限承重", "value": "静态安全拉力测试 > 25 kg" }
+    ],
+    "highlights": [
+      {
+        "title": "岁月养皮包浆美学",
+        "description": "植物鞣制保留天然油脂，越用越柔软，颜色随岁月沉淀愈发温润醇厚。"
+      },
+      {
+        "title": "纯手工马鞍缝线",
+        "description": "高拉力浸蜡粗线手工缝合，即使单点磨损也不会整体脱线，经久耐用。"
+      },
+      {
+        "title": "机身贴心防划伤设计",
+        "description": "随包装附赠 2 枚圆形真皮防护垫圈，有效隔绝金属环与机身烤漆摩擦。"
+      },
+      {
+        "title": "加宽加厚减压肩垫",
+        "description": "有效缓解重型微单与大光圈定焦挂在脖颈上的压迫感。"
+      }
+    ],
+    "packageIncludes": [
+      "意大利植鞣真皮手工减压肩带 × 1",
+      "加厚真皮活动减压肩垫 × 1",
+      "相机机身防磨擦真皮保护垫圈 × 2",
+      "黄铜加固快装双环 × 2",
+      "真皮保养蜡试用装 × 1",
+      "复古牛皮纸礼盒包装 × 1"
+    ],
+    "usageGuide": [
+      "将防刮真皮垫圈先套在相机挂耳上，再将黄铜开环穿入相机吊耳并锁牢。",
+      "根据个人身高与背负习惯，微调肩带两侧黄铜扣针孔位。"
+    ],
+    "faqs": [
+      {
+        "question": "夏天出汗会褪色弄脏衣服吗？",
+        "answer": "不会！天然植鞣皮通过固色抛光工艺处理，背面经过打磨封边，不会出现染色或掉屑现象。"
+      }
     ]
   },
   {
-    "id": "lens-cleaning-master-kit",
+    "id": "1668ac8e-1442-4d96-910c-413b72b07312",
     "title": "光学无尘纳米镀膜镜头清洁套装",
     "description": "气吹、碳头镜头笔、无尘超细纤维擦镜布与无水环保挥发清洁液，呵护昂贵蔡司与徕卡镀膜。",
     "price": 129,
+    "originalPrice": 189,
     "tag": "专业养护",
     "category": "gear",
     "categoryLabel": "摄影配件",
     "coverImage": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&h=600&fit=crop",
+    "rating": 4.8,
+    "salesCount": 3200,
+    "gallery": [
+      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=600&fit=crop"
+    ],
     "features": [
       "食品级硅胶单向止逆阀防吸尘气吹",
       "活性碳粉纳米软头快速瓦解指纹油污",
       "真空独立包装超细纤维抛光布",
       "防静电抗灰尘吸附保护配方"
+    ],
+    "detailDescription": "针对现代高端相机感光元件 CMOS 与昂贵光学镀膜特别研发的专业无尘养护系统。气吹采用单向进气止逆阀，杜绝二次吸尘喷溅；多功能碳粉镜头笔配备天然动物软毛与活性纳米碳头，轻旋即可吸附顽固指纹与油脂；配合环保无水光学清洁液，挥发无痕，不伤纳米抗反射多层镀膜。",
+    "specs": [
+      { "label": "适用对象", "value": "相机镜头 / UV 滤镜 / CMOS 传感器 / 观景窗 / 手机平板屏幕" },
+      { "label": "气吹材质", "value": "高弹食品级环保硅胶 + 金属出风嘴" },
+      { "label": "清洁液规格", "value": "30ml 无水防静电环保配方 (无酒精无腐蚀性)" },
+      { "label": "擦镜布规格", "value": "15cm × 15cm 真空独立包装 (10片装)" },
+      { "label": "安全认证", "value": "通过 RoHS 欧盟环保与光学表面无伤测试" }
+    ],
+    "highlights": [
+      {
+        "title": "单向防吸尘强力气吹",
+        "description": "尾部单向进气滤网，只吹风不吸灰，强劲风压迅速带走镜片颗粒。"
+      },
+      {
+        "title": "纳米活性碳粉镜头笔",
+        "description": "干式物理吸附油污，比普通湿巾更安全，不留水渍与彩虹纹。"
+      },
+      {
+        "title": "激光无尘封边超细纤维布",
+        "description": "百级无尘室真空封装，不掉毛不脱屑，可反复水洗重复使用。"
+      },
+      {
+        "title": "抗静电保护涂层",
+        "description": "擦拭后在镜片表面形成微观抗静电保护膜，减少二次灰尘吸附。"
+      }
+    ],
+    "packageIncludes": [
+      "强力单向止逆阀防尘气吹 × 1",
+      "双头多功能纳米碳粉镜头笔 × 1",
+      "专业光学无水清洁液 (30ml) × 1",
+      "真空独立包装超细纤维擦镜布 × 10",
+      "全画幅 CMOS 传感器清洁棒 × 4",
+      "便携收纳硬壳拉链包 × 1"
+    ],
+    "usageGuide": [
+      "第一步：先使用气吹吹除镜片表面大颗粒砂砾与灰尘。",
+      "第二步：用镜头笔软毛刷扫除缝隙浮尘。",
+      "第三步：用碳粉软头由中心向外画圈轻拭指纹油污，或配合擦镜布与 1 滴清洁液轻柔打圈擦亮。"
+    ],
+    "faqs": [
+      {
+        "question": "清洁液可以直接喷在感光元件 CMOS 上吗？",
+        "answer": "不建议直接将液体喷在传感器上；清洁传感器时请喷在专用清洁棒上微润后单向轻拭。"
+      }
     ]
   },
   {
-    "id": "golden-hour-landscape-preset",
+    "id": "d0aa1edd-28db-4420-b004-af0d06db8816",
     "title": "金色暮光风光暖调预设包",
     "description": "专为日落、日出以及大光比逆光场景优化，精准分离天空冷调与地面暖阳，呈现如油画般的壮阔层次。",
     "price": 189,
+    "originalPrice": 269,
     "tag": "风光必备",
     "category": "presets",
     "categoryLabel": "调色预设",
     "coverImage": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop",
+    "rating": 4.9,
+    "salesCount": 1340,
+    "gallery": [
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800&h=600&fit=crop"
+    ],
     "features": [
       "20 款风光暮色动态范围映射曲线",
       "独家天空渐变色调分离色彩模块",
       "RAW 格式超宽动态智能平衡",
       "包含无人机航拍专用高对比参数"
+    ],
+    "detailDescription": "专为日出、晚霞、雪山金顶与逆光风光场景打造的色彩科学解决方案。通过对高光橙红暖调与阴影蓝紫冷调的精准分离，将数码照片中容易过曝发白的天空与死黑的前景重新注入丰富的色彩信息。预设深度适配无人机 Dlog-M 及相机超宽动态 RAW 格式，一键重现如油画般恢弘磅礴的自然风光。",
+    "specs": [
+      { "label": "文件格式", "value": ".xmp (桌面端) + .dng (手机移动端)" },
+      { "label": "适用场景", "value": "日落暮光 / 日出晨曦 / 雪山金顶 / 森林逆光 / 无人机航拍" },
+      { "label": "兼容设备", "value": "大疆无人机、全画幅微单及 iPhone 原片" },
+      { "label": "更新支持", "value": "终身免费升级与调色交流群" }
+    ],
+    "highlights": [
+      {
+        "title": "动态范围智能重构",
+        "description": "自动压制太阳高光光晕，提亮地景暗部细节，大光比场景无需多次曝光包围合成。"
+      },
+      {
+        "title": "油画感冷暖色调分离",
+        "description": "精确分离霞光暖金与天空深蓝，营造电影大片般的冷暖空间纵深感。"
+      },
+      {
+        "title": "航拍专用穿透模块",
+        "description": "内附 4 款航拍除雾透亮预设，有效消除高空灰霾，还原大地清晰纹理。"
+      },
+      {
+        "title": "智能局部遮罩兼容",
+        "description": "深度结合 Lightroom 最新 AI 天空与主体遮罩，一键智能单独调整天色。"
+      }
+    ],
+    "packageIncludes": [
+      "20 款金色暮光核心风光预设 (.xmp / .dng)",
+      "5 款航拍专用除霾高反差预设",
+      "风光大光比后期核心调色视频讲座 (50分钟)",
+      "8 张 8K 级大师风光实拍 RAW 练习文件",
+      "安装与使用说明文档"
+    ],
+    "usageGuide": [
+      "导入预设后在 Lightroom 预设库中载入「Aperture 暮光风光」分组。",
+      "针对逆光拍摄的照片，先将曝光滑块略微降低以找回云层细节，再套用预设即可。"
+    ],
+    "faqs": [
+      {
+        "question": "大疆无人机拍的照片可以用吗？",
+        "answer": "完全支持！包含专为大疆 Mini/Air/Mavic/Inspire 系列 DNG 格式优化的专用参数。"
+      }
     ]
   },
   {
-    "id": "tokyo-street-stories-book",
+    "id": "3a8385cb-5fc4-4303-9600-afb5b63fdfaf",
     "title": "《东京浮生》街头纪实黑白影集",
     "description": "摄影师张明历时三年在新宿、涩谷、浅草街头抓拍的 120 幅经典瞬间，日本写真协会年度推荐画册。",
     "price": 239,
+    "originalPrice": 329,
     "tag": "精装特辑",
     "category": "book",
     "categoryLabel": "摄影画册",
     "coverImage": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop",
+    "rating": 4.9,
+    "salesCount": 670,
+    "gallery": [
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800&h=600&fit=crop"
+    ],
     "features": [
       "240x300mm 典雅开本硬壳锁线精装",
       "日本白石特种双色黑白油墨高精网点印刷",
       "附赠限量黑白明信片一套六张",
       "作者亲笔中日双语创作心境注解"
+    ],
+    "detailDescription": "穿行于东京雨夜的霓虹倒影与新宿巷弄的匆匆脚步之间。摄影师张明历时三年，用 Leica M 旁轴相机与 35mm 定焦镜头记录下都市人群孤独而又坚韧的生命肖像。本书由日本知名艺术书籍装帧师设计，采用双色黑白特种油墨印刷，完美呈现了传统暗房银盐相纸独有的深沉黑位与细腻灰度阶调。",
+    "specs": [
+      { "label": "画册开本", "value": "240mm × 300mm 精装硬壳" },
+      { "label": "页数体量", "value": "196 页双色高精印刷" },
+      { "label": "纸张品质", "value": "157g 日本白石特种艺术哑粉纸" },
+      { "label": "装订方式", "value": "布面书脊 + 锁线平摊裸脊装" },
+      { "label": "语言版本", "value": "中日双语创作手记与随笔" }
+    ],
+    "highlights": [
+      {
+        "title": "双色黑白深邃油墨",
+        "description": "采用专色黑加专色暖灰双版套印，黑度超越普通单色印刷 30%，暗部不发灰。"
+      },
+      {
+        "title": "纯粹街头纪实视角",
+        "description": "收录 120 幅未公开纪实原作，展现大都市繁华背后的真实人文脉搏。"
+      },
+      {
+        "title": "附赠限量收藏明信片",
+        "description": "内附 6 张高阶艺术微喷工艺制作的街头经典画面收藏明信片。"
+      }
+    ],
+    "packageIncludes": [
+      "《东京浮生》精装黑白摄影画册 × 1",
+      "限量艺术微喷街头纪实明信片 (6张) × 1",
+      "作者亲笔签名寄语扉页卡 × 1",
+      "进口环保封套保护盒 × 1"
+    ],
+    "usageGuide": [
+      "请轻柔翻阅，建议存放在阴凉干燥处，避免潮湿受热。"
+    ],
+    "faqs": [
+      {
+        "question": "画册是否全黑白？",
+        "answer": "是的，全书作品均为纯正黑白街头纪实摄影，专为黑白影像爱好者与收藏家打造。"
+      }
     ]
   },
   {
-    "id": "magnetic-cpl-filter",
+    "id": "686ca52d-8d4d-4f31-8f58-7396d837dcc7",
     "title": "超薄磁吸纳米镀膜偏振 CPL 滤镜",
     "description": "航天铝合金边框，德国肖特光学玻璃，一秒快拆磁吸安装，消除水面反光与玻璃眩光，还原天空深邃纯蓝。",
     "price": 389,
+    "originalPrice": 499,
     "tag": "高清透光",
     "category": "gear",
     "categoryLabel": "摄影配件",
     "coverImage": "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&h=600&fit=crop",
+    "rating": 4.9,
+    "salesCount": 1120,
+    "gallery": [
+      "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop"
+    ],
     "features": [
       "磁吸转接环一贴即合告别卡齿滑丝",
       "双面 18 层低反射防水防油纳米涂层",
       "偏振消除率高达 99.8% 且无暗角",
       "超薄 3.2mm 框架完美兼容超广角"
+    ],
+    "detailDescription": "专为风光、建筑及汽车摄影师打造的旗舰级磁吸偏振镜。采用德国进口肖特 B270 光学玻璃，双面 18 层双低反射增透纳米镀膜，透光率高达 99.5%。独创强磁吸附系统，告别传统螺口滤镜在寒冷或潮湿环境下卡齿滑丝的痛苦体验，一秒即贴即用，旋转滤镜环即可随心调节消光角度。",
+    "specs": [
+      { "label": "玻璃材质", "value": "德国肖特 B270 顶级光学玻璃" },
+      { "label": "边框厚度", "value": "3.2mm 航空级超薄铝合金 (16mm 超广角无暗角)" },
+      { "label": "镀膜工艺", "value": "双面 18 层抗反射防水防油纳米离子镀膜" },
+      { "label": "偏振效率", "value": "99.8% 高偏光率，色彩中性无偏色" },
+      { "label": "可选口径", "value": "67mm / 72mm / 77mm / 82mm / 95mm" }
+    ],
+    "highlights": [
+      {
+        "title": "一秒磁吸快拆",
+        "description": "强力钕铁硼磁环，轻轻一靠即可稳固吸附，狂甩不掉，快速捕捉稍纵即逝的光影。"
+      },
+      {
+        "title": "消除反光还原真彩",
+        "description": "轻松穿透水面、橱窗玻璃与非金属表面杂光，大幅提升天空湛蓝度与植物翠绿色彩饱和度。"
+      },
+      {
+        "title": "疏水疏油防刮耐磨",
+        "description": "荷叶效应纳米涂层，水滴指纹一擦即净，无惧风沙与户外雨水飞溅。"
+      }
+    ],
+    "packageIncludes": [
+      "超薄磁吸 CPL 偏振镜 × 1",
+      "高精度磁吸转接基础环 × 1",
+      "磁吸全金属保护镜头前盖 × 1",
+      "高密度防震收纳保护便携盒 × 1",
+      "真空超细纤维擦镜布 × 1"
+    ],
+    "usageGuide": [
+      "先将磁吸转接环旋转拧紧在镜头前端螺纹上。",
+      "将 CPL 滤镜贴合在磁吸环上，取景时手指轻轻旋转滤镜外环直至取景器中反光消除且天空色彩最浓郁。"
+    ],
+    "faqs": [
+      {
+        "question": "超广角镜头使用会有暗角吗？",
+        "answer": "镜框采用 3.2mm 极致超薄设计，在 16mm 全画幅超广角镜头上使用也完全没有暗角。"
+      },
+      {
+        "question": "镜头盖还可以盖上吗？",
+        "answer": "我们标配了专门匹配的磁吸全金属镜头保护前盖，直接吸附在滤镜表面即可安全保护。"
+      }
     ]
   },
   {
-    "id": "editorial-portrait-preset",
+    "id": "46f2496e-774a-4768-832b-0669d5b5a0ef",
     "title": "时尚商业大刊人像精修预设",
     "description": "针对欧美白皙肤色与亚洲暖黄皮定制的色彩基底，精准校准泛红与暗沉，赋予人物高级奶油肌质感。",
     "price": 219,
+    "originalPrice": 319,
     "tag": "人像热卖",
     "category": "presets",
     "categoryLabel": "调色预设",
     "coverImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=600&fit=crop",
+    "rating": 5.0,
+    "salesCount": 2780,
+    "gallery": [
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop"
+    ],
     "features": [
       "包含 15 款室内影棚与 10 款户外自然光人像预设",
       "智能保留发丝微反差与瞳孔高光反射",
       "一键调整色调色温滑块无需复杂遮罩",
       "提供原图修图对照 DNG 教学范本"
+    ],
+    "detailDescription": "由一线时尚大刊合作修图师联手调教。专攻人像摄影中最棘手的「肤色暗沉、泛红蜡黄、粉底发灰」等痛点。运用创新的非线性双向色调重映射算法，将高光区域锁定为通透高级的奶油白皙，中音阶调呈现自然微粉血色，暗部则保留干净利落的冷灰反差，一键修出时尚杂志封面级质感大片。",
+    "specs": [
+      { "label": "格式支持", "value": ".xmp / .dng" },
+      { "label": "适用场景", "value": "商业棚拍 / 户外写真 / 情绪婚纱 / 时尚大片 / 私房写真" },
+      { "label": "兼容软件", "value": "Lightroom Classic / Lightroom CC / Photoshop ACR" },
+      { "label": "服务承诺", "value": "终身免费升级，支持商业交付使用" }
+    ],
+    "highlights": [
+      {
+        "title": "高级奶油通透肤色",
+        "description": "精准消除面部黄气与杂色，保留毛孔微细节，肌肤细腻通透自然。"
+      },
+      {
+        "title": "发丝瞳孔反差保护",
+        "description": "在提亮肤色的同时，自动保护睫毛、瞳孔及发丝深邃黑度，立体感十足。"
+      },
+      {
+        "title": "棚拍与外景全覆盖",
+        "description": "包含 15 款高反差商业棚拍色调与 10 款日系温润自然光外景色调。"
+      }
+    ],
+    "packageIncludes": [
+      "25 款时尚人像精修核心预设 (.xmp / .dng)",
+      "5 款人像局部微调辅助预设 (眼神光/牙齿美白/红润双唇)",
+      "40 分钟商业人像调色与修瑕实战视频",
+      "6 张高精度中画幅人像实拍 RAW 练习文件"
+    ],
+    "usageGuide": [
+      "将预设导入 Lightroom，套用至人像照片。",
+      "微调曝光滑块至面部亮度舒适，再使用「眼神光增强」辅助工具点亮眼神。"
+    ],
+    "faqs": [
+      {
+        "question": "暗光环境拍摄的人像适用吗？",
+        "answer": "适用！我们专门内置了 5 款针对夜景人像与弱光室内环境优化的暗光降噪调色预设。"
+      }
     ]
   },
   {
-    "id": "shanghai-neon-nights-book",
+    "id": "1a568489-6e6c-4de8-85a0-acf9312b3c08",
     "title": "《霓虹夜行》魔都赛博光影画册",
     "description": "穿梭在上海繁华弄堂与陆家嘴云霄之间的赛博朋克长卷，记录冷暖光影交织下的城市生命力。",
     "price": 269,
+    "originalPrice": 369,
     "tag": "全彩特种纸",
     "category": "book",
     "categoryLabel": "摄影画册",
     "coverImage": "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800&h=600&fit=crop",
+    "rating": 4.9,
+    "salesCount": 840,
+    "gallery": [
+      "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop"
+    ],
     "features": [
       "跨页平摊 180 度裸背装订设计",
       "局部荧光 UV 工艺增强夜景霓虹质感",
       "附赠夜景慢门参数拍摄全案拆解手册",
       "限量收藏木质收纳盒包装"
+    ],
+    "detailDescription": "以极具张力的色彩镜头解构上海的魔幻双面。从黄浦江畔的摩天楼群到老城厢蜿蜒的烟火小巷，摄影师历时 500 个雨夜与凌晨，利用慢门长曝光与电影感青蓝红橙色调，定格下超现实的未来感画卷。封面采用定制暗夜幻彩纸与局部荧光 UV 印刷，在暗处呈现迷人微光。",
+    "specs": [
+      { "label": "画册规格", "value": "260mm × 260mm 正方形超厚精装" },
+      { "label": "页数规格", "value": "224 页全彩艺术纸印制" },
+      { "label": "特殊工艺", "value": "封面荧光 UV + 内页局部专色亮油工艺" },
+      { "label": "装帧设计", "value": "裸脊锁线精装（支持 180 度平展）" }
+    ],
+    "highlights": [
+      {
+        "title": "荧光 UV 特殊印刷",
+        "description": "霓虹灯牌与车流光轨在特种油墨印制下呈现超高光泽与视觉冲击力。"
+      },
+      {
+        "title": "全案慢门参数剖析",
+        "description": "附赠拍摄小册子，包含每幅作品的机位 GPS 坐标、曝光时间与滤镜选择。"
+      },
+      {
+        "title": "定制实木收纳盒",
+        "description": "采用黑胡桃木激光雕刻礼盒封装，防尘防潮，极具收藏质感。"
+      }
+    ],
+    "packageIncludes": [
+      "《霓虹夜行》魔都赛博光影画册 × 1",
+      "夜景长曝光实战机位拆解手册 × 1",
+      "定制黑胡桃木激光雕刻收藏盒 × 1",
+      "夜景艺术微喷大海报 × 1"
+    ],
+    "usageGuide": [
+      "平摊于桌面翻阅，可用紫外手电筒照射封面体验隐藏荧光光效。"
+    ],
+    "faqs": [
+      {
+        "question": "画册是否包含全国包邮？",
+        "answer": "是的，全套由顺丰特快包邮直发。"
+      }
     ]
   },
   {
-    "id": "quick-release-backpack-clip",
+    "id": "0de83349-e2dc-4096-b55b-d805aa83c43e",
     "title": "极速快拆全金属双保险背包夹",
     "description": "数控航空铝 CNC 精雕，夹持在双肩包背带上即可稳固悬挂重型微单相机，登山徒步徒手快取一秒合焦。",
     "price": 199,
+    "originalPrice": 279,
     "tag": "户外便携",
     "category": "gear",
     "categoryLabel": "摄影配件",
-    "coverImage": "https://images.unsplash.com/photo-1510127031490-45144cb561ea?w=800&h=600&fit=crop",
+    "coverImage": "https://images.unsplash.com/photo-1520390138845-fd2d229dd553?w=800&h=600&fit=crop",
+    "rating": 4.8,
+    "salesCount": 1560,
+    "gallery": [
+      "https://images.unsplash.com/photo-1520390138845-fd2d229dd553?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop"
+    ],
     "features": [
       "双重防误触物理机械自锁旋钮",
       "兼容所有阿卡标准云台与三脚架快装底座",
       "硅胶防滑抗拉垫片杜绝肩带磨损滑移",
       "经受 50kg 极限静态悬挂拉力测试"
+    ],
+    "detailDescription": "彻底释放摄影师的双手与颈椎！采用整块航空级 6061-T6 铝合金 CNC 高精雕刻，表面经硬质阳极氧化处理。无论是徒步登山、骑行还是城市街拍，将相机轻推入夹扣即瞬间自动卡紧锁死；单手按下解锁按钮并在 1 秒内拔出相机开机合焦，不错过任何抓拍时机。",
+    "specs": [
+      { "label": "主体材质", "value": "6061-T6 航空铝合金 + 不锈钢机械构件" },
+      { "label": "主体自重", "value": "仅 98g (轻巧无负重感)" },
+      { "label": "承重极限", "value": "静态安全拉力 > 50 kg" },
+      { "label": "适配肩带", "value": "宽度 ≤ 7cm，厚度 ≤ 1.5cm 的所有双肩包或腰带" },
+      { "label": "接口标准", "value": "Arca-Swiss (阿卡) 四向标准快装板" }
+    ],
+    "highlights": [
+      {
+        "title": "双保险物理自锁",
+        "description": "机械自锁到位发出一声清脆咔哒声，旋转侧边安全锁旋钮即可彻底锁定按键，杜绝任何误触坠机风险。"
+      },
+      {
+        "title": "全兼容阿卡生态",
+        "description": "取下相机后无需拆卸快装板，可直接架设在三脚架或云台上使用。"
+      },
+      {
+        "title": "波纹硅胶防滑衬垫",
+        "description": "背面加厚防滑硅胶紧密贴合背包肩带，剧烈跑跳也不下滑、不晃动。"
+      }
+    ],
+    "packageIncludes": [
+      "CNC 金属快拆背包夹底座 × 1",
+      "标准阿卡四向快装板 × 1",
+      "加长紧固手拧螺丝 × 2",
+      "标准紧固手拧螺丝 × 2",
+      "专用内六角调节扳手 × 1",
+      "收纳防尘袋 × 1"
+    ],
+    "usageGuide": [
+      "将背包夹底座套在双肩包一侧肩带合适高度，拧紧固定螺丝。",
+      "将快装板安装于相机底部 1/4 螺孔，相机直接滑入卡座即可完成锁定。"
+    ],
+    "faqs": [
+      {
+        "question": "搭配 70-200 长焦镜头重装会晃动吗？",
+        "answer": "不会！背包夹通过双螺丝将底座紧密夹持在肩带上，受力均匀贴合身体，走路跑步都十分稳固。"
+      }
     ]
   },
   {
-    "id": "analog-nature-lut-pack",
+    "id": "712413d5-4e98-46b5-bc08-3a5b59e40294",
     "title": "森林与原野自然绿调视频 LUTs",
     "description": "专治视频调色绿叶“塑料感”！压低荧光黄绿，赋予森林自然胶片青翠、松针墨绿与大地泥土呼吸感。",
     "price": 179,
+    "originalPrice": 249,
     "tag": "小清新",
     "category": "presets",
     "categoryLabel": "调色预设",
     "coverImage": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&fit=crop",
+    "rating": 4.8,
+    "salesCount": 1940,
+    "gallery": [
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop"
+    ],
     "features": [
       "16 款针对植被与山野高饱和度压制调色方块",
       "完美兼容各大无人机 D-Log 与相机 Log",
       "不损失肤色自然纯度的高光过渡保护",
       "附带达芬奇节点树调色工程演示文件"
+    ],
+    "detailDescription": "数码相机在拍摄森林、草原与绿植时，黄绿通道极易过度饱和而呈现廉价的「数码塑料感」。本套调色方块精准重新校准了绿色与黄色的色相偏角，将刺眼的荧光绿转换为深邃优雅的青松绿、橄榄绿与高级苔藓墨绿。同时保留阳光穿透树叶的柔和漫射光影，赋予户外露营与自然风光视频极致治愈的清新电影感。",
+    "specs": [
+      { "label": "文件格式", "value": ".cube 3D LUT (33点 / 65点双版本)" },
+      { "label": "适用题材", "value": "户外露营 / 森林旅拍 / 草原风光 / 治愈系 Vlog / 纪录片" },
+      { "label": "支持软件", "value": "Premiere / Final Cut Pro / DaVinci Resolve / 剪映 / VN" },
+      { "label": "兼容色彩", "value": "Sony S-Log3, Canon C-Log, D-LogM, Rec.709" }
+    ],
+    "highlights": [
+      {
+        "title": "告别塑料荧光绿",
+        "description": "压抑黄色偏移，将杂乱绿植校准为统一沉静的胶片墨绿与青翠色调。"
+      },
+      {
+        "title": "人景分离保护算法",
+        "description": "在大幅改善背景绿植的同时，自动隔离人脸红黄肤色，人像依然红润白皙。"
+      },
+      {
+        "title": "丁达尔光线强化",
+        "description": "强化树林晨雾间的光束立体感，让画面更具呼吸感与空间沉浸感。"
+      }
+    ],
+    "packageIncludes": [
+      "16 款森林与自然风格 3D LUT (.cube)",
+      "4 款 Log 灰片还原校正 LUT",
+      "DaVinci Resolve 18/19 调色工程示范节点",
+      "45 分钟自然风光视频调色实操录播课程",
+      "全套安装与软件套用说明 PDF"
+    ],
+    "usageGuide": [
+      "在剪辑软件中载入 LUT，将不透明度调整至 75%-85% 获得最舒适的治愈调色效果。"
+    ],
+    "faqs": [
+      {
+        "question": "拍摄雨林阴天也可以用吗？",
+        "answer": "可以！套装中包含了专门针对阴天低对比度森林环境优化的青翠冷调 LUT。"
+      }
     ]
   }
 ]

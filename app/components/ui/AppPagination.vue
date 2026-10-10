@@ -22,11 +22,11 @@ const setPage = (page: number) => {
     <button
       type="button"
       :disabled="currentPage <= 1"
-      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-[#ddd8cf] dark:border-[#2d2a26] transition cursor-pointer"
+      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line transition cursor-pointer"
       :class="[
         currentPage <= 1
-          ? 'opacity-40 cursor-not-allowed text-gray-400'
-          : 'bg-white dark:bg-[#211f1c] text-[#1a1816] dark:text-[#f5f2ed] hover:border-amber-600 dark:hover:border-amber-400',
+          ? 'opacity-40 cursor-not-allowed text-caption'
+          : 'bg-card text-main hover:border-accent',
       ]"
       @click="setPage(currentPage - 1)"
     >
@@ -42,8 +42,8 @@ const setPage = (page: number) => {
         class="w-9 h-9 rounded-xl text-xs md:text-sm font-semibold transition cursor-pointer flex items-center justify-center"
         :class="[
           currentPage === p
-            ? 'bg-amber-600 text-white shadow-md'
-            : 'bg-white dark:bg-[#211f1c] border border-[#ddd8cf] dark:border-[#2d2a26] text-[#4a4540] dark:text-[#c4bdb1] hover:border-amber-600',
+            ? 'bg-accent text-white shadow-md'
+            : 'bg-card border border-line text-muted hover:border-accent',
         ]"
         @click="setPage(p)"
       >
@@ -55,11 +55,11 @@ const setPage = (page: number) => {
     <button
       type="button"
       :disabled="currentPage >= totalPages"
-      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-[#ddd8cf] dark:border-[#2d2a26] transition cursor-pointer"
+      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line transition cursor-pointer"
       :class="[
         currentPage >= totalPages
-          ? 'opacity-40 cursor-not-allowed text-gray-400'
-          : 'bg-white dark:bg-[#211f1c] text-[#1a1816] dark:text-[#f5f2ed] hover:border-amber-600 dark:hover:border-amber-400',
+          ? 'opacity-40 cursor-not-allowed text-caption'
+          : 'bg-card text-main hover:border-accent',
       ]"
       @click="setPage(currentPage + 1)"
     >
