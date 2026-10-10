@@ -98,7 +98,7 @@ onUnmounted(() => {
         class="w-12 h-12 flex items-center justify-center text-gray-300 hover:text-on-accent hover:bg-accent transition-colors cursor-pointer"
         @click="toggleTheme">
         <!-- 太阳（深色模式显示） -->
-        <svg class="w-5 h-5 text-accent group-hover:text-white transition-colors hidden dark:block" viewBox="0 0 24 24"
+        <svg class="w-5 h-5 text-gray-300 group-hover:text-white transition-colors hidden dark:block" viewBox="0 0 24 24"
           fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="12" cy="12" r="4" />
           <path d="M12 2v2" />

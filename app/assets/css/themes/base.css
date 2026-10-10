@@ -22,6 +22,9 @@
   --accent-hover: #92400e;
   --accent-soft-bg: #fef3c7;
   --accent-soft-text: #92400e;
+  
+  --section-accent-bg: var(--accent);
+  --section-accent-text: var(--on-accent);
 }
 
 .dark {
@@ -38,8 +41,11 @@
   --border-line-strong: #4a4540;
 
   --accent: #f59e0b;
-  --on-accent: #12100e;
+  --on-accent: #ffffff;
   --accent-hover: #fbbf24;
   --accent-soft-bg: rgba(120, 53, 15, 0.25);
   --accent-soft-text: #fcd34d;
+
+  --section-accent-bg: var(--accent);
+  --section-accent-text: var(--on-accent);
 }

@@ -114,7 +114,7 @@ const isActive = (path: string) => {
           class="w-10 h-10 rounded-xl text-muted hover:text-main flex items-center justify-center transition hover:bg-subtle cursor-pointer"
           @click="toggleTheme">
           <!-- 太阳图标（深色模式下显示） -->
-          <svg class="hidden dark:block w-5 h-5 text-accent" fill="none" stroke="currentColor"
+          <svg class="hidden dark:block w-5 h-5 text-muted" fill="none" stroke="currentColor"
             viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />

@@ -23,4 +23,7 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-soft: var(--accent-soft-bg);
   --color-accent-soft-text: var(--accent-soft-text);
+
+  --color-section-accent: var(--section-accent-bg);
+  --color-section-on-accent: var(--section-accent-text);
 }
