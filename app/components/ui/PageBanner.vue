@@ -31,30 +31,7 @@ const props = withDefaults(defineProps<Props>(), {
     <AppContainer class="relative z-10">
       <!-- 面包屑 -->
       <div v-if="breadcrumbs && breadcrumbs.length" class="mb-4">
-        <nav aria-label="Breadcrumb">
-          <ol class="flex items-center space-x-2 text-xs md:text-sm text-gray-300">
-            <li>
-              <NuxtLink to="/" class="hover:text-accent transition-colors">
-                首页
-              </NuxtLink>
-            </li>
-            <template v-for="(item, index) in breadcrumbs" :key="index">
-              <li class="text-gray-500">/</li>
-              <li>
-                <NuxtLink
-                  v-if="item.to && index < breadcrumbs.length - 1"
-                  :to="item.to"
-                  class="hover:text-accent transition-colors"
-                >
-                  {{ item.label }}
-                </NuxtLink>
-                <span v-else class="text-white font-medium">
-                  {{ item.label }}
-                </span>
-              </li>
-            </template>
-          </ol>
-        </nav>
+        <AppBreadcrumb :items="breadcrumbs" variant="light" />
       </div>
 
       <div class="max-w-3xl">

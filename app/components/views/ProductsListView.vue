@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
 import { buildListUrl } from '~/utils/route-helper'
+import { PAGE_SIZES, PRODUCT_CATEGORIES } from '~/constants/site'
 
 const route = useRoute()
 
@@ -20,7 +21,7 @@ const parsePage = (): number => {
 
 const currentTab = ref(parseCategory())
 const currentPage = ref(parsePage())
-const pageSize = 8
+const pageSize = PAGE_SIZES.products
 
 useSeoMeta({
   title: computed(() => {
@@ -51,12 +52,14 @@ const total = computed(() => response.value?.data?.total || 0)
 const totalPages = computed(() => response.value?.data?.totalPages || 1)
 const counts = computed(() => response.value?.data?.categoryCounts || {})
 
-const tabs = computed(() => [
-  { id: 'all', label: '全部商品', count: counts.value.all ?? 0, to: buildListUrl('products', 'all', 1) },
-  { id: 'presets', label: '调色预设', count: counts.value.presets ?? 0, to: buildListUrl('products', 'presets', 1) },
-  { id: 'gear', label: '摄影配件', count: counts.value.gear ?? 0, to: buildListUrl('products', 'gear', 1) },
-  { id: 'book', label: '摄影画册', count: counts.value.book ?? 0, to: buildListUrl('products', 'book', 1) },
-])
+const tabs = computed(() =>
+  PRODUCT_CATEGORIES.map((cat) => ({
+    id: cat.id,
+    label: cat.label,
+    count: counts.value[cat.id] ?? 0,
+    to: buildListUrl('products', cat.id, 1),
+  }))
+)
 </script>
 
 <template>

@@ -9,7 +9,8 @@ const isScrolled = ref(false)
 
 const { articles } = useSiteData()
 const exhibitionArticleId = computed(() => {
-  const exhibition = articles.find((a) => a.category === 'exhibition') || articles[0]
+  const list = articles.value || []
+  const exhibition = list.find((a) => a.category === 'exhibition') || list[0]
   return exhibition?.id || ''
 })
 

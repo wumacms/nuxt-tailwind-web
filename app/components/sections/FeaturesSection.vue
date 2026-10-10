@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
 const { services } = useSiteData()
 
-const featureList = [
-  ...services,
+const featureList = computed(() => [
+  ...(services.value || []),
   {
     id: 'creative',
     title: '创意策划',
@@ -21,7 +23,7 @@ const featureList = [
     description: '支持云端专属画廊在线快速审片与无损原片下载，保障项目准时高效落地。',
     icon: 'sparkles',
   },
-]
+])
 </script>
 
 <template>

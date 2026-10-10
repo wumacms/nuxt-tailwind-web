@@ -1,3 +1,5 @@
+import { computed } from 'vue'
+import { DEFAULT_BRAND_INFO } from '~/constants/site'
 import type {
   ServiceItem,
   ProductItem,
@@ -32,48 +34,41 @@ export interface SiteDataBundle {
   partners: { name: string; icon: string }[]
 }
 
-const defaultBrandInfo = {
-  name: 'Aperture',
-  slogan: '摄影艺术与视觉叙事',
-  description: 'Aperture 专注于商业摄影、人像与品牌视觉叙事。我们用光影捕捉情绪，让画面替你说话。',
-  email: 'hello@aperture.studio',
-  phone: '400-666-8888',
-  hours: '工作日 10:00 - 19:00',
-  address: '上海市静安区 M50 创意园 7 号楼',
-}
+const defaultStats = [
+  { value: '800+', label: '合作客户' },
+  { value: '50k+', label: '交付成片' },
+  { value: '12年', label: '行业经验' },
+  { value: '4.9/5', label: '客户满意度' },
+]
+
+const defaultPartners = [
+  { name: 'VOGUE', icon: 'hexagon' },
+  { name: 'National Geographic', icon: 'triangle' },
+  { name: "Harper's BAZAAR", icon: 'square' },
+  { name: 'ELLE', icon: 'circle' },
+  { name: 'GQ', icon: 'diamond' },
+  { name: 'Condé Nast', icon: 'octagon' },
+  { name: 'T Magazine', icon: 'star' },
+  { name: 'Magnum', icon: 'shield' },
+]
 
 export const useSiteData = () => {
   const siteData = useState<SiteDataBundle | null>('site-data')
 
-  const bundle = siteData.value
-
-  const brandInfo = bundle?.brandInfo ?? defaultBrandInfo
-  const services: ServiceItem[] = bundle?.services ?? []
-  const articles: ArticleItem[] = bundle?.articles ?? []
-  const products: ProductItem[] = bundle?.products ?? []
-  const courses: CourseItem[] = bundle?.courses ?? []
-  const team: TeamMember[] = bundle?.team ?? []
-  const testimonials: TestimonialItem[] = bundle?.testimonials ?? []
-  const timeline: TimelineItem[] = bundle?.timeline ?? []
-  const faqs: FaqItem[] = bundle?.faqs ?? []
-  const stats = bundle?.stats ?? [
-    { value: '800+', label: '合作客户' },
-    { value: '50k+', label: '交付成片' },
-    { value: '12年', label: '行业经验' },
-    { value: '4.9/5', label: '客户满意度' },
-  ]
-  const partners = bundle?.partners ?? [
-    { name: 'VOGUE', icon: 'hexagon' },
-    { name: 'National Geographic', icon: 'triangle' },
-    { name: "Harper's BAZAAR", icon: 'square' },
-    { name: 'ELLE', icon: 'circle' },
-    { name: 'GQ', icon: 'diamond' },
-    { name: 'Condé Nast', icon: 'octagon' },
-    { name: 'T Magazine', icon: 'star' },
-    { name: 'Magnum', icon: 'shield' },
-  ]
+  const brandInfo = computed(() => siteData.value?.brandInfo ?? DEFAULT_BRAND_INFO)
+  const services = computed<ServiceItem[]>(() => siteData.value?.services ?? [])
+  const articles = computed<ArticleItem[]>(() => siteData.value?.articles ?? [])
+  const products = computed<ProductItem[]>(() => siteData.value?.products ?? [])
+  const courses = computed<CourseItem[]>(() => siteData.value?.courses ?? [])
+  const team = computed<TeamMember[]>(() => siteData.value?.team ?? [])
+  const testimonials = computed<TestimonialItem[]>(() => siteData.value?.testimonials ?? [])
+  const timeline = computed<TimelineItem[]>(() => siteData.value?.timeline ?? [])
+  const faqs = computed<FaqItem[]>(() => siteData.value?.faqs ?? [])
+  const stats = computed(() => siteData.value?.stats ?? defaultStats)
+  const partners = computed(() => siteData.value?.partners ?? defaultPartners)
 
   return {
+    siteData,
     brandInfo,
     services,
     articles,
@@ -93,3 +88,4 @@ export const useSiteData = () => {
     },
   }
 }
+

@@ -10,6 +10,10 @@ watch(
     nextTick(() => {
       initObserver()
     })
+    // 异步页面数据渲染补充触发，防止骨架屏过渡后元素停留在透明状态
+    setTimeout(() => {
+      initObserver()
+    }, 150)
   }
 )
 </script>
@@ -23,5 +27,6 @@ watch(
     </main>
     <AppFooter />
     <SideToolbar />
+    <BackToTop />
   </div>
 </template>

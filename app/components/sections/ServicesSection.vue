@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
 const { services } = useSiteData()
 
 // Filter to domain services (fashion, food, architecture)
-const domainServices = services.filter((s) => ['fashion', 'food', 'architecture'].includes(s.id))
+const domainServices = computed(() =>
+  (services.value || []).filter((s) => ['fashion', 'food', 'architecture'].includes(s.id))
+)
 </script>
 
 <template>

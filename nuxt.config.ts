@@ -29,6 +29,11 @@ function getStaticPrerenderRoutes(): string[] {
           routes.push(`/courses/category/${cat}/page/${p}`)
         }
       }
+
+      // 显式追加所有课程详情页，确保即使外部深层链接直连也能秒开
+      for (const c of courses) {
+        if (c.id) routes.push(`/courses/${c.id}`)
+      }
     }
 
     // 2. Products
@@ -50,6 +55,11 @@ function getStaticPrerenderRoutes(): string[] {
           routes.push(`/products/category/${cat}/page/${p}`)
         }
       }
+
+      // 显式追加所有商品详情页
+      for (const p of products) {
+        if (p.id) routes.push(`/products/${p.id}`)
+      }
     }
 
     // 3. Articles (News)
@@ -70,6 +80,11 @@ function getStaticPrerenderRoutes(): string[] {
         for (let p = 2; p <= catPages; p++) {
           routes.push(`/news/category/${cat}/page/${p}`)
         }
+      }
+
+      // 显式追加所有新闻专栏详情页
+      for (const a of articles) {
+        if (a.id) routes.push(`/news/${a.id}`)
       }
     }
   } catch (err) {

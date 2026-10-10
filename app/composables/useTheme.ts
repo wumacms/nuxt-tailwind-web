@@ -1,5 +1,3 @@
-import { onMounted } from 'vue'
-
 export type ThemePalette = 'default' | 'obsidian' | 'emerald' | 'ocean' | 'violet'
 
 export interface ThemeOption {
@@ -42,31 +40,23 @@ export const THEME_OPTIONS: ThemeOption[] = [
   },
 ]
 
+import { computed } from 'vue'
+
 export const useTheme = () => {
   const currentTheme = useCookie<ThemePalette>('aperture-theme-palette', {
     default: () => 'default',
   })
 
-  const applyTheme = (theme: ThemePalette) => {
-    if (import.meta.client) {
-      if (theme === 'default') {
-        document.documentElement.removeAttribute('data-theme')
-      } else {
-        document.documentElement.setAttribute('data-theme', theme)
-      }
-    }
-  }
+  // 声明式绑定 html 属性，在 SSR/SSG 服务端与客户端水合期均生效，彻底消除首屏样式闪烁 (FOUC)
+  useHead({
+    htmlAttrs: {
+      'data-theme': computed(() => (currentTheme.value !== 'default' ? currentTheme.value : undefined)),
+    },
+  })
 
   const setTheme = (theme: ThemePalette) => {
     currentTheme.value = theme
-    applyTheme(theme)
   }
-
-  onMounted(() => {
-    if (currentTheme.value && currentTheme.value !== 'default') {
-      applyTheme(currentTheme.value)
-    }
-  })
 
   return {
     currentTheme,

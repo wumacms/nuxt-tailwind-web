@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { products } = useSiteData()
-const displayedProducts = computed(() => products.slice(0, props.limit))
+const displayedProducts = computed(() => (products.value || []).slice(0, props.limit))
 </script>
 
 <template>

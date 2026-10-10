@@ -1,5 +1,6 @@
 import type { Ref } from 'vue'
 import { isRef, ref, watch } from 'vue'
+import { PAGE_SIZES } from '~/constants/site'
 import type {
   ApiResponse,
   PaginatedData,
@@ -9,6 +10,39 @@ import type {
   CourseItem,
   ArticleDetailData,
 } from '~/types'
+
+const DEFAULT_FALLBACK_ARTICLE: ArticleItem = {
+  id: '',
+  title: '',
+  summary: '',
+  date: '',
+  category: 'industry',
+  categoryLabel: '',
+  coverImage: '',
+}
+
+const DEFAULT_FALLBACK_PRODUCT: ProductItem = {
+  id: '',
+  title: '',
+  description: '',
+  price: 0,
+  category: 'presets',
+  categoryLabel: '',
+  coverImage: '',
+}
+
+const DEFAULT_FALLBACK_COURSE: CourseItem = {
+  id: '',
+  title: '',
+  description: '',
+  level: 'beginner',
+  levelLabel: '',
+  lessonsCount: 0,
+  duration: '',
+  studentsCount: 0,
+  price: 0,
+  coverImage: '',
+}
 
 /**
  * 企业级统一前端 API 请求 Composable
@@ -23,12 +57,12 @@ export const useApi = () => {
     page: Ref<number>
     pageSize?: number
   }) => {
-    const pageSize = params.pageSize || 4
+    const pageSize = params.pageSize || PAGE_SIZES.articles
 
     const computeFallback = (): ApiResponse<PaginatedData<ArticleItem>> => {
       const category = params.category.value || 'all'
       const page = params.page.value || 1
-      const all = siteArticles.length ? siteArticles : []
+      const all = siteArticles.value.length ? siteArticles.value : []
       const categoryCounts: Record<string, number> = {
         all: all.length,
         exhibition: all.filter((a) => a.category === 'exhibition').length,
@@ -86,20 +120,18 @@ export const useApi = () => {
 
     const computeFallback = (): ApiResponse<ArticleDetailData> => {
       const currentId = idRef.value
-      const all = siteArticles.length ? siteArticles : []
+      const all = siteArticles.value.length ? siteArticles.value : []
       const index = all.findIndex((a) => a.id === currentId)
-      const article = all[index] || all[0]
-      const prev = index > 0 ? { id: all[index - 1].id, title: all[index - 1].title } : null
-      const next = index < all.length - 1 ? { id: all[index + 1].id, title: all[index + 1].title } : null
+      const article: ArticleItem =
+        (index >= 0 ? all[index] : all[0]) ?? { ...DEFAULT_FALLBACK_ARTICLE, id: currentId }
+      const prev = index > 0 ? (all[index - 1] ?? null) : null
+      const next = index >= 0 && index < all.length - 1 ? (all[index + 1] ?? null) : null
 
       return {
         code: 200,
         message: 'success',
         data: {
-          ...article,
-          authorName: 'Aperture 影像实验室',
-          authorAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop',
-          authorBio: '探索光影边界与视觉情绪叙事的先锋摄影团队。',
+          article,
           prev,
           next,
         },
@@ -129,12 +161,12 @@ export const useApi = () => {
     page: Ref<number>
     pageSize?: number
   }) => {
-    const pageSize = params.pageSize || 8
+    const pageSize = params.pageSize || PAGE_SIZES.products
 
     const computeFallback = (): ApiResponse<PaginatedData<ProductItem>> => {
       const category = params.category.value || 'all'
       const page = params.page.value || 1
-      const all = siteProducts.length ? siteProducts : []
+      const all = siteProducts.value.length ? siteProducts.value : []
       const categoryCounts: Record<string, number> = {
         all: all.length,
         presets: all.filter((p) => p.category === 'presets').length,
@@ -192,24 +224,20 @@ export const useApi = () => {
 
     const computeFallback = (): ApiResponse<ProductDetailData> => {
       const currentId = idRef.value
-      const all = siteProducts.length ? siteProducts : []
-      const product = all.find((p) => p.id === currentId) || all[0]
+      const all = siteProducts.value.length ? siteProducts.value : []
+      const product: ProductItem =
+        all.find((p) => p.id === currentId) ?? all[0] ?? { ...DEFAULT_FALLBACK_PRODUCT, id: currentId }
+      const related = all
+        .filter((p) => p.id !== (product.id || currentId))
+        .sort((a, b) => (a.category === product.category ? -1 : 1))
+        .slice(0, 4)
+
       return {
         code: 200,
         message: 'success',
         data: {
-          ...product,
-          images: [
-            product.coverImage,
-            'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=800&fit=crop',
-            'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&h=800&fit=crop',
-          ],
-          parameters: [
-            { label: '适用设备', value: 'Sony / Canon / Nikon / 手机' },
-            { label: '文件格式', value: '.xmp / .cube / RAW' },
-            { label: '支持软件', value: 'Lightroom / Photoshop / DaVinci' },
-            { label: '交付方式', value: '数字下载 / 实体顺丰速递' },
-          ],
+          product,
+          related,
         },
       }
     }
@@ -239,12 +267,12 @@ export const useApi = () => {
     pageSize?: number
   }) => {
     const filterRef = params.category || params.level || ref('all')
-    const pageSize = params.pageSize || 6
+    const pageSize = params.pageSize || PAGE_SIZES.courses
 
     const computeFallback = (): ApiResponse<PaginatedData<CourseItem>> => {
       const level = filterRef.value || 'all'
       const page = params.page.value || 1
-      const all = siteCourses.length ? siteCourses : []
+      const all = siteCourses.value.length ? siteCourses.value : []
       const categoryCounts: Record<string, number> = {
         all: all.length,
         beginner: all.filter((c) => c.level === 'beginner').length,
@@ -303,8 +331,9 @@ export const useApi = () => {
 
     const computeFallback = (): ApiResponse<CourseItem> => {
       const currentId = idRef.value
-      const all = siteCourses.length ? siteCourses : []
-      const course = all.find((c) => c.id === currentId) || all[0]
+      const all = siteCourses.value.length ? siteCourses.value : []
+      const course: CourseItem =
+        all.find((c) => c.id === currentId) ?? all[0] ?? { ...DEFAULT_FALLBACK_COURSE, id: currentId }
       return {
         code: 200,
         message: 'success',

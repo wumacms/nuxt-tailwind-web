@@ -86,6 +86,8 @@ https://wumacms.github.io/nuxt-tailwind-web/
 
 ## 五、静态物理路由与分页预渲染架构（方案 2 实施）
 
+> 💡 **详细设计与落地技术文档**：请参阅 [`docs/static-pagination-optimization.md`](file:///Users/devlink/code/github/wumacms/nuxt-tailwind-web/docs/static-pagination-optimization.md)
+
 为了彻底解决纯静态托管环境下 Query 参数（如 `?page=2`）无法由后端处理导致的 404 错误，本项目将分类与分页改造成了**独立的物理静态路由体系**：
 
 ### 1. 物理路径映射规范

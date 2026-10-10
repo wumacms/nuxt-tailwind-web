@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
 import { buildListUrl } from '~/utils/route-helper'
+import { PAGE_SIZES, COURSE_CATEGORIES } from '~/constants/site'
 
 const route = useRoute()
 
@@ -23,7 +24,7 @@ const parsePage = (): number => {
 
 const currentTab = ref(parseCategory())
 const currentPage = ref(parsePage())
-const pageSize = 6
+const pageSize = PAGE_SIZES.courses
 
 useSeoMeta({
   title: computed(() => {
@@ -54,12 +55,14 @@ const total = computed(() => response.value?.data?.total || 0)
 const totalPages = computed(() => response.value?.data?.totalPages || 1)
 const counts = computed(() => response.value?.data?.categoryCounts || {})
 
-const tabs = computed(() => [
-  { id: 'all', label: '全部研习班', count: counts.value.all ?? 0, to: buildListUrl('courses', 'all', 1) },
-  { id: 'beginner', label: '入门启蒙', count: counts.value.beginner ?? 0, to: buildListUrl('courses', 'beginner', 1) },
-  { id: 'intermediate', label: '进阶实战', count: counts.value.intermediate ?? 0, to: buildListUrl('courses', 'intermediate', 1) },
-  { id: 'advanced', label: '商业大师', count: counts.value.advanced ?? 0, to: buildListUrl('courses', 'advanced', 1) },
-])
+const tabs = computed(() =>
+  COURSE_CATEGORIES.map((cat) => ({
+    id: cat.id,
+    label: cat.label,
+    count: counts.value[cat.id] ?? 0,
+    to: buildListUrl('courses', cat.id, 1),
+  }))
+)
 </script>
 
 <template>
