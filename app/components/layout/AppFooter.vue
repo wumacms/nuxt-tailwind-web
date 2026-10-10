@@ -28,7 +28,7 @@ const legalLinks = [
           <NuxtLink to="/" class="flex items-center gap-2.5 font-bold text-lg text-white font-display">
             <span
               class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-on-accent">
-              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg class="w-4 h-4 text-on-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="10" />
                 <line x1="14.31" y1="8" x2="20.05" y2="17.94" />
                 <line x1="9.69" y1="8" x2="21.17" y2="8" />

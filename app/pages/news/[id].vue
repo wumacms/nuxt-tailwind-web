@@ -72,7 +72,7 @@ const paragraphs = computed(() => {
           <!-- 标签与元数据 -->
           <div class="flex flex-wrap items-center gap-3 mb-4">
             <span
-              class="text-xs font-semibold px-3 py-1 rounded-full bg-accent text-accent-foreground uppercase tracking-wider">
+              class="text-xs font-semibold px-3 py-1 rounded-full bg-accent text-on-accent uppercase tracking-wider">
               {{ currentArticle.categoryLabel }}
             </span>
             <span class="text-xs md:text-sm text-gray-300">

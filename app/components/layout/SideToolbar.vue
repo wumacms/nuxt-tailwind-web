@@ -154,22 +154,24 @@ onUnmounted(() => {
         <div class="text-xs font-bold text-main mb-2 px-1 flex items-center justify-between">
           <span>主题配色</span>
         </div>
-        <div class="space-y-1.5">
-          <button v-for="item in themes" :key="item.id" type="button"
-            class="w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl text-xs transition cursor-pointer text-left"
-            :class="[
-              currentTheme === item.id
-                ? 'bg-accent/15 text-accent font-semibold border border-accent/30'
-                : 'text-muted hover:bg-subtle/50 hover:text-main'
-            ]" @click.stop="selectTheme(item.id)">
-            <span class="w-3.5 h-3.5 rounded-full border border-black/10 shrink-0"
-              :style="{ backgroundColor: item.colorHex }"></span>
-            <div class="flex-1 min-w-0">
-              <div class="truncate">{{ item.label }}</div>
-            </div>
-            <span v-if="currentTheme === item.id" class="text-xs">✓</span>
-          </button>
-        </div>
+        <ClientOnly>
+          <div class="space-y-1.5">
+            <button v-for="item in themes" :key="item.id" type="button"
+              class="w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl text-xs transition cursor-pointer text-left border"
+              :class="[
+                currentTheme === item.id
+                  ? 'bg-accent/15 text-accent font-semibold border-accent/30'
+                  : 'text-muted hover:bg-subtle/50 hover:text-main border-transparent'
+              ]" @click.stop="selectTheme(item.id)">
+              <span class="w-3.5 h-3.5 rounded-full border border-black/10 shrink-0"
+                :style="{ backgroundColor: item.colorHex }"></span>
+              <div class="flex-1 min-w-0">
+                <div class="truncate">{{ item.label }}</div>
+              </div>
+              <span v-if="currentTheme === item.id" class="text-xs">✓</span>
+            </button>
+          </div>
+        </ClientOnly>
         <!-- 右侧小三角指引 -->
         <div
           class="absolute -right-1.5 top-1/2 -translate-y-1/2 w-3 h-3 bg-card rotate-45 border-r border-t border-line">

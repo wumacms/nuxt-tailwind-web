@@ -51,7 +51,7 @@ const domainServices = computed(() =>
           <div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
             <div>
               <div
-                class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-accent flex items-center justify-center text-accent-foreground mb-5 shadow-md"
+                class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-accent flex items-center justify-center text-on-accent mb-5 shadow-md"
               >
                 <svg class="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />

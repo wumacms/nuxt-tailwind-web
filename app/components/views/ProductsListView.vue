@@ -89,8 +89,8 @@ const tabs = computed(() =>
           <span class="inline-block animate-spin mr-2">◌</span> 正在加载商品列表...
         </div>
 
-        <!-- 商品网格列表（4列电商矩阵布局） -->
-        <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
+        <!-- 商品网格列表 -->
+        <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <NuxtLink
             v-for="product in products"
             :key="product.id"

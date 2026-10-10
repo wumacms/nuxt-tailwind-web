@@ -20,7 +20,7 @@ watch(
 
 <template>
   <div
-    class="min-h-screen flex flex-col bg-canvas text-main antialiased selection:bg-accent selection:text-white">
+    class="min-h-screen flex flex-col bg-canvas text-main antialiased selection:bg-accent selection:text-on-accent">
     <AppHeader />
     <main class="flex-1">
       <slot />
