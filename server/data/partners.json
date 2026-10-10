@@ -1,0 +1,10 @@
+[
+  { "name": "VOGUE", "icon": "hexagon" },
+  { "name": "National Geographic", "icon": "triangle" },
+  { "name": "Harper's BAZAAR", "icon": "square" },
+  { "name": "ELLE", "icon": "circle" },
+  { "name": "GQ", "icon": "diamond" },
+  { "name": "Condé Nast", "icon": "octagon" },
+  { "name": "T Magazine", "icon": "star" },
+  { "name": "Magnum", "icon": "shield" }
+]

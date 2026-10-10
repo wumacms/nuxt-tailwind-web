@@ -1,0 +1,230 @@
+[
+  {
+    "id": "photography-intro",
+    "title": "摄影基础：从零开始学会看光与构图",
+    "description": "曝光三要素、测光原理、镜头焦段选择与经典构图法则，轻松告别手机随手乱拍。",
+    "level": "beginner",
+    "levelLabel": "入门启蒙",
+    "lessonsCount": 16,
+    "duration": "2 小时 30 分",
+    "studentsCount": 5240,
+    "price": 0,
+    "isFree": true,
+    "coverImage": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=500&fit=crop",
+    "syllabus": [
+      "相机的核心机械结构与感光原理",
+      "光圈快门ISO三位一体曝光三角公式",
+      "单反与微单对焦系统的终极设置",
+      "黄金分割与引导线构图实战训练"
+    ]
+  },
+  {
+    "id": "portrait-lighting",
+    "title": "人像摄影用光全攻略：从自然光到棚拍多灯系统",
+    "description": "掌握顺光、侧光、轮廓逆光及闪光灯系统，用光线塑造富有立体感与情感深度的人像大片。",
+    "level": "intermediate",
+    "levelLabel": "进阶实战",
+    "lessonsCount": 24,
+    "duration": "4 小时 20 分",
+    "studentsCount": 2180,
+    "price": 399,
+    "isFree": false,
+    "coverImage": "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&h=500&fit=crop",
+    "syllabus": [
+      "自然光方位与五合一反光板高级控光",
+      "经典单灯布光：伦勃朗光与蝴蝶光实操",
+      "多灯系统联控与背景光影分离秘诀",
+      "现场模特沟通话术与真实情绪抓拍"
+    ]
+  },
+  {
+    "id": "lightroom-mastery",
+    "title": "Lightroom 调色体系课：打造属于你的风格签名",
+    "description": "RGB曲线进阶、色调分离、局部蒙版精修与色彩理论，建立可复用的专业数码后期调色工作流。",
+    "level": "intermediate",
+    "levelLabel": "进阶实战",
+    "lessonsCount": 20,
+    "duration": "3 小时 40 分",
+    "studentsCount": 3420,
+    "price": 299,
+    "isFree": false,
+    "coverImage": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=500&fit=crop",
+    "syllabus": [
+      "直方图科学解读与 RAW 动态范围极致压榨",
+      "三色通道曲线精准调色的几何原理",
+      "AI 智能蒙版在人物发丝与背景上的分离应用",
+      "从零创建属于你自己的商业调色预设包"
+    ]
+  },
+  {
+    "id": "commercial-workflow",
+    "title": "商业摄影实战大师班：从商务接单到交付闭环",
+    "description": "商业报价体系、合同条款避坑、方案提案脚本、现场客户沟通与售后版权授权全链路。",
+    "level": "advanced",
+    "levelLabel": "商业大师",
+    "lessonsCount": 22,
+    "duration": "5 小时 10 分",
+    "studentsCount": 1320,
+    "price": 499,
+    "isFree": false,
+    "coverImage": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop",
+    "syllabus": [
+      "商业拍摄立项与品牌客户真实痛点拆解",
+      "商务成本核算与阶梯式报价单制作",
+      "大型影棚联机监视器团队协同工作流",
+      "作品集深度排版与开拓高客单客户秘笈"
+    ]
+  },
+  {
+    "id": "food-photography-pro",
+    "title": "美食摄影精修班：拍出令人垂涎的食物温度",
+    "description": "食材保鲜技巧、微型反光板精准勾勒油光、法式明亮风与复古暗调静物摆盘美学。",
+    "level": "intermediate",
+    "levelLabel": "进阶实战",
+    "lessonsCount": 18,
+    "duration": "3 小时 15 分",
+    "studentsCount": 1890,
+    "price": 269,
+    "isFree": false,
+    "coverImage": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=500&fit=crop",
+    "syllabus": [
+      "餐具道具搭配与色彩情绪学",
+      "高速闪光捕捉酱汁倾倒瞬间",
+      "利用假冰与甘油保持食材新鲜光泽",
+      "餐厅现场复杂环境光的快速压制与净化"
+    ]
+  },
+  {
+    "id": "landscape-golden-hour",
+    "title": "风光摄影大师课：捕捉天地间的极致光线",
+    "description": "滤镜系统配合、超焦距合焦、全景接片与极端天气下的安全摄影防护指南。",
+    "level": "intermediate",
+    "levelLabel": "进阶实战",
+    "lessonsCount": 15,
+    "duration": "2 小时 50 分",
+    "studentsCount": 2750,
+    "price": 249,
+    "isFree": false,
+    "coverImage": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=500&fit=crop",
+    "syllabus": [
+      "减光镜与渐变灰滤镜的风光应用",
+      "星空摄影极轴对准与堆栈降噪流程",
+      "大光比包围曝光与动态范围融合",
+      "风光印相特种纸输出的色彩调整"
+    ]
+  },
+  {
+    "id": "street-photography-secrets",
+    "title": "城市街头纪实抓拍：捕捉决定性瞬间",
+    "description": "隐藏相机存在感、预判行进步伐轨迹、几何光影分割线与人文纪实故事挖掘。",
+    "level": "beginner",
+    "levelLabel": "入门启蒙",
+    "lessonsCount": 14,
+    "duration": "2 小时 10 分",
+    "studentsCount": 3810,
+    "price": 0,
+    "isFree": true,
+    "coverImage": "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?w=800&h=500&fit=crop",
+    "syllabus": [
+      "街道隐形拍摄礼仪与心理脱敏训练",
+      "定焦 35mm 与 28mm 视角的叙事距离",
+      "阴晴雨雪复杂城市环境光线运用",
+      "从随拍到成组专题报道的编辑逻辑"
+    ]
+  },
+  {
+    "id": "black-and-white-fine-art",
+    "title": "黑白摄影精修课：灰阶与影调的高级克制美学",
+    "description": "剥离色彩诱惑，专注质感、纹理、对比度与情绪张力，打造具有收藏级艺术感的黑白杰作。",
+    "level": "intermediate",
+    "levelLabel": "进阶实战",
+    "lessonsCount": 18,
+    "duration": "3 小时 30 分",
+    "studentsCount": 1650,
+    "price": 289,
+    "isFree": false,
+    "coverImage": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&h=500&fit=crop",
+    "syllabus": [
+      "安瑟·亚当斯区域曝光系统（Zone System）现代数码版",
+      "高调、中间调与低调影调的视觉心理学",
+      "局部加光与减光（Dodge & Burn）精细重塑体积感",
+      "高密度银盐颗粒模拟与特种无酸纸输出规范"
+    ]
+  },
+  {
+    "id": "studio-product-masterclass",
+    "title": "商业静物高光课：手表珠宝与金属倒影精修棚拍",
+    "description": "反光材质终极布光方案，亚克力漫射箱搭设、微距景深合成与极致无尘倒影呈现。",
+    "level": "advanced",
+    "levelLabel": "商业大师",
+    "lessonsCount": 20,
+    "duration": "4 小时 45 分",
+    "studentsCount": 980,
+    "price": 549,
+    "isFree": false,
+    "coverImage": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=500&fit=crop",
+    "syllabus": [
+      "镜面高反光金属与弧面透光宝石布光法则",
+      "硫酸纸渐变光斑与黑色吸光板的控光配合",
+      "Focus Stacking 景深堆叠高精度微距合成",
+      "珠宝腕表商业修图毛孔级除尘与金属质感强化"
+    ]
+  },
+  {
+    "id": "travel-mobile-photography",
+    "title": "旅途视觉随笔：手机摄影与短视频叙事速成",
+    "description": "告别沉重设备，用便携手机创作专业水准的旅途纪实、色彩情绪板与生活美学。",
+    "level": "beginner",
+    "levelLabel": "入门启蒙",
+    "lessonsCount": 12,
+    "duration": "1 小时 50 分",
+    "studentsCount": 6120,
+    "price": 169,
+    "isFree": false,
+    "coverImage": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=500&fit=crop",
+    "syllabus": [
+      "手机相机专业模式 RAW 格式极致调教",
+      "旅行途中的光线感知与快速构图直觉",
+      "手机端高画质后期剪辑与调色 App 实操",
+      "社交平台视觉排版与九宫格叙事策略"
+    ]
+  },
+  {
+    "id": "cinematic-video-production",
+    "title": "电影感视听语言：商业短片运镜与色彩节奏",
+    "description": "分镜脚本、轨道斯坦尼康稳定器运镜、三点式电影布光与 DaVinci Resolve 调色全案。",
+    "level": "advanced",
+    "levelLabel": "商业大师",
+    "lessonsCount": 26,
+    "duration": "6 小时 15 分",
+    "studentsCount": 1150,
+    "price": 599,
+    "isFree": false,
+    "coverImage": "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=500&fit=crop",
+    "syllabus": [
+      "商业广告短片视听脚本与情绪板推敲",
+      "电影级轴线原则与动感摇移运镜实战",
+      "现场多机位时间码同步与声画录制",
+      "达芬奇色彩科学与胶片模拟 LUTs 自建管线"
+    ]
+  },
+  {
+    "id": "portrait-retouching-pro",
+    "title": "高级时尚人像精修：高低频与中性灰质感重塑",
+    "description": "拒绝假面塑料皮！保留真实皮肤肌理，掌握一线时尚大刊级别的皮肤修饰与骨相微雕心法。",
+    "level": "intermediate",
+    "levelLabel": "进阶实战",
+    "lessonsCount": 16,
+    "duration": "3 小时 10 分",
+    "studentsCount": 2430,
+    "price": 329,
+    "isFree": false,
+    "coverImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=500&fit=crop",
+    "syllabus": [
+      "高低频分离在不同面部区域的参数设置",
+      "50% 中性灰图层光影重塑与骨骼立体感修饰",
+      "发丝边缘抠图与自然飞丝修补技巧",
+      "眼眸高光点睛与唇纹润色真实感保留"
+    ]
+  }
+]

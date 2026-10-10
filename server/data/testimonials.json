@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "author": "张薇",
+    "role": "市场总监",
+    "company": "某知名时尚女装品牌",
+    "quote": "Aperture 团队对光影与面料材质的理解令人惊艳。他们交付的画册让线上店铺点击转化率直接翻倍。",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces",
+    "rating": 5
+  },
+  {
+    "id": "2",
+    "author": "李然",
+    "role": "独立设计师",
+    "company": "先锋服装设计工作室",
+    "quote": "从前期情绪板探讨到现场灯光布置，整个过程极其专业顺畅。他们总能捕捉到设计师内心深处的情绪火花。",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=faces",
+    "rating": 5
+  },
+  {
+    "id": "3",
+    "author": "王磊",
+    "role": "品牌负责人",
+    "company": "某精品连锁餐饮集团",
+    "quote": "连续三年每一次应季新菜单发布都交给 Aperture。稳定、专业、无论屏幕还是菜单印刷都超乎预期。",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces",
+    "rating": 5
+  }
+]

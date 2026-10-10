@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Aperture — 摄影艺术与视觉叙事</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style type="text/tailwindcss">
+    @custom-variant dark (&:where(.dark, .dark *));
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: .4; }
+      50%      { opacity: .8; }
+    }
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-12px); }
+    }
+
+    .animate-marquee { animation: marquee 36s linear infinite; }
+    .animate-marquee:hover { animation-play-state: paused; }
+    .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+    .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform .25s cubic-bezier(.4,0,.2,1); }
+    [data-lucide] { width: 1em; height: 1em; }
+  
+    /* 滚动触发动画 */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .animate-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+    .delay-400 { transition-delay: 0.4s; }
+    .delay-500 { transition-delay: 0.5s; }
+
+  </style>
+</head>
+
+<body class="bg-[#faf9f7] text-[#1a1816] antialiased dark:bg-[#12100e] dark:text-[#f5f2ed]">
+  <!-- ============================================================
+     SECTION: announcement
+     ============================================================ -->
+  <div class="bg-gray-900 dark:bg-black text-white text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-2 flex items-center justify-center gap-2 sm:gap-3">
+      <span class="inline-flex items-center gap-1.5 min-w-0">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse flex-shrink-0"></span>
+        <span class="truncate">新展开幕：Aperture「城市光影」年度摄影展</span>
+      </span>
+      <a class="hidden sm:inline-flex underline underline-offset-4 hover:text-amber-300 transition items-center gap-1 flex-shrink-0"
+        href="#">
+        了解详情 <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i>
+      </a>
+    </div>
+  </div>
+  <!-- ============================================================
+     SECTION: navbar
+     ============================================================ -->
+  <header
+    class="sticky top-0 z-50 backdrop-blur-md border-b border-[#ddd8cf] dark:border-[#2d2a26] bg-[#faf9f7]/80 dark:bg-[#12100e]/80 transition-colors"
+    id="site-header">
+    <nav class="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between gap-2">
+      <a class="flex items-center gap-2 font-bold text-base sm:text-lg font-display text-[#1a1816] dark:text-[#f5f2ed] flex-shrink-0"
+        href="#">
+        <span
+          class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-600 to-orange-700 flex items-center justify-center text-white shadow-sm flex-shrink-0">
+          <i class="w-4 h-4" data-lucide="aperture"></i>
+        </span>
+        <span>Aperture</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-[#4a4540] dark:text-[#c4bdb1]">
+        <li><a class="hover:text-[#1a1816] dark:hover:text-[#f5f2ed] transition" href="#features">作品集</a></li>
+        <li><a class="hover:text-[#1a1816] dark:hover:text-[#f5f2ed] transition" href="#services">服务</a></li>
+        <li><a class="hover:text-[#1a1816] dark:hover:text-[#f5f2ed] transition" href="#pricing">定价</a></li>
+        <li><a class="hover:text-[#1a1816] dark:hover:text-[#f5f2ed] transition" href="#cases">客户故事</a></li>
+        <li><a class="hover:text-[#1a1816] dark:hover:text-[#f5f2ed] transition" href="#faq">常见问题</a></li>
+      </ul>
+      <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+        <button aria-label="切换到深色模式" aria-pressed="false"
+          class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg text-[#4a4540] dark:text-[#c4bdb1] hover:text-[#1a1816] dark:hover:text-[#f5f2ed] flex items-center justify-center transition hover:bg-[#e8e4dd] dark:hover:bg-[#2d2a26]"
+          id="theme-toggle" style="background-color: transparent;" type="button">
+          <svg aria-hidden="true" class="w-5 h-5" fill="none" id="theme-toggle-light-icon" stroke="currentColor"
+            viewbox="0 0 24 24">
+            <path
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+          <svg aria-hidden="true" class="w-5 h-5 hidden" fill="none" id="theme-toggle-dark-icon" stroke="currentColor"
+            viewbox="0 0 24 24">
+            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </button>
+        <a class="hidden md:inline-block text-sm font-medium text-[#4a4540] dark:text-[#c4bdb1] hover:text-[#1a1816] dark:hover:text-[#f5f2ed] transition"
+          href="#">登录</a>
+        <a class="text-xs sm:text-sm font-medium px-2.5 sm:px-4 py-2 rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:opacity-90 transition shadow-sm"
+          href="#contact">
+          <span class="hidden xs:inline sm:inline">预约拍摄</span>
+          <span class="xs:hidden sm:hidden">预约</span>
+        </a>
+        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="打开菜单"
+          class="md:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-lg text-[#4a4540] dark:text-[#c4bdb1] hover:text-[#1a1816] dark:hover:text-[#f5f2ed] flex items-center justify-center transition"
+          id="mobile-menu-btn" type="button">
+          <i class="w-5 h-5" data-lucide="menu"></i>
+        </button>
+      </div>
+    </nav>
+    <div class="md:hidden border-t border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c]" id="mobile-menu"
+      style="transform: translateY(-8px); opacity: 0; pointer-events: none; transition: transform .2s ease, opacity .2s ease; overflow: hidden; max-height: 0;">
+      <ul class="px-4 py-4 space-y-1 text-sm font-medium text-[#4a4540] dark:text-[#c4bdb1]">
+        <li><a class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition"
+            href="#features">作品集</a></li>
+        <li><a class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition"
+            href="#services">服务</a></li>
+        <li><a class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition"
+            href="#pricing">定价</a></li>
+        <li><a class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition"
+            href="#cases">客户故事</a></li>
+        <li><a class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition"
+            href="#faq">常见问题</a></li>
+        <li class="pt-2 border-t border-[#ddd8cf] dark:border-[#2d2a26]"><a
+            class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition" href="#">登录</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- ============================================================
+     SECTION: hero
+     ============================================================ -->
+  <section class="relative overflow-hidden">
+    <div
+      class="absolute inset-0 -z-10 bg-gradient-to-b from-[#f3f0eb] to-[#faf9f7] dark:from-[#1a1816] dark:to-[#12100e]">
+    </div>
+    <div
+      class="absolute top-[-10%] right-[-5%] w-[500px] sm:w-[700px] h-[500px] sm:h-[700px] rounded-full blur-3xl -z-10 animate-pulse-glow [background:radial-gradient(circle,rgba(245,158,11,.22)_0%,rgba(245,158,11,0)_70%)] dark:[background:radial-gradient(circle,rgba(245,158,11,.15)_0%,rgba(245,158,11,0)_70%)]">
+    </div>
+    <div
+      class="absolute bottom-[-20%] left-[-10%] w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] rounded-full blur-3xl -z-10 [background:radial-gradient(circle,rgba(120,53,15,.18)_0%,rgba(120,53,15,0)_70%)] dark:[background:radial-gradient(circle,rgba(180,83,9,.12)_0%,rgba(180,83,9,0)_70%)]">
+    </div>
+    <div
+      class="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center">
+      <div class="space-y-6 md:space-y-7">
+        <span
+          class="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full bg-[#fef3c7] text-[#92400e] dark:bg-[#78350f33] dark:text-[#fcd34d] border border-amber-100 dark:border-amber-900/50 animate-on-scroll delay-100">
+          <i class="w-3.5 h-3.5" data-lucide="camera"></i>
+          全新视觉叙事系列 · 2025
+        </span>
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#1a1816] dark:text-[#f5f2ed] leading-[1.05] font-display animate-on-scroll delay-200">
+          让每一帧<br />
+          <span
+            class="bg-gradient-to-r from-amber-600 via-orange-600 to-rose-600 bg-clip-text text-transparent">成为永恒</span>
+        </h1>
+        <p
+          class="text-base sm:text-lg md:text-xl text-[#4a4540] dark:text-[#c4bdb1] max-w-lg leading-relaxed animate-on-scroll delay-300">
+          Aperture 专注于商业摄影、人像与品牌视觉叙事。我们用光影捕捉情绪，让画面替你说话。
+        </p>
+        <div class="flex flex-wrap gap-3 pt-2 animate-on-scroll delay-400">
+          <a class="group px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-gray-900/20 dark:shadow-white/10 inline-flex items-center gap-2 text-sm sm:text-base"
+            href="#contact">
+            预约拍摄
+            <i class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" data-lucide="arrow-right"></i>
+          </a>
+          <a class="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl border font-semibold text-[#4a4540] dark:text-[#c4bdb1] hover:text-[#1a1816] dark:hover:text-[#f5f2ed] transition inline-flex items-center gap-2 text-sm sm:text-base border-[#c4bdb1] dark:border-[#4a4540] bg-white dark:bg-[#211f1c]"
+            href="#">
+            <i class="w-4 h-4" data-lucide="play-circle"></i>
+            查看作品集
+          </a>
+        </div>
+        <div class="flex flex-wrap items-center gap-4 pt-4 animate-on-scroll delay-500">
+          <div class="flex -space-x-2 flex-shrink-0">
+            <img alt="" class="w-8 h-8 rounded-full border-2 border-[#faf9f7] dark:border-[#12100e] object-cover"
+              height="64" loading="lazy"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&amp;h=64&amp;fit=crop&amp;crop=faces"
+              width="64" />
+            <img alt="" class="w-8 h-8 rounded-full border-2 border-[#faf9f7] dark:border-[#12100e] object-cover"
+              height="64" loading="lazy"
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&amp;h=64&amp;fit=crop&amp;crop=faces"
+              width="64" />
+            <img alt="" class="w-8 h-8 rounded-full border-2 border-[#faf9f7] dark:border-[#12100e] object-cover"
+              height="64" loading="lazy"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&amp;h=64&amp;fit=crop&amp;crop=faces"
+              width="64" />
+            <span
+              class="w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold text-white bg-[#b45309] dark:bg-[#f59e0b] border-2 border-[#faf9f7] dark:border-[#12100e]">+2k</span>
+          </div>
+          <div class="text-sm text-[#6b655d] dark:text-[#8a8378]">
+            <span class="font-semibold text-[#1a1816] dark:text-[#f5f2ed]">800+</span> 位客户的选择
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div
+          class="relative rounded-2xl overflow-hidden shadow-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] animate-on-scroll delay-300">
+          <div
+            class="flex items-center gap-1.5 px-4 py-3 border-b border-[#ddd8cf] dark:border-[#2d2a26] bg-[#e8e4dd] dark:bg-[#2d2a26]">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            <span
+              class="ml-3 text-[11px] text-[#6b655d] dark:text-[#8a8378] font-mono truncate">aperture.studio/gallery</span>
+          </div>
+          <img alt="Aperture 摄影作品展示" class="w-full h-auto block" fetchpriority="high" height="800"
+            src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1200&amp;h=800&amp;fit=crop"
+            width="1200" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+     SECTION: logo-wall（合作品牌/媒体）
+     ============================================================ -->
+  <section class="py-10 sm:py-12 border-y border-[#ddd8cf] dark:border-[#2d2a26] bg-[#f3f0eb] dark:bg-[#1a1816]">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <p class="text-center text-sm text-[#6b655d] dark:text-[#8a8378] mb-6 sm:mb-8">受到以下品牌与媒体信赖</p>
+      <div
+        class="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <div class="flex gap-10 md:gap-16 animate-marquee w-max">
+          <div
+            class="flex gap-10 md:gap-16 items-center text-lg md:text-2xl font-bold text-[#6b655d] dark:text-[#8a8378] whitespace-nowrap font-display">
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="hexagon"></i>VOGUE</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="triangle"></i>National Geographic</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="square"></i>Harper's BAZAAR</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="circle"></i>ELLE</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="diamond"></i>GQ</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="octagon"></i>Condé Nast</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7" data-lucide="star"></i>T
+              Magazine</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="shield"></i>Magnum</span>
+          </div>
+          <div aria-hidden="true"
+            class="flex gap-10 md:gap-16 items-center text-lg md:text-2xl font-bold text-[#6b655d] dark:text-[#8a8378] whitespace-nowrap font-display">
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="hexagon"></i>VOGUE</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="triangle"></i>National Geographic</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="square"></i>Harper's BAZAAR</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="circle"></i>ELLE</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="diamond"></i>GQ</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="octagon"></i>Condé Nast</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7" data-lucide="star"></i>T
+              Magazine</span>
+            <span class="inline-flex items-center gap-2"><i class="w-5 h-5 md:w-7 md:h-7"
+                data-lucide="shield"></i>Magnum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+     SECTION: features（摄影服务特色）
+     ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#faf9f7] dark:bg-[#12100e]" id="features">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16 animate-on-scroll">
+        <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">核心服务</span>
+        <h2
+          class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+          我们为你捕捉每一个重要瞬间</h2>
+        <p class="mt-4 text-base md:text-lg text-[#4a4540] dark:text-[#c4bdb1]">从商业广告到私人肖像，Aperture 提供完整的视觉解决方案。</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 md:gap-6 lg:gap-8">
+        <div
+          class="p-5 md:p-6 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] transition-all hover:shadow-lg hover:-translate-y-0.5 animate-on-scroll delay-100">
+          <div
+            class="w-11 h-11 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]">
+            <i class="w-5 h-5 md:w-6 md:h-6" data-lucide="camera"></i>
+          </div>
+          <h3 class="font-semibold text-base md:text-lg mb-2 text-[#1a1816] dark:text-[#f5f2ed]">商业摄影</h3>
+          <p class="text-[#4a4540] dark:text-[#c4bdb1] text-sm leading-relaxed">产品、空间、品牌形象，用专业光影提升商业价值。</p>
+        </div>
+        <div
+          class="p-5 md:p-6 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] transition-all hover:shadow-lg hover:-translate-y-0.5 animate-on-scroll delay-200">
+          <div
+            class="w-11 h-11 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]">
+            <i class="w-5 h-5 md:w-6 md:h-6" data-lucide="user"></i>
+          </div>
+          <h3 class="font-semibold text-base md:text-lg mb-2 text-[#1a1816] dark:text-[#f5f2ed]">人像写真</h3>
+          <p class="text-[#4a4540] dark:text-[#c4bdb1] text-sm leading-relaxed">个人形象、家庭纪实、情侣旅拍，记录真实情感。</p>
+        </div>
+        <div
+          class="p-5 md:p-6 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] transition-all hover:shadow-lg hover:-translate-y-0.5 animate-on-scroll delay-300">
+          <div
+            class="w-11 h-11 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 bg-[#ecfdf5] text-[#059669] dark:bg-[#064e3b33] dark:text-[#34d399]">
+            <i class="w-5 h-5 md:w-6 md:h-6" data-lucide="film"></i>
+          </div>
+          <h3 class="font-semibold text-base md:text-lg mb-2 text-[#1a1816] dark:text-[#f5f2ed]">视频制作</h3>
+          <p class="text-[#4a4540] dark:text-[#c4bdb1] text-sm leading-relaxed">品牌短片、活动记录、创意广告，动态叙事更动人。</p>
+        </div>
+        <div
+          class="p-5 md:p-6 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] transition-all hover:shadow-lg hover:-translate-y-0.5 animate-on-scroll delay-400">
+          <div
+            class="w-11 h-11 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 bg-[#fff7ed] text-[#ea580c] dark:bg-[#7c2d1233] dark:text-[#fb923c]">
+            <i class="w-5 h-5 md:w-6 md:h-6" data-lucide="palette"></i>
+          </div>
+          <h3 class="font-semibold text-base md:text-lg mb-2 text-[#1a1816] dark:text-[#f5f2ed]">后期修图</h3>
+          <p class="text-[#4a4540] dark:text-[#c4bdb1] text-sm leading-relaxed">专业调色、精修、合成，让每一张成片都经得起放大。</p>
+        </div>
+        <div
+          class="p-5 md:p-6 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] transition-all hover:shadow-lg hover:-translate-y-0.5 animate-on-scroll delay-500">
+          <div
+            class="w-11 h-11 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]">
+            <i class="w-5 h-5 md:w-6 md:h-6" data-lucide="aperture"></i>
+          </div>
+          <h3 class="font-semibold text-base md:text-lg mb-2 text-[#1a1816] dark:text-[#f5f2ed]">创意策划</h3>
+          <p class="text-[#4a4540] dark:text-[#c4bdb1] text-sm leading-relaxed">从概念到执行，为品牌定制完整的视觉方案。</p>
+        </div>
+        <div
+          class="p-5 md:p-6 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] transition-all hover:shadow-lg hover:-translate-y-0.5 animate-on-scroll delay-500">
+          <div
+            class="w-11 h-11 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-4 bg-[#fff1f2] text-[#e11d48] dark:bg-[#88133733] dark:text-[#fb7185]">
+            <i class="w-5 h-5 md:w-6 md:h-6" data-lucide="headphones"></i>
+          </div>
+          <h3 class="font-semibold text-base md:text-lg mb-2 text-[#1a1816] dark:text-[#f5f2ed]">专属顾问</h3>
+          <p class="text-[#4a4540] dark:text-[#c4bdb1] text-sm leading-relaxed">一对一沟通，从拍摄到交付全程贴心服务。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+     SECTION: stats（摄影数据）
+     ============================================================ -->
+  <section class="py-16 md:py-20 lg:py-24 bg-gray-900 dark:bg-black text-white relative overflow-hidden">
+    <div
+      class="absolute top-[-50%] left-[20%] w-[400px] md:w-[500px] h-[400px] md:h-[500px] rounded-full blur-3xl [background:radial-gradient(circle,rgba(245,158,11,.22)_0%,rgba(245,158,11,0)_70%)] dark:[background:radial-gradient(circle,rgba(245,158,11,.15)_0%,rgba(245,158,11,0)_70%)]">
+    </div>
+    <div class="max-w-7xl mx-auto px-4 md:px-8 relative">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
+        <div class="animate-on-scroll delay-100">
+          <div
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-br from-amber-400 to-orange-400 bg-clip-text text-transparent font-display">
+            800+</div>
+          <div class="mt-2 md:mt-3 text-xs md:text-sm text-gray-400">合作客户</div>
+        </div>
+        <div class="animate-on-scroll delay-200">
+          <div
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-br from-amber-400 to-orange-400 bg-clip-text text-transparent font-display">
+            50k+</div>
+          <div class="mt-2 md:mt-3 text-xs md:text-sm text-gray-400">交付成片</div>
+        </div>
+        <div class="animate-on-scroll delay-300">
+          <div
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-br from-amber-400 to-orange-400 bg-clip-text text-transparent font-display">
+            12年</div>
+          <div class="mt-2 md:mt-3 text-xs md:text-sm text-gray-400">行业经验</div>
+        </div>
+        <div class="animate-on-scroll delay-400">
+          <div
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-br from-amber-400 to-orange-400 bg-clip-text text-transparent font-display">
+            4.9/5</div>
+          <div class="mt-2 md:mt-3 text-xs md:text-sm text-gray-400">客户满意度</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+     SECTION: services（拍摄领域/行业）
+     ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#f3f0eb] dark:bg-[#1a1816]" id="services">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16 animate-on-scroll">
+        <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">拍摄领域</span>
+        <h2
+          class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+          为不同行业定制视觉方案</h2>
+        <p class="mt-4 text-base md:text-lg text-[#4a4540] dark:text-[#c4bdb1]">无论你身处哪个行业，我们都有成熟的拍摄经验。</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <!-- 卡片 1 时尚 -->
+        <div
+          class="group rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-100">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img alt="时尚摄影" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="500" loading="lazy"
+              src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&amp;h=500&amp;fit=crop"
+              width="800" />
+          </div>
+          <div class="p-6 md:p-8">
+            <div
+              class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white mb-5 shadow-md">
+              <i class="w-5 h-5 md:w-6 md:h-6" data-lucide="shopping-bag"></i>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold mb-3 text-[#1a1816] dark:text-[#f5f2ed]">时尚与美妆</h3>
+            <p class="text-[#4a4540] dark:text-[#c4bdb1] text-sm mb-5 leading-relaxed">杂志大片、电商 lookbook、品牌形象，用影像定义风格。
+            </p>
+            <ul class="space-y-2 text-sm text-[#4a4540] dark:text-[#c4bdb1] mb-6">
+              <li class="flex items-center gap-2"><i class="w-4 h-4 text-[#b45309] dark:text-[#f59e0b]"
+                  data-lucide="check"></i> 杂志封面拍摄</li>
+              <li class="flex items-center gap-2"><i class="w-4 h-4 text-[#b45309] dark:text-[#f59e0b]"
+                  data-lucide="check"></i> 电商产品图</li>
+              <li class="flex items-center gap-2"><i class="w-4 h-4 text-[#b45309] dark:text-[#f59e0b]"
+                  data-lucide="check"></i> 美妆特写</li>
+            </ul>
+            <a class="text-[#b45309] dark:text-[#f59e0b] font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+              href="#">
+              了解更多 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- 卡片 2 美食 -->
+        <div
+          class="group rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-200">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img alt="美食摄影" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="500" loading="lazy"
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&amp;h=500&amp;fit=crop"
+              width="800" />
+          </div>
+          <div class="p-6 md:p-8">
+            <div
+              class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white mb-5 shadow-md">
+              <i class="w-5 h-5 md:w-6 md:h-6" data-lucide="utensils"></i>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold mb-3 text-[#1a1816] dark:text-[#f5f2ed]">美食与餐饮</h3>
+            <p class="text-[#4a4540] dark:text-[#c4bdb1] text-sm mb-5 leading-relaxed">菜单拍摄、餐厅空间、美食短视频，让味道透过屏幕散发。</p>
+            <ul class="space-y-2 text-sm text-[#4a4540] dark:text-[#c4bdb1] mb-6">
+              <li class="flex items-center gap-2"><i class="w-4 h-4 text-emerald-600 dark:text-emerald-400"
+                  data-lucide="check"></i> 菜单图拍摄</li>
+              <li class="flex items-center gap-2"><i class="w-4 h-4 text-emerald-600 dark:text-emerald-400"
+                  data-lucide="check"></i> 餐厅环境</li>
+              <li class="flex items-center gap-2"><i class="w-4 h-4 text-emerald-600 dark:text-emerald-400"
+                  data-lucide="check"></i> 美食短视频</li>
+            </ul>
+            <a class="text-emerald-600 dark:text-emerald-400 font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+              href="#">
+              了解更多 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- 卡片 3 建筑空间 -->
+        <div
+          class="group rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-300">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img alt="建筑摄影" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="500" loading="lazy"
+              src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&amp;h=500&amp;fit=crop"
+              width="800" />
+          </div>
+          <div class="p-6 md:p-8">
+            <div
+              class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-orange-500 to-rose-600 flex items-center justify-center text-white mb-5 shadow-md">
+              <i class="w-5 h-5 md:w-6 md:h-6" data-lucide="building-2"></i>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold mb-3 text-[#1a1816] dark:text-[#f5f2ed]">建筑与空间</h3>
+            <p class="text-[#4a4540] dark:text-[#c4bdb1] text-sm mb-5 leading-relaxed">建筑外观、室内设计、酒店民宿，用镜头展现空间美学。</p>
+            <ul class="space-y-2 text-sm text-[#4a4540] dark:text-[#c4bdb1] mb-6">
+              <li class="flex items-center gap-2"><i class="w-4 h-4 text-orange-600 dark:text-orange-400"
+                  data-lucide="check"></i> 建筑外观</li>
+              <li class="flex items-center gap-2"><i class="w-4 h-4 text-orange-600 dark:text-orange-400"
+                  data-lucide="check"></i> 室内空间</li>
+              <li class="flex items-center gap-2"><i class="w-4 h-4 text-orange-600 dark:text-orange-400"
+                  data-lucide="check"></i> 航拍全景</li>
+            </ul>
+            <a class="text-orange-600 dark:text-orange-400 font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+              href="#">
+              了解更多 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+     SECTION: cases（客户故事）
+     ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#faf9f7] dark:bg-[#12100e]" id="cases">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-10 md:mb-12 animate-on-scroll">
+        <div class="max-w-xl">
+          <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">客户故事</span>
+          <h2
+            class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+            他们选择了 Aperture</h2>
+        </div>
+        <a class="text-[#b45309] dark:text-[#f59e0b] font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
+          href="#">
+          查看全部案例 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+        </a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <a class="group block rounded-2xl overflow-hidden border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-100"
+          href="#">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img alt="服装品牌" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="600" loading="lazy"
+              src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&amp;h=600&amp;fit=crop"
+              width="800" />
+          </div>
+          <div class="p-5 md:p-6">
+            <span
+              class="text-xs font-medium px-2.5 py-1 rounded-full bg-[#fef3c7] text-[#92400e] dark:bg-[#78350f33] dark:text-[#fcd34d]">时尚</span>
+            <h3
+              class="mt-3 font-semibold text-base md:text-lg text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              某设计师品牌：季度 lookbook 点击率提升 120%</h3>
+            <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1]">通过统一的视觉语言，帮助品牌在社交媒体获得更高互动。</p>
+          </div>
+        </a>
+        <a class="group block rounded-2xl overflow-hidden border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-200"
+          href="#">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img alt="餐厅" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" height="600"
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&amp;h=600&amp;fit=crop"
+              width="800" />
+          </div>
+          <div class="p-5 md:p-6">
+            <span
+              class="text-xs font-medium px-2.5 py-1 rounded-full bg-[#ecfdf5] text-[#059669] dark:bg-[#064e3b33] dark:text-[#34d399]">餐饮</span>
+            <h3
+              class="mt-3 font-semibold text-base md:text-lg text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              米其林餐厅：菜单更新后预订量增长 65%</h3>
+            <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1]">美食摄影让菜品在线上平台获得更多曝光与转化。</p>
+          </div>
+        </a>
+        <a class="group block rounded-2xl overflow-hidden border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-300"
+          href="#">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img alt="建筑空间" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="600" loading="lazy"
+              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&amp;h=600&amp;fit=crop"
+              width="800" />
+          </div>
+          <div class="p-5 md:p-6">
+            <span
+              class="text-xs font-medium px-2.5 py-1 rounded-full bg-[#fff7ed] text-[#ea580c] dark:bg-[#7c2d1233] dark:text-[#fb923c]">地产</span>
+            <h3
+              class="mt-3 font-semibold text-base md:text-lg text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              高端民宿：房源页面转化率提升 80%</h3>
+            <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1]">专业空间摄影与航拍，让房源在预订平台脱颖而出。</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+     SECTION: testimonials（客户评价）
+     ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#f3f0eb] dark:bg-[#1a1816]">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16 animate-on-scroll">
+        <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">客户评价</span>
+        <h2
+          class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+          真实的声音</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <figure
+          class="flex flex-col h-full p-6 md:p-7 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] shadow-sm animate-on-scroll delay-100">
+          <div aria-label="评分 5 星" class="flex gap-1 text-amber-500 mb-4">
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+          </div>
+          <blockquote class="flex-1 text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed">
+            “Aperture 团队对光影的理解非常深刻。他们拍出的产品图，让我们的线上店铺转化率直接翻了一倍。”
+          </blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <img alt="" class="w-10 h-10 rounded-full object-cover" height="80" loading="lazy"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&amp;h=80&amp;fit=crop&amp;crop=faces"
+              width="80" />
+            <div>
+              <div class="font-medium text-sm text-[#1a1816] dark:text-[#f5f2ed]">张薇</div>
+              <div class="text-xs text-[#6b655d] dark:text-[#8a8378]">某时尚品牌 市场总监</div>
+            </div>
+          </figcaption>
+        </figure>
+        <figure
+          class="flex flex-col h-full p-6 md:p-7 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] shadow-sm animate-on-scroll delay-200">
+          <div aria-label="评分 5 星" class="flex gap-1 text-amber-500 mb-4">
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+          </div>
+          <blockquote class="flex-1 text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed">
+            “从策划到拍摄再到后期，整个过程非常顺畅。他们总能捕捉到我都没注意到的动人细节。”
+          </blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <img alt="" class="w-10 h-10 rounded-full object-cover" height="80" loading="lazy"
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&amp;h=80&amp;fit=crop&amp;crop=faces"
+              width="80" />
+            <div>
+              <div class="font-medium text-sm text-[#1a1816] dark:text-[#f5f2ed]">李然</div>
+              <div class="text-xs text-[#6b655d] dark:text-[#8a8378]">独立设计师</div>
+            </div>
+          </figcaption>
+        </figure>
+        <figure
+          class="flex flex-col h-full p-6 md:p-7 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] shadow-sm animate-on-scroll delay-300">
+          <div aria-label="评分 5 星" class="flex gap-1 text-amber-500 mb-4">
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+            <i class="w-4 h-4 fill-amber-500" data-lucide="star"></i>
+          </div>
+          <blockquote class="flex-1 text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed">
+            “我们和 Aperture 合作了三年，每一次重要发布都交给他们。稳定、专业、超出预期。”
+          </blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <img alt="" class="w-10 h-10 rounded-full object-cover" height="80" loading="lazy"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&amp;h=80&amp;fit=crop&amp;crop=faces"
+              width="80" />
+            <div>
+              <div class="font-medium text-sm text-[#1a1816] dark:text-[#f5f2ed]">王磊</div>
+              <div class="text-xs text-[#6b655d] dark:text-[#8a8378]">某连锁餐饮 品牌负责人</div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+     SECTION: timeline（发展历程）
+     ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#faf9f7] dark:bg-[#12100e]">
+    <div class="max-w-5xl mx-auto px-4 md:px-8">
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16 animate-on-scroll">
+        <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">发展历程</span>
+        <h2
+          class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+          用镜头记录时间</h2>
+      </div>
+      <div class="relative">
+        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px md:-translate-x-px bg-[#ddd8cf] dark:bg-[#2d2a26]">
+        </div>
+        <div class="space-y-10 md:space-y-12">
+          <div class="relative md:grid md:grid-cols-2 md:gap-12 items-center">
+            <div class="pl-10 md:pl-0 md:text-right md:pr-12">
+              <div class="text-sm font-bold text-[#b45309] dark:text-[#f59e0b] font-display">2013</div>
+              <h3 class="mt-1 font-semibold text-base md:text-lg text-[#1a1816] dark:text-[#f5f2ed]">工作室成立</h3>
+              <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1]">从一间小暗房开始，专注于人像与纪实摄影。</p>
+            </div>
+            <div class="hidden md:block"></div>
+            <span
+              class="absolute left-4 md:left-1/2 top-2 w-3 h-3 rounded-full bg-[#b45309] dark:bg-[#f59e0b] border-4 border-[#faf9f7] dark:border-[#12100e] shadow -translate-x-1/2"></span>
+          </div>
+          <div class="relative md:grid md:grid-cols-2 md:gap-12 items-center">
+            <div class="hidden md:block"></div>
+            <div class="pl-10 md:pl-12">
+              <div class="text-sm font-bold text-[#b45309] dark:text-[#f59e0b] font-display">2017</div>
+              <h3 class="mt-1 font-semibold text-base md:text-lg text-[#1a1816] dark:text-[#f5f2ed]">转型商业摄影</h3>
+              <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1]">开始服务时尚品牌与杂志，作品登上多个封面。</p>
+            </div>
+            <span
+              class="absolute left-4 md:left-1/2 top-2 w-3 h-3 rounded-full bg-[#b45309] dark:bg-[#f59e0b] border-4 border-[#faf9f7] dark:border-[#12100e] shadow -translate-x-1/2"></span>
+          </div>
+          <div class="relative md:grid md:grid-cols-2 md:gap-12 items-center">
+            <div class="pl-10 md:pl-0 md:text-right md:pr-12">
+              <div class="text-sm font-bold text-[#b45309] dark:text-[#f59e0b] font-display">2021</div>
+              <h3 class="mt-1 font-semibold text-base md:text-lg text-[#1a1816] dark:text-[#f5f2ed]">客户突破 500 家</h3>
+              <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1]">服务范围扩展至美食、建筑、电商等多个领域。</p>
+            </div>
+            <div class="hidden md:block"></div>
+            <span
+              class="absolute left-4 md:left-1/2 top-2 w-3 h-3 rounded-full bg-[#b45309] dark:bg-[#f59e0b] border-4 border-[#faf9f7] dark:border-[#12100e] shadow -translate-x-1/2"></span>
+          </div>
+          <div class="relative md:grid md:grid-cols-2 md:gap-12 items-center">
+            <div class="hidden md:block"></div>
+            <div class="pl-10 md:pl-12">
+              <div class="text-sm font-bold text-[#b45309] dark:text-[#f59e0b] font-display">2025</div>
+              <h3 class="mt-1 font-semibold text-base md:text-lg text-[#1a1816] dark:text-[#f5f2ed]">全新视觉实验室</h3>
+              <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1]">融合 AI 辅助调色与虚拟制片，探索影像新边界。</p>
+            </div>
+            <span
+              class="absolute left-4 md:left-1/2 top-2 w-3 h-3 rounded-full bg-[#b45309] dark:bg-[#f59e0b] border-4 border-[#faf9f7] dark:border-[#12100e] shadow -translate-x-1/2"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+     SECTION: pricing（拍摄套餐）
+     ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#f3f0eb] dark:bg-[#1a1816]" id="pricing">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="max-w-2xl mx-auto text-center mb-10 md:mb-12 animate-on-scroll">
+        <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">拍摄套餐</span>
+        <h2
+          class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+          简单透明的价格</h2>
+        <p class="mt-4 text-base md:text-lg text-[#4a4540] dark:text-[#c4bdb1]">按需选择，随时升级或取消。</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5 md:gap-6 lg:gap-8 items-stretch">
+        <div
+          class="flex flex-col p-6 md:p-8 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] animate-on-scroll delay-100">
+          <div
+            class="w-10 h-10 rounded-lg flex items-center justify-center mb-4 bg-[#e8e4dd] dark:bg-[#2d2a26] text-[#4a4540] dark:text-[#c4bdb1]">
+            <i class="w-5 h-5" data-lucide="camera"></i>
+          </div>
+          <h3 class="font-semibold text-lg text-[#1a1816] dark:text-[#f5f2ed]">基础套餐</h3>
+          <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1]">适合个人写真与小型产品拍摄</p>
+          <div class="mt-6">
+            <span class="text-3xl md:text-4xl font-bold text-[#1a1816] dark:text-[#f5f2ed] font-display">¥1,999</span>
+            <span class="text-[#6b655d] dark:text-[#8a8378] text-sm">/次</span>
+          </div>
+          <ul class="mt-6 md:mt-8 space-y-3 text-sm flex-1 text-[#4a4540] dark:text-[#c4bdb1]">
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-[#b45309] dark:text-[#f59e0b]"
+                data-lucide="check"></i> 2 小时拍摄</li>
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-[#b45309] dark:text-[#f59e0b]"
+                data-lucide="check"></i> 30 张精修</li>
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-[#b45309] dark:text-[#f59e0b]"
+                data-lucide="check"></i> 1 个场景</li>
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-[#b45309] dark:text-[#f59e0b]"
+                data-lucide="check"></i> 7 天交付</li>
+            <li class="flex items-center gap-2 text-[#6b655d] dark:text-[#8a8378]"><i class="w-4 h-4"
+                data-lucide="x"></i> 视频拍摄</li>
+            <li class="flex items-center gap-2 text-[#6b655d] dark:text-[#8a8378]"><i class="w-4 h-4"
+                data-lucide="x"></i> 专属策划</li>
+          </ul>
+          <a class="mt-6 md:mt-8 block text-center px-6 py-3 rounded-xl border border-[#c4bdb1] dark:border-[#4a4540] font-medium text-[#1a1816] dark:text-[#f5f2ed] hover:bg-gray-50 dark:hover:bg-white/5 transition"
+            href="#">
+            立即预约
+          </a>
+        </div>
+        <div
+          class="relative flex flex-col p-6 md:p-8 rounded-2xl bg-gray-900 dark:bg-gray-800 text-white shadow-2xl lg:-translate-y-4 border-2 border-amber-500 lg:border-gray-800 dark:lg:border-gray-700 animate-on-scroll delay-200">
+          <span
+            class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-xs font-medium inline-flex items-center gap-1 shadow-md whitespace-nowrap">
+            <i class="w-3 h-3" data-lucide="sparkles"></i> 最受欢迎
+          </span>
+          <div class="w-10 h-10 rounded-lg bg-white/10 text-white flex items-center justify-center mb-4">
+            <i class="w-5 h-5" data-lucide="aperture"></i>
+          </div>
+          <h3 class="font-semibold text-lg">专业套餐</h3>
+          <p class="mt-2 text-sm text-gray-400">适合品牌形象与电商拍摄</p>
+          <div class="mt-6">
+            <span class="text-3xl md:text-4xl font-bold font-display">¥5,999</span>
+            <span class="text-gray-400 text-sm">/次</span>
+          </div>
+          <ul class="mt-6 md:mt-8 space-y-3 text-sm flex-1 text-gray-300">
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-amber-400" data-lucide="check"></i> 全天拍摄</li>
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-amber-400" data-lucide="check"></i> 100 张精修</li>
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-amber-400" data-lucide="check"></i> 3 个场景</li>
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-amber-400" data-lucide="check"></i> 3 天交付</li>
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-amber-400" data-lucide="check"></i> 15 秒短视频</li>
+            <li class="flex items-center gap-2 text-gray-500"><i class="w-4 h-4" data-lucide="x"></i> 专属策划</li>
+          </ul>
+          <a class="mt-6 md:mt-8 block text-center px-6 py-3 rounded-xl bg-white text-gray-900 font-semibold hover:bg-gray-100 transition"
+            href="#">
+            立即预约
+          </a>
+        </div>
+        <div
+          class="flex flex-col p-6 md:p-8 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] animate-on-scroll delay-300">
+          <div
+            class="w-10 h-10 rounded-lg flex items-center justify-center mb-4 bg-[#e8e4dd] dark:bg-[#2d2a26] text-[#4a4540] dark:text-[#c4bdb1]">
+            <i class="w-5 h-5" data-lucide="building-2"></i>
+          </div>
+          <h3 class="font-semibold text-lg text-[#1a1816] dark:text-[#f5f2ed]">企业定制</h3>
+          <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1]">适合长期合作与整合营销</p>
+          <div class="mt-6">
+            <span class="text-3xl md:text-4xl font-bold text-[#1a1816] dark:text-[#f5f2ed] font-display">定制</span>
+          </div>
+          <ul class="mt-6 md:mt-8 space-y-3 text-sm flex-1 text-[#4a4540] dark:text-[#c4bdb1]">
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-[#b45309] dark:text-[#f59e0b]"
+                data-lucide="check"></i> 全年框架</li>
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-[#b45309] dark:text-[#f59e0b]"
+                data-lucide="check"></i> 不限拍摄次数</li>
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-[#b45309] dark:text-[#f59e0b]"
+                data-lucide="check"></i> 专属策划团队</li>
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-[#b45309] dark:text-[#f59e0b]"
+                data-lucide="check"></i> 快速交付通道</li>
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-[#b45309] dark:text-[#f59e0b]"
+                data-lucide="check"></i> 视频/直播支持</li>
+            <li class="flex items-center gap-2"><i class="w-4 h-4 text-[#b45309] dark:text-[#f59e0b]"
+                data-lucide="check"></i> 季度视觉复盘</li>
+          </ul>
+          <a class="mt-6 md:mt-8 block text-center px-6 py-3 rounded-xl border border-[#c4bdb1] dark:border-[#4a4540] font-medium text-[#1a1816] dark:text-[#f5f2ed] hover:bg-gray-50 dark:hover:bg-white/5 transition"
+            href="#">
+            联系顾问
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+       SECTION: split-image-right（为什么选择我们）
+       ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#faf9f7] dark:bg-[#12100e]">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-center">
+        <div class="order-1 md:order-1 animate-on-scroll delay-100">
+          <div class="rounded-3xl overflow-hidden shadow-2xl border border-[#ddd8cf] dark:border-[#2d2a26]">
+            <img alt="摄影师工作" class="w-full h-auto" height="700" loading="lazy"
+              src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=900&amp;h=700&amp;fit=crop"
+              width="900" />
+          </div>
+        </div>
+        <div class="space-y-6 order-2 md:order-2 animate-on-scroll delay-200">
+          <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">为什么选择我们</span>
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] leading-tight tracking-tight font-display">
+            不只是拍照<br />更是视觉策略
+          </h2>
+          <p class="text-base md:text-lg text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed">
+            我们相信好的影像不只是好看，更要能传递品牌价值、打动人心、带来转化。从策略到执行，全程为你考虑。
+          </p>
+          <ul class="space-y-4 pt-2">
+            <li class="flex items-start gap-3">
+              <span
+                class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]">
+                <i class="w-3.5 h-3.5" data-lucide="check"></i>
+              </span>
+              <div>
+                <div class="font-medium text-[#1a1816] dark:text-[#f5f2ed]">专业团队，全流程把控</div>
+                <p class="text-sm text-[#4a4540] dark:text-[#c4bdb1] mt-0.5">导演、摄影、灯光、后期，各环节均由资深人员负责。</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span
+                class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]">
+                <i class="w-3.5 h-3.5" data-lucide="check"></i>
+              </span>
+              <div>
+                <div class="font-medium text-[#1a1816] dark:text-[#f5f2ed]">定制化方案，拒绝千篇一律</div>
+                <p class="text-sm text-[#4a4540] dark:text-[#c4bdb1] mt-0.5">每个项目都从了解你的品牌与目标受众开始。</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span
+                class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]">
+                <i class="w-3.5 h-3.5" data-lucide="check"></i>
+              </span>
+              <div>
+                <div class="font-medium text-[#1a1816] dark:text-[#f5f2ed]">高效交付，不耽误你的节奏</div>
+                <p class="text-sm text-[#4a4540] dark:text-[#c4bdb1] mt-0.5">标准项目 7 天交付，加急可 48 小时出片。</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+       SECTION: split-image-left（智能后期）
+       ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#f3f0eb] dark:bg-[#1a1816]">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-center">
+        <div class="space-y-6 order-2 md:order-1 animate-on-scroll delay-100">
+          <span
+            class="text-sm font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">后期与调色</span>
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] leading-tight tracking-tight font-display">
+            从原片到成片<br />只差一次调色
+          </h2>
+          <p class="text-base md:text-lg text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed">
+            我们使用专业色彩管理与 AI 辅助修图，确保每一张照片都达到出版级品质。风格统一、细节丰富、经得起放大。
+          </p>
+          <div class="grid grid-cols-2 gap-4 pt-2 animate-on-scroll">
+            <div
+              class="p-4 md:p-5 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c]">
+              <div
+                class="w-9 h-9 rounded-lg flex items-center justify-center mb-3 bg-[#ecfdf5] text-[#059669] dark:bg-[#064e3b33] dark:text-[#34d399]">
+                <i class="w-4 h-4" data-lucide="sliders"></i>
+              </div>
+              <div class="text-xl md:text-2xl font-bold text-[#1a1816] dark:text-[#f5f2ed] font-display">100%</div>
+              <div class="text-xs text-[#6b655d] dark:text-[#8a8378] mt-1">色彩准确度</div>
+            </div>
+            <div
+              class="p-4 md:p-5 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c]">
+              <div
+                class="w-9 h-9 rounded-lg flex items-center justify-center mb-3 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]">
+                <i class="w-4 h-4" data-lucide="clock"></i>
+              </div>
+              <div class="text-xl md:text-2xl font-bold text-[#1a1816] dark:text-[#f5f2ed] font-display">-50%</div>
+              <div class="text-xs text-[#6b655d] dark:text-[#8a8378] mt-1">交付周期</div>
+            </div>
+          </div>
+        </div>
+        <div class="order-1 md:order-2 animate-on-scroll delay-200">
+          <div class="rounded-3xl overflow-hidden shadow-2xl border border-[#ddd8cf] dark:border-[#2d2a26]">
+            <img alt="后期调色" class="w-full h-auto" height="700" loading="lazy"
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&amp;h=700&amp;fit=crop"
+              width="900" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+       SECTION: image-top-text-bottom（作品全景）
+       ============================================================ -->
+  <section class="py-16 md:py-24 bg-[#faf9f7] dark:bg-[#12100e]">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-10 md:mb-16 animate-on-scroll">
+        <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">精选作品</span>
+        <h2
+          class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+          每一帧，都是故事
+        </h2>
+        <p class="mt-4 text-base md:text-lg text-[#4a4540] dark:text-[#c4bdb1]">
+          从人像到风景，从商业到纪实，我们持续用影像记录这个时代。
+        </p>
+      </div>
+      <div class="relative">
+        <div
+          class="absolute -top-12 left-1/2 -translate-x-1/2 w-2/3 h-24 blur-3xl -z-10 [background:radial-gradient(circle,rgba(245,158,11,.22)_0%,rgba(245,158,11,0)_70%)] dark:[background:radial-gradient(circle,rgba(245,158,11,.15)_0%,rgba(245,158,11,0)_70%)]">
+        </div>
+        <div class="rounded-3xl overflow-hidden shadow-2xl border border-[#ddd8cf] dark:border-[#2d2a26]">
+          <img alt="摄影作品全景" class="w-full h-auto" height="900" loading="lazy"
+            src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600&amp;h=900&amp;fit=crop"
+            width="1600" />
+        </div>
+      </div>
+      <div class="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto text-center">
+        <div class="animate-on-scroll delay-100">
+          <div
+            class="inline-flex items-center justify-center w-11 h-11 rounded-xl mb-3 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]">
+            <i class="w-5 h-5" data-lucide="layers"></i>
+          </div>
+          <div class="font-semibold text-base text-[#1a1816] dark:text-[#f5f2ed]">统一风格</div>
+          <p class="mt-1.5 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed">专业色彩管理，让系列作品视觉一致。</p>
+        </div>
+        <div class="animate-on-scroll delay-200">
+          <div
+            class="inline-flex items-center justify-center w-11 h-11 rounded-xl mb-3 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]">
+            <i class="w-5 h-5" data-lucide="gauge"></i>
+          </div>
+          <div class="font-semibold text-base text-[#1a1816] dark:text-[#f5f2ed]">快速交付</div>
+          <p class="mt-1.5 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed">高效后期流程，不耽误你的发布节奏。</p>
+        </div>
+        <div class="animate-on-scroll delay-300">
+          <div
+            class="inline-flex items-center justify-center w-11 h-11 rounded-xl mb-3 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]">
+            <i class="w-5 h-5" data-lucide="share-2"></i>
+          </div>
+          <div class="font-semibold text-base text-[#1a1816] dark:text-[#f5f2ed]">多平台适配</div>
+          <p class="mt-1.5 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed">提供社交媒体、网站、印刷等多规格输出。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+       SECTION: team（团队）
+       ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#f3f0eb] dark:bg-[#1a1816]">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16 animate-on-scroll">
+        <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">核心团队</span>
+        <h2
+          class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+          镜头背后的眼睛</h2>
+        <p class="mt-4 text-base md:text-lg text-[#4a4540] dark:text-[#c4bdb1]">来自不同背景，却同样对光影充满热情。</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+        <div class="group text-center animate-on-scroll delay-100">
+          <div class="aspect-square rounded-2xl overflow-hidden mb-4 shadow-lg">
+            <img alt="张明" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" height="500"
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=500&amp;h=500&amp;fit=crop&amp;crop=faces"
+              width="500" />
+          </div>
+          <h3 class="font-semibold text-sm md:text-base text-[#1a1816] dark:text-[#f5f2ed]">张明</h3>
+          <p class="text-xs md:text-sm text-[#6b655d] dark:text-[#8a8378] mt-0.5">创始人 / 首席摄影师</p>
+        </div>
+        <div class="group text-center animate-on-scroll delay-200">
+          <div class="aspect-square rounded-2xl overflow-hidden mb-4 shadow-lg">
+            <img alt="李婷" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" height="500"
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&amp;h=500&amp;fit=crop&amp;crop=faces"
+              width="500" />
+          </div>
+          <h3 class="font-semibold text-sm md:text-base text-[#1a1816] dark:text-[#f5f2ed]">李婷</h3>
+          <p class="text-xs md:text-sm text-[#6b655d] dark:text-[#8a8378] mt-0.5">联合创始人 / 创意总监</p>
+        </div>
+        <div class="group text-center animate-on-scroll delay-300">
+          <div class="aspect-square rounded-2xl overflow-hidden mb-4 shadow-lg">
+            <img alt="王浩" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" height="500"
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&amp;h=500&amp;fit=crop&amp;crop=faces"
+              width="500" />
+          </div>
+          <h3 class="font-semibold text-sm md:text-base text-[#1a1816] dark:text-[#f5f2ed]">王浩</h3>
+          <p class="text-xs md:text-sm text-[#6b655d] dark:text-[#8a8378] mt-0.5">资深摄影师</p>
+        </div>
+        <div class="group text-center animate-on-scroll delay-400">
+          <div class="aspect-square rounded-2xl overflow-hidden mb-4 shadow-lg">
+            <img alt="陈静" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" height="500"
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&amp;h=500&amp;fit=crop&amp;crop=faces"
+              width="500" />
+          </div>
+          <h3 class="font-semibold text-sm md:text-base text-[#1a1816] dark:text-[#f5f2ed]">陈静</h3>
+          <p class="text-xs md:text-sm text-[#6b655d] dark:text-[#8a8378] mt-0.5">后期总监 / 色彩管理</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+       SECTION: products（摄影周边/预设）
+       ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#faf9f7] dark:bg-[#12100e]">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-10 md:mb-12 animate-on-scroll">
+        <div class="max-w-xl">
+          <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">摄影商店</span>
+          <h2
+            class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+            精选摄影周边与预设</h2>
+        </div>
+        <a class="text-[#b45309] dark:text-[#f59e0b] font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
+          href="#">
+          查看全部商品 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+        </a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <a class="group flex flex-col rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-100"
+          href="#">
+          <div class="relative aspect-[4/3] overflow-hidden bg-[#e8e4dd] dark:bg-[#2d2a26]">
+            <img alt="复古胶片预设" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="600" loading="lazy"
+              src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&amp;h=600&amp;fit=crop"
+              width="800" />
+            <span
+              class="absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-full bg-amber-600 text-white shadow-sm">热销</span>
+          </div>
+          <div class="p-5 md:p-6 flex flex-col flex-1">
+            <div class="flex items-center gap-2 text-xs text-[#6b655d] dark:text-[#8a8378] mb-2">
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="palette"></i> 调色预设</span>
+            </div>
+            <h3
+              class="font-semibold text-base md:text-lg text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              复古胶片 LR 预设包</h3>
+            <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed flex-1">
+              30 款精心调校的 Lightroom 预设，一键还原经典胶片色调。
+            </p>
+            <div class="mt-5 flex flex-wrap items-center gap-2 justify-between">
+              <div>
+                <span class="text-xl md:text-2xl font-bold text-[#1a1816] dark:text-[#f5f2ed] font-display">¥199</span>
+              </div>
+              <span
+                class="inline-flex items-center gap-1 text-[#b45309] dark:text-[#f59e0b] text-sm font-medium group-hover:gap-2 transition-all">
+                查看详情 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a class="group flex flex-col rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-200"
+          href="#">
+          <div class="relative aspect-[4/3] overflow-hidden bg-[#e8e4dd] dark:bg-[#2d2a26]">
+            <img alt="摄影包" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" height="600"
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&amp;h=600&amp;fit=crop"
+              width="800" />
+            <span
+              class="absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-full bg-emerald-600 text-white shadow-sm">新品</span>
+          </div>
+          <div class="p-5 md:p-6 flex flex-col flex-1">
+            <div class="flex items-center gap-2 text-xs text-[#6b655d] dark:text-[#8a8378] mb-2">
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="briefcase"></i>
+                摄影配件</span>
+            </div>
+            <h3
+              class="font-semibold text-base md:text-lg text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              Aperture 联名摄影包</h3>
+            <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed flex-1">
+              防水帆布与真皮拼接，可容纳一机三镜，日常通勤也适合。
+            </p>
+            <div class="mt-5 flex flex-wrap items-center gap-2 justify-between">
+              <div>
+                <span class="text-xl md:text-2xl font-bold text-[#1a1816] dark:text-[#f5f2ed] font-display">¥899</span>
+              </div>
+              <span
+                class="inline-flex items-center gap-1 text-[#b45309] dark:text-[#f59e0b] text-sm font-medium group-hover:gap-2 transition-all">
+                查看详情 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a class="group flex flex-col rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-300"
+          href="#">
+          <div class="relative aspect-[4/3] overflow-hidden bg-[#e8e4dd] dark:bg-[#2d2a26]">
+            <img alt="摄影书" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" height="600"
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&amp;h=600&amp;fit=crop"
+              width="800" />
+          </div>
+          <div class="p-5 md:p-6 flex flex-col flex-1">
+            <div class="flex items-center gap-2 text-xs text-[#6b655d] dark:text-[#8a8378] mb-2">
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="book-open"></i>
+                摄影书</span>
+            </div>
+            <h3
+              class="font-semibold text-base md:text-lg text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              《光影之间》作品集</h3>
+            <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed flex-1">
+              Aperture 十年精选作品集，收录 200 余幅经典影像。
+            </p>
+            <div class="mt-5 flex flex-wrap items-center gap-2 justify-between">
+              <div>
+                <span class="text-xl md:text-2xl font-bold text-[#1a1816] dark:text-[#f5f2ed] font-display">¥299</span>
+              </div>
+              <span
+                class="inline-flex items-center gap-1 text-[#b45309] dark:text-[#f59e0b] text-sm font-medium group-hover:gap-2 transition-all">
+                查看详情 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+       SECTION: news（摄影资讯/动态）
+       ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#f3f0eb] dark:bg-[#1a1816]">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-10 md:mb-12 animate-on-scroll">
+        <div class="max-w-xl">
+          <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">新闻动态</span>
+          <h2
+            class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+            了解 Aperture 的最新动态</h2>
+        </div>
+        <a class="text-[#b45309] dark:text-[#f59e0b] font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
+          href="#">
+          查看全部新闻 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+        </a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <article
+          class="group rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col animate-on-scroll delay-100">
+          <a class="block aspect-[16/10] overflow-hidden" href="#">
+            <img alt="摄影展" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" height="500"
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&amp;h=500&amp;fit=crop"
+              width="800" />
+          </a>
+          <div class="p-5 md:p-6 flex flex-col flex-1">
+            <div class="flex flex-wrap items-center gap-3 text-xs text-[#6b655d] dark:text-[#8a8378] mb-3">
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="tag"></i> 展览</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="calendar"></i>
+                2025-08-12</span>
+            </div>
+            <h3
+              class="font-semibold text-base md:text-lg leading-snug text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              <a href="#">「城市光影」年度摄影展即将开幕</a>
+            </h3>
+            <p class="mt-3 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed flex-1">
+              汇集 50 位摄影师的 200 余幅作品，探索城市与人的关系。
+            </p>
+            <div class="mt-5 pt-5 border-t border-[#ddd8cf] dark:border-[#2d2a26]">
+              <a class="text-[#b45309] dark:text-[#f59e0b] text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+                href="#">
+                阅读全文 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article
+          class="group rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col animate-on-scroll delay-200">
+          <a class="block aspect-[16/10] overflow-hidden" href="#">
+            <img alt="胶片复兴" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="500" loading="lazy"
+              src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&amp;h=500&amp;fit=crop"
+              width="800" />
+          </a>
+          <div class="p-5 md:p-6 flex flex-col flex-1">
+            <div class="flex flex-wrap items-center gap-3 text-xs text-[#6b655d] dark:text-[#8a8378] mb-3">
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="tag"></i> 行业观察</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="calendar"></i>
+                2025-07-28</span>
+            </div>
+            <h3
+              class="font-semibold text-base md:text-lg leading-snug text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              <a href="#">胶片复兴：为什么年轻人重新爱上胶片摄影</a>
+            </h3>
+            <p class="mt-3 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed flex-1">
+              从色彩到仪式感，胶片摄影正在成为新一代的创作选择。
+            </p>
+            <div class="mt-5 pt-5 border-t border-[#ddd8cf] dark:border-[#2d2a26]">
+              <a class="text-[#b45309] dark:text-[#f59e0b] text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+                href="#">
+                阅读全文 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article
+          class="group rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col animate-on-scroll delay-300">
+          <a class="block aspect-[16/10] overflow-hidden" href="#">
+            <img alt="幕后花絮" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="500" loading="lazy"
+              src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&amp;h=500&amp;fit=crop"
+              width="800" />
+          </a>
+          <div class="p-5 md:p-6 flex flex-col flex-1">
+            <div class="flex flex-wrap items-center gap-3 text-xs text-[#6b655d] dark:text-[#8a8378] mb-3">
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="tag"></i> 幕后花絮</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="calendar"></i>
+                2025-06-15</span>
+            </div>
+            <h3
+              class="font-semibold text-base md:text-lg leading-snug text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              <a href="#">一次时尚大片的拍摄全记录</a>
+            </h3>
+            <p class="mt-3 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed flex-1">
+              从布光到引导模特，揭秘专业时尚摄影的台前幕后。
+            </p>
+            <div class="mt-5 pt-5 border-t border-[#ddd8cf] dark:border-[#2d2a26]">
+              <a class="text-[#b45309] dark:text-[#f59e0b] text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+                href="#">
+                阅读全文 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+       SECTION: courses（摄影课程/工作坊）
+       ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#faf9f7] dark:bg-[#12100e]">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-10 md:mb-12 animate-on-scroll">
+        <div class="max-w-xl">
+          <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">学习中心</span>
+          <h2
+            class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+            提升你的摄影技艺</h2>
+          <p class="mt-3 text-[#4a4540] dark:text-[#c4bdb1]">由 Aperture 团队亲自授课，从入门到专业。</p>
+        </div>
+        <a class="text-[#b45309] dark:text-[#f59e0b] font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
+          href="#">
+          全部课程 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+        </a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <a class="group flex flex-col rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-100"
+          href="#">
+          <div class="relative aspect-[16/10] overflow-hidden">
+            <img alt="摄影入门" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="500" loading="lazy"
+              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&amp;h=500&amp;fit=crop"
+              width="800" />
+            <span
+              class="absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-md bg-amber-600 text-white shadow-sm">入门</span>
+            <span
+              class="absolute top-3 right-3 text-xs font-medium px-2.5 py-1 rounded-md backdrop-blur inline-flex items-center gap-1 text-white shadow-sm"
+              style="background-color: rgba(0,0,0,.45);">
+              <i class="w-3.5 h-3.5" data-lucide="play-circle"></i> 16 节
+            </span>
+          </div>
+          <div class="p-5 md:p-6 flex flex-col flex-1">
+            <h3
+              class="font-semibold text-base md:text-lg leading-snug text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              摄影基础：从零开始学拍照</h3>
+            <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed flex-1">
+              光圈、快门、ISO、构图，一次搞懂相机的基本操作。
+            </p>
+            <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#6b655d] dark:text-[#8a8378]">
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="clock"></i> 2 小时 30
+                分</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="signal"></i> 初级</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="users"></i> 5,240
+                人</span>
+            </div>
+            <div class="mt-5 pt-5 border-t border-[#ddd8cf] dark:border-[#2d2a26] flex items-center justify-between">
+              <span class="text-base md:text-lg font-bold text-emerald-600 dark:text-emerald-400 font-display">免费</span>
+              <span
+                class="inline-flex items-center gap-1 text-[#b45309] dark:text-[#f59e0b] text-sm font-medium group-hover:gap-2 transition-all">
+                开始学习 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a class="group flex flex-col rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-200"
+          href="#">
+          <div class="relative aspect-[16/10] overflow-hidden">
+            <img alt="人像用光" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="500" loading="lazy"
+              src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&amp;h=500&amp;fit=crop"
+              width="800" />
+            <span
+              class="absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-md bg-indigo-600 text-white shadow-sm">进阶</span>
+            <span
+              class="absolute top-3 right-3 text-xs font-medium px-2.5 py-1 rounded-md backdrop-blur inline-flex items-center gap-1 text-white shadow-sm"
+              style="background-color: rgba(0,0,0,.45);">
+              <i class="w-3.5 h-3.5" data-lucide="play-circle"></i> 24 节
+            </span>
+          </div>
+          <div class="p-5 md:p-6 flex flex-col flex-1">
+            <h3
+              class="font-semibold text-base md:text-lg leading-snug text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              人像摄影用光全攻略</h3>
+            <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed flex-1">
+              自然光、闪光灯、混合光，掌握人像摄影的核心用光技巧。
+            </p>
+            <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#6b655d] dark:text-[#8a8378]">
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="clock"></i> 4 小时 20
+                分</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="signal"></i> 中级</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="users"></i> 2,180
+                人</span>
+            </div>
+            <div class="mt-5 pt-5 border-t border-[#ddd8cf] dark:border-[#2d2a26] flex items-center justify-between">
+              <span class="text-base md:text-lg font-bold text-[#1a1816] dark:text-[#f5f2ed] font-display">¥399</span>
+              <span
+                class="inline-flex items-center gap-1 text-[#b45309] dark:text-[#f59e0b] text-sm font-medium group-hover:gap-2 transition-all">
+                立即报名 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a class="group flex flex-col rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-300"
+          href="#">
+          <div class="relative aspect-[16/10] overflow-hidden">
+            <img alt="后期调色" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="500" loading="lazy"
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&amp;h=500&amp;fit=crop"
+              width="800" />
+            <span
+              class="absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-md bg-purple-600 text-white shadow-sm">后期</span>
+            <span
+              class="absolute top-3 right-3 text-xs font-medium px-2.5 py-1 rounded-md backdrop-blur inline-flex items-center gap-1 text-white shadow-sm"
+              style="background-color: rgba(0,0,0,.45);">
+              <i class="w-3.5 h-3.5" data-lucide="play-circle"></i> 20 节
+            </span>
+          </div>
+          <div class="p-5 md:p-6 flex flex-col flex-1">
+            <h3
+              class="font-semibold text-base md:text-lg leading-snug text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              Lightroom 调色从入门到精通</h3>
+            <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed flex-1">
+              掌握色彩理论、风格化调色、批量处理，建立自己的调色体系。
+            </p>
+            <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#6b655d] dark:text-[#8a8378]">
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="clock"></i> 3 小时 40
+                分</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="signal"></i> 中高级</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="users"></i> 3,420
+                人</span>
+            </div>
+            <div class="mt-5 pt-5 border-t border-[#ddd8cf] dark:border-[#2d2a26] flex items-center justify-between">
+              <span class="text-base md:text-lg font-bold text-[#1a1816] dark:text-[#f5f2ed] font-display">¥299</span>
+              <span
+                class="inline-flex items-center gap-1 text-[#b45309] dark:text-[#f59e0b] text-sm font-medium group-hover:gap-2 transition-all">
+                立即报名 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a class="group flex flex-col rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-400"
+          href="#">
+          <div class="relative aspect-[16/10] overflow-hidden">
+            <img alt="美食摄影" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="500" loading="lazy"
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&amp;h=500&amp;fit=crop"
+              width="800" />
+            <span
+              class="absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-md bg-emerald-600 text-white shadow-sm">美食</span>
+            <span
+              class="absolute top-3 right-3 text-xs font-medium px-2.5 py-1 rounded-md backdrop-blur inline-flex items-center gap-1 text-white shadow-sm"
+              style="background-color: rgba(0,0,0,.45);">
+              <i class="w-3.5 h-3.5" data-lucide="play-circle"></i> 14 节
+            </span>
+          </div>
+          <div class="p-5 md:p-6 flex flex-col flex-1">
+            <h3
+              class="font-semibold text-base md:text-lg leading-snug text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              美食摄影：让食物看起来更好吃</h3>
+            <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed flex-1">
+              从摆盘、布光到后期，拍出让人垂涎欲滴的美食照片。
+            </p>
+            <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#6b655d] dark:text-[#8a8378]">
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="clock"></i> 2 小时 10
+                分</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="signal"></i> 中级</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="users"></i> 1,860
+                人</span>
+            </div>
+            <div class="mt-5 pt-5 border-t border-[#ddd8cf] dark:border-[#2d2a26] flex items-center justify-between">
+              <span class="text-base md:text-lg font-bold text-[#1a1816] dark:text-[#f5f2ed] font-display">¥249</span>
+              <span
+                class="inline-flex items-center gap-1 text-[#b45309] dark:text-[#f59e0b] text-sm font-medium group-hover:gap-2 transition-all">
+                立即报名 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a class="group flex flex-col rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-500"
+          href="#">
+          <div class="relative aspect-[16/10] overflow-hidden">
+            <img alt="风光摄影" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="500" loading="lazy"
+              src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&amp;h=500&amp;fit=crop"
+              width="800" />
+            <span
+              class="absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-md bg-orange-600 text-white shadow-sm">风光</span>
+            <span
+              class="absolute top-3 right-3 text-xs font-medium px-2.5 py-1 rounded-md backdrop-blur inline-flex items-center gap-1 text-white shadow-sm"
+              style="background-color: rgba(0,0,0,.45);">
+              <i class="w-3.5 h-3.5" data-lucide="play-circle"></i> 18 节
+            </span>
+          </div>
+          <div class="p-5 md:p-6 flex flex-col flex-1">
+            <h3
+              class="font-semibold text-base md:text-lg leading-snug text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              风光摄影：等待最好的光线</h3>
+            <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed flex-1">
+              构图、滤镜、黄金时刻，拍出令人震撼的自然风光。
+            </p>
+            <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#6b655d] dark:text-[#8a8378]">
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="clock"></i> 3 小时 00
+                分</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="signal"></i> 中级</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="users"></i> 2,950
+                人</span>
+            </div>
+            <div class="mt-5 pt-5 border-t border-[#ddd8cf] dark:border-[#2d2a26] flex items-center justify-between">
+              <span class="text-base md:text-lg font-bold text-[#1a1816] dark:text-[#f5f2ed] font-display">¥279</span>
+              <span
+                class="inline-flex items-center gap-1 text-[#b45309] dark:text-[#f59e0b] text-sm font-medium group-hover:gap-2 transition-all">
+                立即报名 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a class="group flex flex-col rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 animate-on-scroll delay-500"
+          href="#">
+          <div class="relative aspect-[16/10] overflow-hidden">
+            <img alt="商业摄影" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              height="500" loading="lazy"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&amp;h=500&amp;fit=crop"
+              width="800" />
+            <span
+              class="absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-md bg-rose-600 text-white shadow-sm">商业</span>
+            <span
+              class="absolute top-3 right-3 text-xs font-medium px-2.5 py-1 rounded-md backdrop-blur inline-flex items-center gap-1 text-white shadow-sm"
+              style="background-color: rgba(0,0,0,.45);">
+              <i class="w-3.5 h-3.5" data-lucide="play-circle"></i> 22 节
+            </span>
+          </div>
+          <div class="p-5 md:p-6 flex flex-col flex-1">
+            <h3
+              class="font-semibold text-base md:text-lg leading-snug text-[#1a1816] dark:text-[#f5f2ed] group-hover:text-[#b45309] dark:group-hover:text-[#f59e0b] transition">
+              商业摄影：从接单到交付</h3>
+            <p class="mt-2 text-sm text-[#4a4540] dark:text-[#c4bdb1] leading-relaxed flex-1">
+              报价、合同、拍摄执行、客户沟通，商业摄影师的完整工作流。
+            </p>
+            <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#6b655d] dark:text-[#8a8378]">
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="clock"></i> 5 小时 10
+                分</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="signal"></i> 高级</span>
+              <span class="inline-flex items-center gap-1"><i class="w-3.5 h-3.5" data-lucide="users"></i> 1,320
+                人</span>
+            </div>
+            <div class="mt-5 pt-5 border-t border-[#ddd8cf] dark:border-[#2d2a26] flex items-center justify-between">
+              <span class="text-base md:text-lg font-bold text-[#1a1816] dark:text-[#f5f2ed] font-display">¥499</span>
+              <span
+                class="inline-flex items-center gap-1 text-[#b45309] dark:text-[#f59e0b] text-sm font-medium group-hover:gap-2 transition-all">
+                立即报名 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+     SECTION: faq
+     ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#f3f0eb] dark:bg-[#1a1816]" id="faq">
+    <div class="max-w-3xl mx-auto px-4 md:px-8">
+      <div class="text-center mb-10 md:mb-12">
+        <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">常见问题</span>
+        <h2
+          class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+          你可能想知道</h2>
+      </div>
+      <div class="space-y-3">
+        <details
+          class="group p-5 md:p-6 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] transition-all open:shadow-sm animate-on-scroll delay-100"
+          open="">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+            <span class="font-medium text-[#1a1816] dark:text-[#f5f2ed] text-sm md:text-base">拍摄前需要准备什么？</span>
+            <i class="faq-icon text-[#b45309] dark:text-[#f59e0b] w-5 h-5 flex-shrink-0 transition-transform duration-250"
+              data-lucide="plus"></i>
+          </summary>
+          <p class="mt-4 text-[#4a4540] dark:text-[#c4bdb1] text-sm leading-relaxed">
+            你只需要确定拍摄风格和大致场景，剩下的交给我们。我们会提前发送拍摄指南，包括服装建议、道具准备和参考样片。
+          </p>
+        </details>
+        <details
+          class="group p-5 md:p-6 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] transition-all open:shadow-sm animate-on-scroll delay-200">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+            <span class="font-medium text-[#1a1816] dark:text-[#f5f2ed] text-sm md:text-base">成片多久能交付？</span>
+            <i class="faq-icon text-[#b45309] dark:text-[#f59e0b] w-5 h-5 flex-shrink-0 transition-transform duration-250"
+              data-lucide="plus"></i>
+          </summary>
+          <p class="mt-4 text-[#4a4540] dark:text-[#c4bdb1] text-sm leading-relaxed">
+            基础套餐 7 个工作日，专业套餐 3 个工作日。如需加急，可沟通 48 小时出片（可能产生额外费用）。
+          </p>
+        </details>
+        <details
+          class="group p-5 md:p-6 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] transition-all open:shadow-sm animate-on-scroll delay-300">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+            <span class="font-medium text-[#1a1816] dark:text-[#f5f2ed] text-sm md:text-base">你们在哪些城市可以拍摄？</span>
+            <i class="faq-icon text-[#b45309] dark:text-[#f59e0b] w-5 h-5 flex-shrink-0 transition-transform duration-250"
+              data-lucide="plus"></i>
+          </summary>
+          <p class="mt-4 text-[#4a4540] dark:text-[#c4bdb1] text-sm leading-relaxed">
+            我们总部在上海，北京、深圳、成都、杭州均有常驻团队。其他城市可安排差旅拍摄，具体费用请咨询顾问。
+          </p>
+        </details>
+        <details
+          class="group p-5 md:p-6 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] transition-all open:shadow-sm animate-on-scroll delay-400">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+            <span class="font-medium text-[#1a1816] dark:text-[#f5f2ed] text-sm md:text-base">后期修图可以指定风格吗？</span>
+            <i class="faq-icon text-[#b45309] dark:text-[#f59e0b] w-5 h-5 flex-shrink-0 transition-transform duration-250"
+              data-lucide="plus"></i>
+          </summary>
+          <p class="mt-4 text-[#4a4540] dark:text-[#c4bdb1] text-sm leading-relaxed">
+            当然可以。拍摄前我们会与你确认参考图，调色师会根据你的品牌调性或个人喜好进行针对性调色。
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+     SECTION: cta
+     ============================================================ -->
+  <section class="py-16 md:py-20 lg:py-24 bg-[#faf9f7] dark:bg-[#12100e]">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div
+        class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-600 via-orange-600 to-rose-600 px-6 py-12 sm:px-8 sm:py-16 md:px-16 md:py-20 text-center text-white shadow-2xl">
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/10 blur-3xl"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-white/10 blur-3xl"></div>
+        <div class="relative">
+          <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight font-display">准备好记录你的故事了吗？</h2>
+          <p class="mt-4 text-base md:text-lg text-amber-100 max-w-2xl mx-auto">
+            无论是一次个人写真，还是品牌年度视觉，Aperture 都能为你量身打造。
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3 justify-center">
+            <a class="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-white text-gray-900 font-semibold hover:bg-gray-100 hover:scale-[1.02] active:scale-[0.98] transition-all inline-flex items-center gap-2 shadow-lg text-sm sm:text-base"
+              href="#">
+              预约拍摄 <i class="w-4 h-4" data-lucide="arrow-right"></i>
+            </a>
+            <a class="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl border border-white/30 font-semibold hover:bg-white/10 transition text-sm sm:text-base"
+              href="#contact">
+              联系顾问
+            </a>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2 justify-center text-sm text-amber-100">
+            <span class="inline-flex items-center gap-1.5"><i class="w-4 h-4" data-lucide="check"></i> 免费咨询</span>
+            <span class="inline-flex items-center gap-1.5"><i class="w-4 h-4" data-lucide="check"></i> 快速响应</span>
+            <span class="inline-flex items-center gap-1.5"><i class="w-4 h-4" data-lucide="check"></i> 不满意可重拍</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+     SECTION: contact
+     ============================================================ -->
+  <section class="py-20 md:py-28 lg:py-32 bg-[#f3f0eb] dark:bg-[#1a1816]" id="contact">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-12 lg:gap-20">
+        <div class="animate-on-scroll delay-100">
+          <span class="text-sm font-semibold text-[#b45309] dark:text-[#f59e0b] uppercase tracking-wider">联系我们</span>
+          <h2
+            class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1816] dark:text-[#f5f2ed] tracking-tight font-display">
+            让我们聊聊你的拍摄想法</h2>
+          <p class="mt-4 text-base md:text-lg text-[#4a4540] dark:text-[#c4bdb1]">
+            无论是产品拍摄、人像写真还是品牌合作，我们的团队都会在 1 个工作日内回复你。
+          </p>
+          <div class="mt-8 md:mt-10 space-y-5">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]">
+                <i class="w-5 h-5" data-lucide="mail"></i>
+              </div>
+              <div>
+                <div class="font-medium text-[#1a1816] dark:text-[#f5f2ed]">邮箱</div>
+                <div class="text-[#4a4540] dark:text-[#c4bdb1] text-sm">hello@aperture.studio</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]">
+                <i class="w-5 h-5" data-lucide="phone"></i>
+              </div>
+              <div>
+                <div class="font-medium text-[#1a1816] dark:text-[#f5f2ed]">电话</div>
+                <div class="text-[#4a4540] dark:text-[#c4bdb1] text-sm">400-666-8888（工作日 10:00-19:00）</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#fef3c7] text-[#b45309] dark:bg-[#78350f33] dark:text-[#f59e0b]">
+                <i class="w-5 h-5" data-lucide="map-pin"></i>
+              </div>
+              <div>
+                <div class="font-medium text-[#1a1816] dark:text-[#f5f2ed]">地址</div>
+                <div class="text-[#4a4540] dark:text-[#c4bdb1] text-sm">上海市静安区 M50 创意园 7 号楼</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form
+          class="p-6 md:p-8 rounded-2xl border border-[#ddd8cf] dark:border-[#2d2a26] bg-white dark:bg-[#211f1c] shadow-sm space-y-5 w-full max-w-2xl md:max-w-none md:ml-auto animate-on-scroll delay-200">
+          <div class="grid sm:grid-cols-2 gap-5 animate-on-scroll">
+            <div>
+              <label class="block text-sm font-medium mb-1.5 text-[#1a1816] dark:text-[#f5f2ed]"
+                for="contact-name">姓名</label>
+              <input
+                class="w-full px-4 py-2.5 rounded-lg border border-[#c4bdb1] dark:border-[#4a4540] bg-[#faf9f7] dark:bg-[#12100e] text-[#1a1816] dark:text-[#f5f2ed] outline-none transition focus:ring-2 focus:ring-[#b45309] dark:focus:ring-[#f59e0b]"
+                id="contact-name" placeholder="你的名字" required="" type="text" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1.5 text-[#1a1816] dark:text-[#f5f2ed]"
+                for="contact-company">品牌/公司</label>
+              <input
+                class="w-full px-4 py-2.5 rounded-lg border border-[#c4bdb1] dark:border-[#4a4540] bg-[#faf9f7] dark:bg-[#12100e] text-[#1a1816] dark:text-[#f5f2ed] outline-none transition focus:ring-2 focus:ring-[#b45309] dark:focus:ring-[#f59e0b]"
+                id="contact-company" placeholder="品牌或公司名称" type="text" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1.5 text-[#1a1816] dark:text-[#f5f2ed]"
+              for="contact-email">邮箱</label>
+            <input
+              class="w-full px-4 py-2.5 rounded-lg border border-[#c4bdb1] dark:border-[#4a4540] bg-[#faf9f7] dark:bg-[#12100e] text-[#1a1816] dark:text-[#f5f2ed] outline-none transition focus:ring-2 focus:ring-[#b45309] dark:focus:ring-[#f59e0b]"
+              id="contact-email" placeholder="you@company.com" required="" type="email" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1.5 text-[#1a1816] dark:text-[#f5f2ed]"
+              for="contact-type">拍摄类型</label>
+            <select
+              class="w-full px-4 py-2.5 rounded-lg border border-[#c4bdb1] dark:border-[#4a4540] bg-[#faf9f7] dark:bg-[#12100e] text-[#1a1816] dark:text-[#f5f2ed] outline-none transition focus:ring-2 focus:ring-[#b45309] dark:focus:ring-[#f59e0b]"
+              id="contact-type">
+              <option>商业摄影</option>
+              <option>人像写真</option>
+              <option>视频制作</option>
+              <option>后期修图</option>
+              <option>其他合作</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1.5 text-[#1a1816] dark:text-[#f5f2ed]"
+              for="contact-message">留言</label>
+            <textarea
+              class="w-full px-4 py-2.5 rounded-lg border border-[#c4bdb1] dark:border-[#4a4540] bg-[#faf9f7] dark:bg-[#12100e] text-[#1a1816] dark:text-[#f5f2ed] outline-none transition focus:ring-2 focus:ring-[#b45309] dark:focus:ring-[#f59e0b]"
+              id="contact-message" placeholder="简单描述你的拍摄需求、期望风格、预算范围..." rows="4"></textarea>
+          </div>
+          <button
+            class="w-full px-6 py-3 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold hover:opacity-90 transition inline-flex items-center justify-center gap-2"
+            type="submit">
+            提交咨询 <i class="w-4 h-4" data-lucide="send"></i>
+          </button>
+          <p class="text-xs text-[#6b655d] dark:text-[#8a8378] text-center">提交即表示你同意我们的隐私政策</p>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- ============================================================
+     SECTION: footer
+     ============================================================ -->
+  <footer class="bg-gray-900 dark:bg-black text-gray-400">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-10">
+        <div class="col-span-2 sm:col-span-3 lg:col-span-2 animate-on-scroll delay-100">
+          <a class="flex items-center gap-2 font-bold text-lg text-white font-display" href="#">
+            <span
+              class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white">
+              <i class="w-4 h-4" data-lucide="aperture"></i>
+            </span>
+            Aperture
+          </a>
+          <p class="mt-4 text-sm leading-relaxed max-w-xs">
+            用光影捕捉情绪，让每一帧都成为永恒。
+          </p>
+          <div class="mt-6 flex gap-3">
+            <a aria-label="Instagram"
+              class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition"
+              href="#">
+              <i class="w-4 h-4" data-lucide="instagram"></i>
+            </a>
+            <a aria-label="微博"
+              class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition"
+              href="#">
+              <i class="w-4 h-4" data-lucide="message-circle"></i>
+            </a>
+            <a aria-label="小红书"
+              class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition"
+              href="#">
+              <i class="w-4 h-4" data-lucide="bookmark"></i>
+            </a>
+            <a aria-label="视频号"
+              class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition"
+              href="#">
+              <i class="w-4 h-4" data-lucide="play"></i>
+            </a>
+          </div>
+        </div>
+        <div class="animate-on-scroll delay-200">
+          <h4 class="text-white font-medium text-sm mb-4">服务</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a class="hover:text-white transition" href="#">商业摄影</a></li>
+            <li><a class="hover:text-white transition" href="#">人像写真</a></li>
+            <li><a class="hover:text-white transition" href="#">视频制作</a></li>
+            <li><a class="hover:text-white transition" href="#">后期修图</a></li>
+          </ul>
+        </div>
+        <div class="animate-on-scroll delay-300">
+          <h4 class="text-white font-medium text-sm mb-4">拍摄领域</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a class="hover:text-white transition" href="#">时尚美妆</a></li>
+            <li><a class="hover:text-white transition" href="#">美食餐饮</a></li>
+            <li><a class="hover:text-white transition" href="#">建筑空间</a></li>
+            <li><a class="hover:text-white transition" href="#">电商产品</a></li>
+          </ul>
+        </div>
+        <div class="animate-on-scroll delay-400">
+          <h4 class="text-white font-medium text-sm mb-4">关于</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a class="hover:text-white transition" href="#">工作室</a></li>
+            <li><a class="hover:text-white transition" href="#">团队</a></li>
+            <li><a class="hover:text-white transition" href="#">新闻</a></li>
+            <li><a class="hover:text-white transition" href="#">联系方式</a></li>
+          </ul>
+        </div>
+        <div class="animate-on-scroll delay-500">
+          <h4 class="text-white font-medium text-sm mb-4">法律</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a class="hover:text-white transition" href="#">隐私政策</a></li>
+            <li><a class="hover:text-white transition" href="#">服务条款</a></li>
+            <li><a class="hover:text-white transition" href="#">版权说明</a></li>
+            <li><a class="hover:text-white transition" href="#">安全</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/5">
+      <div
+        class="max-w-7xl mx-auto px-4 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <div>© 2025 Aperture Studio. 保留所有权利。</div>
+        <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+          <span>沪ICP备2025000002号</span>
+          <span>沪公网安备 31010602000002号</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ============================================================
+     FLOATING: 返回顶部
+     ============================================================ -->
+  <button aria-label="返回顶部"
+    class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-40 w-11 h-11 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-2xl hover:opacity-90 transition flex items-center justify-center opacity-0 pointer-events-none"
+    id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="w-5 h-5 stroke-[2.5]" data-lucide="arrow-up"></i>
+  </button>
+  <script>
+    lucide.createIcons();
+
+    /* ===== 主题切换 ===== */
+    (function () {
+      const btn = document.getElementById('theme-toggle');
+      const lightIcon = document.getElementById('theme-toggle-light-icon');
+      const darkIcon = document.getElementById('theme-toggle-dark-icon');
+
+      function applyTheme(theme) {
+        const isDark = theme === 'dark';
+        document.documentElement.classList.toggle('dark', isDark);
+        lightIcon.classList.toggle('hidden', isDark);
+        darkIcon.classList.toggle('hidden', !isDark);
+        btn.setAttribute('aria-label', isDark ? '切换到浅色模式' : '切换到深色模式');
+        btn.setAttribute('aria-pressed', String(isDark));
+        try { localStorage.setItem('theme', theme); } catch (e) { }
+      }
+
+      const stored = (() => { try { return localStorage.getItem('theme'); } catch (e) { return null; } })();
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(stored || (prefersDark ? 'dark' : 'light'));
+
+      btn.addEventListener('click', () => {
+        applyTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark');
+      });
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) applyTheme(e.matches ? 'dark' : 'light');
+      });
+    })();
+
+    /* ===== 移动端菜单 ===== */
+    (function () {
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+
+      menu.classList.remove('open');
+
+      function close() {
+        menu.classList.remove('open');
+        menu.style.transform = 'translateY(-8px)';
+        menu.style.opacity = '0';
+        menu.style.pointerEvents = 'none';
+        menu.style.maxHeight = '0';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', '打开菜单');
+      }
+      function toggle() {
+        const willOpen = !menu.classList.contains('open');
+        menu.classList.toggle('open', willOpen);
+        if (willOpen) {
+          menu.style.transform = 'translateY(0)';
+          menu.style.opacity = '1';
+          menu.style.pointerEvents = 'auto';
+          menu.style.maxHeight = '500px';
+        } else {
+          close();
+        }
+        btn.setAttribute('aria-expanded', String(willOpen));
+        btn.setAttribute('aria-label', willOpen ? '关闭菜单' : '打开菜单');
+      }
+      btn.addEventListener('click', toggle);
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+      window.addEventListener('resize', () => { if (window.innerWidth >= 768) close(); });
+    })();
+
+    /* ===== 返回顶部按钮 ===== */
+    (function () {
+      const btn = document.getElementById('back-to-top');
+      if (!btn) return;
+      const onScroll = () => {
+        const show = window.scrollY > 400;
+        btn.classList.toggle('opacity-0', !show);
+        btn.classList.toggle('pointer-events-none', !show);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+  <script>
+    /* ===== 滚动触发动画 ===== */
+    const observerOptions = { root: null, rootMargin: "0px", threshold: 0.1 };
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".animate-on-scroll").forEach(function (el) {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+
+</html>

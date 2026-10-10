@@ -1,0 +1,258 @@
+[
+  {
+    "id": "retro-film-preset",
+    "title": "复古胶片 LR 预设包（全能典藏版）",
+    "description": "30 款精心调校的 Lightroom 预设，一键还原柯达 Portra、富士 Pro400H 经典胶片色调与有机颗粒。",
+    "price": 199,
+    "tag": "畅销榜首",
+    "category": "presets",
+    "categoryLabel": "调色预设",
+    "coverImage": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop",
+    "features": [
+      "支持 Lightroom Classic、CC 及手机端 DNG 格式",
+      "附赠 5 组黑白纪实高对比银盐胶片颗粒 LUT",
+      "包含 45 分钟后期调色实战视频解析",
+      "终身免费升级与调色交流社群权益"
+    ]
+  },
+  {
+    "id": "aperture-camera-bag",
+    "title": "Aperture 联名复古摄影单肩包",
+    "description": "军工级防水涂层帆布与头层植鞣牛皮拼接，可轻松容纳一机三镜及 14 英寸笔记本电脑，日常通勤亦显优雅。",
+    "price": 899,
+    "tag": "手工精制",
+    "category": "gear",
+    "categoryLabel": "摄影配件",
+    "coverImage": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=600&fit=crop",
+    "features": [
+      "高密度防撕裂防泼水涂层重磅帆布",
+      "YKK 防水密封拉链与黄铜复古五金配件",
+      "可拆卸高回弹魔术贴防震厚内胆",
+      "隐形护照与电池专用防盗快取插袋"
+    ]
+  },
+  {
+    "id": "between-light-shadow-book",
+    "title": "《光影之间》十年典藏精装摄影集",
+    "description": "Aperture 创立十年精选代表作画册，收录 200 余幅殿堂级大片，德国海德堡六色特种纸高精全彩印刷。",
+    "price": 299,
+    "tag": "限量编号",
+    "category": "book",
+    "categoryLabel": "摄影画册",
+    "coverImage": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&h=600&fit=crop",
+    "features": [
+      "大 16 开进口布面手工烫金锁线装订",
+      "日本富士特种艺术超感纸全彩打样",
+      "附赠主理人手写签名收藏证书与编号藏书票",
+      "特约艺术评论家万字学术序言专论"
+    ]
+  },
+  {
+    "id": "master-macro-light",
+    "title": "专业微距环形双色温补光灯",
+    "description": "Ra 98 高显色指数，2500K - 8500K 无极色温微调，专为商业静物、珠宝首饰与微距特写打造。",
+    "price": 459,
+    "tag": "摄影师推荐",
+    "category": "gear",
+    "categoryLabel": "摄影配件",
+    "coverImage": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&h=600&fit=crop",
+    "features": [
+      "Ra 98 电影级精准还原晶片",
+      "内置 4000mAh 大容量锂电池支持 Type-C 快充",
+      "支持磁吸滤镜与全向冷靴热靴扩展",
+      "无频闪无波纹数字恒流调光电路"
+    ]
+  },
+  {
+    "id": "cinematic-lut-pack",
+    "title": "电影级 4K 视频调色 LUTs 预设包",
+    "description": "24 款专为 Sony S-Log3、Canon C-Log 及 Apple Log 调校的专业电影调色方块，一键赋予画面好莱坞质感。",
+    "price": 259,
+    "tag": "数字资产",
+    "category": "presets",
+    "categoryLabel": "调色预设",
+    "coverImage": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop",
+    "features": [
+      "兼容 Final Cut Pro、Premiere 与 DaVinci Resolve",
+      "包含 .cube 33x 与 65x 高精度三维色彩网格",
+      "还原自然胶片肤色高光缓冲曲线",
+      "附带 Log 转 Rec.709 标准矫正 LUT"
+    ]
+  },
+  {
+    "id": "carbon-fiber-tripod",
+    "title": "超轻碳纤维便携旅行三脚架",
+    "description": "仅重 1.1kg，折叠后全长仅 34cm，承重高达 12kg，风景旅拍与风光长时间曝光的坚固拍档。",
+    "price": 1199,
+    "tag": "户外旗舰",
+    "category": "gear",
+    "categoryLabel": "摄影配件",
+    "coverImage": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop",
+    "features": [
+      "日本东丽 10 层菱形编织碳纤维管",
+      "低重心双凹槽精密数控阻尼球形云台",
+      "中轴倒置支持贴地微距低角度仰拍",
+      "快拆阿卡（Arca-Swiss）标准快装板"
+    ]
+  },
+  {
+    "id": "monochrome-noir-preset",
+    "title": "黑白暗房银盐颗粒 LR 预设",
+    "description": "专注于反差灰阶与电影暗调氛围，模拟传统暗房柯达 Tri-X 与伊尔福 HP5 胶卷粗颗粒。",
+    "price": 159,
+    "tag": "大师黑白",
+    "category": "presets",
+    "categoryLabel": "调色预设",
+    "coverImage": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&h=600&fit=crop",
+    "features": [
+      "18 款黑白阶调高精预设",
+      "自定义可微调颗粒强度模块",
+      "保留高光与暗部细腻呼吸感",
+      "适合纪实、建筑与情绪人像"
+    ]
+  },
+  {
+    "id": "leather-camera-strap",
+    "title": "意大利植鞣牛皮手工减压肩带",
+    "description": "进口托斯卡纳植鞣牛皮纯手工切削封边，随使用时间呈现温润琥珀色包浆，配防磨皮垫与黄铜快拆扣。",
+    "price": 269,
+    "tag": "头层皮料",
+    "category": "gear",
+    "categoryLabel": "摄影配件",
+    "coverImage": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&h=600&fit=crop",
+    "features": [
+      "天然植物鞣制无重金属染色",
+      "宽边加厚减压肩垫有效分散机身自重",
+      "赠送机身防刮擦圆形保护真皮垫片",
+      "承重测试超过 25kg 安全坚固"
+    ]
+  },
+  {
+    "id": "lens-cleaning-master-kit",
+    "title": "光学无尘纳米镀膜镜头清洁套装",
+    "description": "气吹、碳头镜头笔、无尘超细纤维擦镜布与无水环保挥发清洁液，呵护昂贵蔡司与徕卡镀膜。",
+    "price": 129,
+    "tag": "专业养护",
+    "category": "gear",
+    "categoryLabel": "摄影配件",
+    "coverImage": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&h=600&fit=crop",
+    "features": [
+      "食品级硅胶单向止逆阀防吸尘气吹",
+      "活性碳粉纳米软头快速瓦解指纹油污",
+      "真空独立包装超细纤维抛光布",
+      "防静电抗灰尘吸附保护配方"
+    ]
+  },
+  {
+    "id": "golden-hour-landscape-preset",
+    "title": "金色暮光风光暖调预设包",
+    "description": "专为日落、日出以及大光比逆光场景优化，精准分离天空冷调与地面暖阳，呈现如油画般的壮阔层次。",
+    "price": 189,
+    "tag": "风光必备",
+    "category": "presets",
+    "categoryLabel": "调色预设",
+    "coverImage": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop",
+    "features": [
+      "20 款风光暮色动态范围映射曲线",
+      "独家天空渐变色调分离色彩模块",
+      "RAW 格式超宽动态智能平衡",
+      "包含无人机航拍专用高对比参数"
+    ]
+  },
+  {
+    "id": "tokyo-street-stories-book",
+    "title": "《东京浮生》街头纪实黑白影集",
+    "description": "摄影师张明历时三年在新宿、涩谷、浅草街头抓拍的 120 幅经典瞬间，日本写真协会年度推荐画册。",
+    "price": 239,
+    "tag": "精装特辑",
+    "category": "book",
+    "categoryLabel": "摄影画册",
+    "coverImage": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&h=600&fit=crop",
+    "features": [
+      "240x300mm 典雅开本硬壳锁线精装",
+      "日本白石特种双色黑白油墨高精网点印刷",
+      "附赠限量黑白明信片一套六张",
+      "作者亲笔中日双语创作心境注解"
+    ]
+  },
+  {
+    "id": "magnetic-cpl-filter",
+    "title": "超薄磁吸纳米镀膜偏振 CPL 滤镜",
+    "description": "航天铝合金边框，德国肖特光学玻璃，一秒快拆磁吸安装，消除水面反光与玻璃眩光，还原天空深邃纯蓝。",
+    "price": 389,
+    "tag": "高清透光",
+    "category": "gear",
+    "categoryLabel": "摄影配件",
+    "coverImage": "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&h=600&fit=crop",
+    "features": [
+      "磁吸转接环一贴即合告别卡齿滑丝",
+      "双面 18 层低反射防水防油纳米涂层",
+      "偏振消除率高达 99.8% 且无暗角",
+      "超薄 3.2mm 框架完美兼容超广角"
+    ]
+  },
+  {
+    "id": "editorial-portrait-preset",
+    "title": "时尚商业大刊人像精修预设",
+    "description": "针对欧美白皙肤色与亚洲暖黄皮定制的色彩基底，精准校准泛红与暗沉，赋予人物高级奶油肌质感。",
+    "price": 219,
+    "tag": "人像热卖",
+    "category": "presets",
+    "categoryLabel": "调色预设",
+    "coverImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=600&fit=crop",
+    "features": [
+      "包含 15 款室内影棚与 10 款户外自然光人像预设",
+      "智能保留发丝微反差与瞳孔高光反射",
+      "一键调整色调色温滑块无需复杂遮罩",
+      "提供原图修图对照 DNG 教学范本"
+    ]
+  },
+  {
+    "id": "shanghai-neon-nights-book",
+    "title": "《霓虹夜行》魔都赛博光影画册",
+    "description": "穿梭在上海繁华弄堂与陆家嘴云霄之间的赛博朋克长卷，记录冷暖光影交织下的城市生命力。",
+    "price": 269,
+    "tag": "全彩特种纸",
+    "category": "book",
+    "categoryLabel": "摄影画册",
+    "coverImage": "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800&h=600&fit=crop",
+    "features": [
+      "跨页平摊 180 度裸背装订设计",
+      "局部荧光 UV 工艺增强夜景霓虹质感",
+      "附赠夜景慢门参数拍摄全案拆解手册",
+      "限量收藏木质收纳盒包装"
+    ]
+  },
+  {
+    "id": "quick-release-backpack-clip",
+    "title": "极速快拆全金属双保险背包夹",
+    "description": "数控航空铝 CNC 精雕，夹持在双肩包背带上即可稳固悬挂重型微单相机，登山徒步徒手快取一秒合焦。",
+    "price": 199,
+    "tag": "户外便携",
+    "category": "gear",
+    "categoryLabel": "摄影配件",
+    "coverImage": "https://images.unsplash.com/photo-1510127031490-45144cb561ea?w=800&h=600&fit=crop",
+    "features": [
+      "双重防误触物理机械自锁旋钮",
+      "兼容所有阿卡标准云台与三脚架快装底座",
+      "硅胶防滑抗拉垫片杜绝肩带磨损滑移",
+      "经受 50kg 极限静态悬挂拉力测试"
+    ]
+  },
+  {
+    "id": "analog-nature-lut-pack",
+    "title": "森林与原野自然绿调视频 LUTs",
+    "description": "专治视频调色绿叶“塑料感”！压低荧光黄绿，赋予森林自然胶片青翠、松针墨绿与大地泥土呼吸感。",
+    "price": 179,
+    "tag": "小清新",
+    "category": "presets",
+    "categoryLabel": "调色预设",
+    "coverImage": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&fit=crop",
+    "features": [
+      "16 款针对植被与山野高饱和度压制调色方块",
+      "完美兼容各大无人机 D-Log 与相机 Log",
+      "不损失肤色自然纯度的高光过渡保护",
+      "附带达芬奇节点树调色工程演示文件"
+    ]
+  }
+]

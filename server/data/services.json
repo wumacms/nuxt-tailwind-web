@@ -1,0 +1,75 @@
+[
+  {
+    "id": "commercial",
+    "title": "商业静物与产品",
+    "description": "顶级控光与中画幅超清细节，赋予商业产品高贵质感与强劲购买欲望。",
+    "icon": "camera",
+    "highlights": [
+      "哈苏 1 亿像素联机拍摄",
+      "全封闭无反光专业微距棚",
+      "高精度色彩管理标准"
+    ],
+    "coverImage": "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&h=500&fit=crop"
+  },
+  {
+    "id": "portrait",
+    "title": "高级人像与写真",
+    "description": "褪去工业化假面，用情绪引导与雕塑感光影，捕捉灵魂深处的瞬间。",
+    "icon": "user",
+    "highlights": [
+      "一对一私密定制创作",
+      "布朗经典柔光伞与反光板组合",
+      "出版级非破坏性皮肤纹理精修"
+    ],
+    "coverImage": "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&h=500&fit=crop"
+  },
+  {
+    "id": "fashion",
+    "title": "时尚大片与画册",
+    "description": "为独立设计师品牌与一线时尚杂志构筑前卫视觉语言。",
+    "icon": "shopping-bag",
+    "tag": "热门业务",
+    "highlights": [
+      "欧美艺术刊物风格企划",
+      "资深妆造与美术置景团队",
+      "多重色调 LUT 定制"
+    ],
+    "coverImage": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&h=500&fit=crop"
+  },
+  {
+    "id": "food",
+    "title": "美食餐饮与空间",
+    "description": "捕捉刚出炉的微烟与酱汁光泽，让诱人香气跨越屏幕与纸张。",
+    "icon": "utensils",
+    "highlights": [
+      "高速闪光凝结动态水滴",
+      "暗调复古与法式明亮双风格",
+      "米其林级菜单视觉策划"
+    ],
+    "coverImage": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=500&fit=crop"
+  },
+  {
+    "id": "architecture",
+    "title": "建筑空间与环境",
+    "description": "大画幅移轴透视校正，记录晨昏交替间的结构之美与呼吸感。",
+    "icon": "building-2",
+    "highlights": [
+      "移轴镜头精密水平校准",
+      "昼夜包围曝光融合",
+      "4K 高清低空航拍视角"
+    ],
+    "coverImage": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=500&fit=crop"
+  },
+  {
+    "id": "video",
+    "title": "动态影像与广告",
+    "description": "电影级色调与细腻视听叙事，让品牌价值更加立体可感。",
+    "icon": "film",
+    "highlights": [
+      "RED / ARRI 电影机工作流",
+      "专业现场收音与原创配乐",
+      "短视频与横屏双规格分发"
+    ],
+    "coverImage": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop"
+  }
+]
