@@ -84,10 +84,35 @@ https://wumacms.github.io/nuxt-tailwind-web/
 
 ---
 
-## 五、常见问题与注意事项
+## 五、静态物理路由与分页预渲染架构（方案 2 实施）
+
+为了彻底解决纯静态托管环境下 Query 参数（如 `?page=2`）无法由后端处理导致的 404 错误，本项目将分类与分页改造成了**独立的物理静态路由体系**：
+
+### 1. 物理路径映射规范
+- **课程列表**：
+  - 默认第 1 页：`/courses`
+  - 静态第 2 页：`/courses/page/2`
+  - 分类第 1 页：`/courses/category/beginner`
+  - 分类第 2 页：`/courses/category/beginner/page/2`
+- **商品列表**：`/products`、`/products/page/2`、`/products/category/presets` 等
+- **新闻列表**：`/news`、`/news/page/2`、`/news/category/exhibition` 等
+
+### 2. 关键工程落地
+1. **静态超链接组件**：
+   - [`AppPagination.vue`](file:///Users/devlink/code/github/wumacms/nuxt-tailwind-web/app/components/ui/AppPagination.vue) 支持 `getPageUrl`，生成真实 `<NuxtLink>` 标签，便于搜索引擎与 Nuxt 爬虫静态索引。
+   - [`AppTabs.vue`](file:///Users/devlink/code/github/wumacms/nuxt-tailwind-web/app/components/ui/AppTabs.vue) 支持 `to` 属性，分类切换直接对应静态物理路由。
+2. **构建期全量路由计算**：
+   - 在 [`nuxt.config.ts`](file:///Users/devlink/code/github/wumacms/nuxt-tailwind-web/nuxt.config.ts) 中通过 `getStaticPrerenderRoutes()` 动态遍历计算所有分类和页码组合（130+ 条独立物理路由），自动注入 `nitro.prerender.routes`。
+   - 构建生成对应的 `index.html` 与 `_payload.json`，在 GitHub Pages 上无需运行后端服务即可原生支持任意页面刷新与访问。
+3. **双重降级保障**：
+   - [`app/composables/useApi.ts`](file:///Users/devlink/code/github/wumacms/nuxt-tailwind-web/app/composables/useApi.ts) 内置客户端回退数据计算，即使存在动态交互或参数变更，也不会向不存在的后端报错。
+
+---
+
+## 六、常见问题与注意事项
 
 | 问题场景 | 原因 | 解决方案 |
 | :--- | :--- | :--- |
 | 页面样式丢失，控制台大量 `_nuxt/*.css` 或 `*.js` 404 | GitHub Pages 默认 Jekyll 忽略了 `_nuxt` 目录 | 确认构建产物根目录下包含 `.nojekyll` 文件（工作流已内置自动生成） |
 | 绑定了自定义域名后页面资源 404 | 仓库名称子路径与根域名冲突 | 在仓库 **Settings -> Secrets and variables -> Actions -> Variables** 中添加 `NUXT_APP_BASE_URL`，值设置为 `/` |
-| 动态刷新子路由 404 | 静态托管单页应用刷新 | Nuxt generate 已默认生成对应路由目录下的 `index.html` 以及根目录 `404.html` 作为 SPA 回退 |
+| 动态刷新子路由 404 | 静态托管单页应用刷新 | Nuxt generate 已为所有分类、页码、详情页生成独立的 `index.html`，同时生成根目录 `404.html` 作为 SPA 回退 |

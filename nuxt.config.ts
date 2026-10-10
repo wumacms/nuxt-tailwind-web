@@ -1,7 +1,83 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
 
-import { fileURLToPath } from "node:url";
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+// 计算所有分页与分类的独立物理静态路由
+function getStaticPrerenderRoutes(): string[] {
+  const routes: string[] = ['/api/site-data', '/courses', '/products', '/news']
+
+  try {
+    // 1. Courses
+    const coursesPath = path.resolve('./server/data/courses.json')
+    if (fs.existsSync(coursesPath)) {
+      const courses = JSON.parse(fs.readFileSync(coursesPath, 'utf-8'))
+      const pageSize = 6
+      const totalPages = Math.ceil(courses.length / pageSize) || 1
+      for (let p = 2; p <= totalPages; p++) {
+        routes.push(`/courses/page/${p}`)
+      }
+
+      const categories = ['beginner', 'intermediate', 'advanced']
+      for (const cat of categories) {
+        const filtered = courses.filter((c: any) => c.level === cat)
+        routes.push(`/courses/category/${cat}`)
+        const catPages = Math.ceil(filtered.length / pageSize) || 1
+        for (let p = 2; p <= catPages; p++) {
+          routes.push(`/courses/category/${cat}/page/${p}`)
+        }
+      }
+    }
+
+    // 2. Products
+    const productsPath = path.resolve('./server/data/products.json')
+    if (fs.existsSync(productsPath)) {
+      const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'))
+      const pageSize = 8
+      const totalPages = Math.ceil(products.length / pageSize) || 1
+      for (let p = 2; p <= totalPages; p++) {
+        routes.push(`/products/page/${p}`)
+      }
+
+      const categories = ['presets', 'gear', 'book']
+      for (const cat of categories) {
+        const filtered = products.filter((p: any) => p.category === cat)
+        routes.push(`/products/category/${cat}`)
+        const catPages = Math.ceil(filtered.length / pageSize) || 1
+        for (let p = 2; p <= catPages; p++) {
+          routes.push(`/products/category/${cat}/page/${p}`)
+        }
+      }
+    }
+
+    // 3. Articles (News)
+    const articlesPath = path.resolve('./server/data/articles.json')
+    if (fs.existsSync(articlesPath)) {
+      const articles = JSON.parse(fs.readFileSync(articlesPath, 'utf-8'))
+      const pageSize = 4
+      const totalPages = Math.ceil(articles.length / pageSize) || 1
+      for (let p = 2; p <= totalPages; p++) {
+        routes.push(`/news/page/${p}`)
+      }
+
+      const categories = ['exhibition', 'industry', 'behind']
+      for (const cat of categories) {
+        const filtered = articles.filter((a: any) => a.category === cat)
+        routes.push(`/news/category/${cat}`)
+        const catPages = Math.ceil(filtered.length / pageSize) || 1
+        for (let p = 2; p <= catPages; p++) {
+          routes.push(`/news/category/${cat}/page/${p}`)
+        }
+      }
+    }
+  } catch (err) {
+    console.warn('Failed to calculate static prerender routes:', err)
+  }
+
+  return routes
+}
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -47,7 +123,8 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ['/api/site-data'],
+      crawlLinks: true,
+      routes: getStaticPrerenderRoutes(),
     },
   },
 });
