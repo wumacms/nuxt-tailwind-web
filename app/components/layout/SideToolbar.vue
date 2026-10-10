@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
+const config = useRuntimeConfig()
+const qrcodeUrl = computed(() => `${config.app.baseURL.replace(/\/$/, '')}/qrcode.png`)
 const colorMode = useColorMode()
 const { currentTheme, setTheme, themes } = useTheme()
 const isScrolled = ref(false)
@@ -77,7 +79,7 @@ onUnmounted(() => {
       <div
         class="absolute right-full mr-3.5 top-1/2 -translate-y-1/2 hidden group-hover:flex flex-col items-center p-3.5 bg-card text-main rounded-2xl shadow-2xl border border-line w-44 pointer-events-auto transition-all before:content-[''] before:absolute before:-right-4 before:top-0 before:bottom-0 before:w-5">
         <div class="w-36 h-36 bg-subtle/40 p-1.5 rounded-xl border border-line flex items-center justify-center">
-          <img src="/qrcode.png" alt="Aperture 官方微信公众号二维码" class="w-full h-full object-contain" loading="lazy" />
+          <img :src="qrcodeUrl" alt="Aperture 官方微信公众号二维码" class="w-full h-full object-contain" loading="lazy" />
         </div>
         <div class="mt-2.5 text-center">
           <div class="text-xs font-semibold text-main">关注 Aperture</div>

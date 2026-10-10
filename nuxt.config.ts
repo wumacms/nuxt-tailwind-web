@@ -29,6 +29,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   app: {
+    baseURL: process.env.NUXT_APP_BASE_URL || '/',
     head: {
       title: "Aperture — 摄影艺术与视觉叙事",
       meta: [
@@ -40,8 +41,13 @@ export default defineNuxtConfig({
         },
       ],
       link: [
-        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        { rel: "icon", type: "image/x-icon", href: `${(process.env.NUXT_APP_BASE_URL || '/').replace(/\/$/, '')}/favicon.ico` },
       ],
+    },
+  },
+  nitro: {
+    prerender: {
+      routes: ['/api/site-data'],
     },
   },
 });

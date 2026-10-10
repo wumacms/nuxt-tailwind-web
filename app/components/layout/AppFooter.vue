@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
+const qrcodeUrl = computed(() => `${config.app.baseURL.replace(/\/$/, '')}/qrcode.png`)
 const { brandInfo } = useSiteData()
 
 const primaryLinks = [
@@ -119,7 +121,7 @@ const legalLinks = [
             <div
               class="inline-block p-2 bg-white rounded-xl shadow-lg border border-white/10 group transition-transform hover:scale-105 duration-300">
               <div class="w-28 h-28 relative flex items-center justify-center overflow-hidden rounded-lg">
-                <img src="/qrcode.png" alt="Aperture 官方微信公众号二维码" class="w-full h-full object-contain" loading="lazy" />
+                <img :src="qrcodeUrl" alt="Aperture 官方微信公众号二维码" class="w-full h-full object-contain" loading="lazy" />
               </div>
             </div>
             <p class="text-xs text-gray-400 leading-relaxed">
