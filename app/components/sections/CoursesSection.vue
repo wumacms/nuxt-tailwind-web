@@ -16,22 +16,22 @@ const displayedCourses = computed(() => (courses.value || []).slice(0, props.lim
 <template>
   <section class="py-20 md:py-28 lg:py-32 bg-canvas">
     <AppContainer>
-      <div class="flex flex-wrap items-end justify-between gap-6 mb-10 md:mb-12 animate-on-scroll">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-10 md:mb-12">
         <div class="max-w-xl">
-          <span class="text-sm font-semibold text-accent uppercase tracking-wider">
+          <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wider animate-on-scroll">
             摄影学院
           </span>
-          <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display">
+          <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display animate-on-scroll delay-50">
             提升你的摄影技艺
           </h2>
-          <p class="mt-3 text-muted text-base">
+          <p class="mt-3 text-muted text-base animate-on-scroll delay-100">
             由 Aperture 核心创作团队亲自授课，从入门启蒙到商业实战。
           </p>
         </div>
         <NuxtLink
           v-if="showViewAll"
           to="/courses"
-          class="text-accent font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
+          class="text-accent font-medium inline-flex items-center gap-1 hover:gap-2 transition-all animate-on-scroll delay-150"
         >
           查看全部课程 &rarr;
         </NuxtLink>

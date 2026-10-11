@@ -5,11 +5,11 @@ const { testimonials } = useSiteData()
 <template>
   <section class="py-20 md:py-28 lg:py-32 bg-surface">
     <AppContainer>
-      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16 animate-on-scroll">
-        <span class="text-sm font-semibold text-accent uppercase tracking-wider">
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+        <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wider animate-on-scroll">
           客户评价
         </span>
-        <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display">
+        <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display animate-on-scroll delay-50">
           真实的声音
         </h2>
       </div>

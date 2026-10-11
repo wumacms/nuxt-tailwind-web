@@ -1,27 +1,14 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { computed } from 'vue'
 
-const isVisible = ref(false)
-
-const handleScroll = () => {
-  if (typeof window !== 'undefined') {
-    isVisible.value = window.scrollY > 400
-  }
-}
+const { scrollY } = useScroll()
+const isVisible = computed(() => scrollY.value > 300)
 
 const scrollToTop = () => {
   if (typeof window !== 'undefined') {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 }
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll, { passive: true })
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
 </script>
 
 <template>

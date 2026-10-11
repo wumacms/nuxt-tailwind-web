@@ -12,14 +12,14 @@ const domainServices = computed(() =>
 <template>
   <section id="services" class="py-20 md:py-28 lg:py-32 bg-surface">
     <AppContainer>
-      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16 animate-on-scroll">
-        <span class="text-sm font-semibold text-accent uppercase tracking-wider">
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+        <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wider animate-on-scroll">
           拍摄领域
         </span>
-        <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display">
+        <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display animate-on-scroll delay-50">
           为不同行业定制视觉方案
         </h2>
-        <p class="mt-4 text-base md:text-lg text-muted">
+        <p class="mt-4 text-base md:text-lg text-muted animate-on-scroll delay-100">
           无论你身处哪个行业，我们都有成熟的灯光布景与镜头叙事经验。
         </p>
       </div>

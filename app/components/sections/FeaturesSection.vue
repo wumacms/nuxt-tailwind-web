@@ -13,15 +13,15 @@ const featureList = computed(() => [
 <template>
   <section id="features" class="py-20 md:py-28 lg:py-32 bg-canvas">
     <AppContainer>
-      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16 animate-on-scroll">
-        <span class="text-sm font-semibold text-accent uppercase tracking-wider">
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+        <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wider animate-on-scroll">
           核心服务
         </span>
         <h2
-          class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display">
+          class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display animate-on-scroll delay-50">
           我们为你捕捉每一个重要瞬间
         </h2>
-        <p class="mt-4 text-base md:text-lg text-muted">
+        <p class="mt-4 text-base md:text-lg text-muted animate-on-scroll delay-100">
           从商业广告到私人肖像，Aperture 提供一站式、高规格的视觉叙事解决方案。
         </p>
       </div>

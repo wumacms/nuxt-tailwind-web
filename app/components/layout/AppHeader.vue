@@ -5,7 +5,8 @@ const route = useRoute()
 const colorMode = useColorMode()
 const isMobileMenuOpen = ref(false)
 const showAnnouncement = ref(true)
-const isScrolled = ref(false)
+const { scrollY } = useScroll()
+const isScrolled = computed(() => scrollY.value > 15)
 
 const { articles } = useSiteData()
 const exhibitionArticleId = computed(() => {
@@ -17,21 +18,6 @@ const exhibitionArticleId = computed(() => {
 const toggleTheme = () => {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
-
-const handleScroll = () => {
-  if (typeof window !== 'undefined') {
-    isScrolled.value = window.scrollY > 15
-  }
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll, { passive: true })
-  handleScroll()
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
 
 const navItems = [
   { label: '首页', to: '/' },

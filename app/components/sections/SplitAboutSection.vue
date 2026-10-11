@@ -17,18 +17,18 @@
         </div>
 
         <!-- 为什么选择我们 说明 -->
-        <div class="space-y-6 order-2 animate-on-scroll delay-200">
-          <span class="text-sm font-semibold text-accent uppercase tracking-wider">
+        <div class="space-y-6 order-2">
+          <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wider animate-on-scroll">
             为什么选择我们
           </span>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-main leading-tight tracking-tight font-display">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-main leading-tight tracking-tight font-display animate-on-scroll delay-50">
             不只是拍照<br />更是视觉策略
           </h2>
-          <p class="text-base md:text-lg text-muted leading-relaxed">
+          <p class="text-base md:text-lg text-muted leading-relaxed animate-on-scroll delay-100">
             我们相信好的影像不只是好看，更要能传递品牌价值、打动人心、带来转化。从策略到执行，全程为你考虑。
           </p>
 
-          <ul class="space-y-5 pt-2">
+          <ul class="space-y-5 pt-2 animate-on-scroll delay-150">
             <li class="flex items-start gap-3.5">
               <span
                 class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-accent-soft text-accent-soft-text"

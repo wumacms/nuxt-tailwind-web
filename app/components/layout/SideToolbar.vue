@@ -5,7 +5,8 @@ const config = useRuntimeConfig()
 const qrcodeUrl = computed(() => `${config.app.baseURL.replace(/\/$/, '')}/qrcode.png`)
 const colorMode = useColorMode()
 const { currentTheme, setTheme, themes } = useTheme()
-const isScrolled = ref(false)
+const { scrollY } = useScroll()
+const isScrolled = computed(() => scrollY.value > 300)
 const isThemeMenuOpen = ref(false)
 const themeDropdownRef = ref<HTMLElement | null>(null)
 
@@ -34,20 +35,11 @@ const scrollToTop = () => {
   }
 }
 
-const handleScroll = () => {
-  if (typeof window !== 'undefined') {
-    isScrolled.value = window.scrollY > 250
-  }
-}
-
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll, { passive: true })
   window.addEventListener('click', handleClickOutside)
-  handleScroll()
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
   window.removeEventListener('click', handleClickOutside)
 })
 </script>

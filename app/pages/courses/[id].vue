@@ -37,15 +37,19 @@ const isEnrollModalOpen = ref(false)
     <!-- 头部横幅 -->
     <section class="border-b border-line bg-surface py-12 md:py-16">
       <AppContainer>
-        <AppBreadcrumb :items="breadcrumbs" />
+        <div class="animate-on-scroll">
+          <AppBreadcrumb :items="breadcrumbs" />
+        </div>
         <div class="max-w-3xl mt-4">
-          <AppBadge variant="accent" class="mb-3">
-            {{ currentCourse.levelLabel }}阶段课程
-          </AppBadge>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-main font-display">
+          <div class="animate-on-scroll delay-50">
+            <AppBadge variant="accent" class="mb-3">
+              {{ currentCourse.levelLabel }}阶段课程
+            </AppBadge>
+          </div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-main font-display animate-on-scroll delay-100">
             {{ currentCourse.title }}
           </h1>
-          <p class="text-base sm:text-lg text-muted mt-3 leading-relaxed">
+          <p class="text-base sm:text-lg text-muted mt-3 leading-relaxed animate-on-scroll delay-150">
             {{ currentCourse.description }}
           </p>
         </div>

@@ -61,7 +61,7 @@ const isPurchasedModalOpen = ref(false)
   <div>
     <!-- 面包屑导航与头部背景 -->
     <section class="border-b border-line bg-surface py-6 md:py-8">
-      <AppContainer>
+      <AppContainer class="animate-on-scroll">
         <AppBreadcrumb :items="breadcrumbs" />
       </AppContainer>
     </section>
@@ -71,7 +71,7 @@ const isPurchasedModalOpen = ref(false)
       <AppContainer>
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           <!-- 左侧：商品画廊 -->
-          <div class="lg:col-span-7 space-y-4">
+          <div class="lg:col-span-7 space-y-4 animate-on-scroll delay-50">
             <div class="relative rounded-3xl overflow-hidden border border-line bg-card shadow-lg group">
               <div class="aspect-[4/3] w-full overflow-hidden bg-subtle flex items-center justify-center">
                 <img
@@ -117,7 +117,7 @@ const isPurchasedModalOpen = ref(false)
           </div>
 
           <!-- 右侧：商品信息与购买面板 -->
-          <div class="lg:col-span-5 space-y-6">
+          <div class="lg:col-span-5 space-y-6 animate-on-scroll delay-100">
             <div class="bg-card p-6 sm:p-8 rounded-3xl border border-line shadow-md space-y-6">
               <div>
                 <div class="flex items-center justify-between gap-2 mb-2">
@@ -195,7 +195,7 @@ const isPurchasedModalOpen = ref(false)
     <!-- 相关推荐商品区域 -->
     <section v-if="relatedProducts.length > 0" class="py-16 md:py-24 bg-canvas border-t border-line">
       <AppContainer>
-        <div class="flex items-baseline justify-between mb-10">
+        <div class="flex items-baseline justify-between mb-10 animate-on-scroll">
           <div>
             <div class="text-xs font-bold text-accent uppercase tracking-widest mb-1">
               RECOMMENDED
@@ -211,10 +211,13 @@ const isPurchasedModalOpen = ref(false)
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <NuxtLink
-            v-for="rel in relatedProducts"
+            v-for="(rel, idx) in relatedProducts"
             :key="rel.id"
             :to="`/products/${rel.id}`"
-            class="group flex flex-col rounded-2xl border border-line bg-card overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            :class="[
+              'group flex flex-col rounded-2xl border border-line bg-card overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-on-scroll',
+              (idx % 4 === 0) ? 'delay-50' : (idx % 4 === 1) ? 'delay-100' : (idx % 4 === 2) ? 'delay-150' : 'delay-200'
+            ]"
           >
             <div class="relative aspect-[16/10] overflow-hidden bg-subtle">
               <img

@@ -77,7 +77,7 @@ const tabs = computed(() =>
     <section class="py-16 md:py-24 bg-canvas">
       <AppContainer>
         <!-- 分类筛选条件（静态超链接 Tab） -->
-        <div class="mb-10 flex flex-wrap items-center justify-between gap-4">
+        <div class="mb-10 flex flex-wrap items-center justify-between gap-4 animate-on-scroll">
           <AppTabs v-model="currentTab" :tabs="tabs" />
           <div class="text-xs text-caption">
             共找到 <span class="font-bold text-accent">{{ total }}</span> 篇专栏内容
@@ -92,9 +92,12 @@ const tabs = computed(() =>
         <!-- 网格列表（2列画报杂志风格） -->
         <div v-else class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           <article
-            v-for="item in articles"
+            v-for="(item, idx) in articles"
             :key="item.id"
-            class="group rounded-3xl border border-line bg-card overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+            :class="[
+              'group rounded-3xl border border-line bg-card overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between animate-on-scroll',
+              (idx % 2 === 0) ? 'delay-50' : 'delay-100'
+            ]"
           >
             <div>
               <NuxtLink :to="`/news/${item.id}`" class="block aspect-[16/9] overflow-hidden relative">

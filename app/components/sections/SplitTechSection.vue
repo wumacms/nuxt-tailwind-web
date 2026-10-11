@@ -3,18 +3,18 @@
     <AppContainer>
       <div class="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-center">
         <!-- 左侧文本与指标 -->
-        <div class="space-y-6 order-2 lg:order-1 animate-on-scroll delay-100">
-          <span class="text-sm font-semibold text-accent uppercase tracking-wider">
+        <div class="space-y-6 order-2 lg:order-1">
+          <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wider animate-on-scroll">
             后期与调色
           </span>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-main leading-tight tracking-tight font-display">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-main leading-tight tracking-tight font-display animate-on-scroll delay-50">
             从原片到成片<br />只差一次调色
           </h2>
-          <p class="text-base md:text-lg text-muted leading-relaxed">
+          <p class="text-base md:text-lg text-muted leading-relaxed animate-on-scroll delay-100">
             我们使用专业色彩管理与 AI 辅助修图工作流，确保每一张照片都达到出版级品质。风格统一、细节丰富、经得起无损放大。
           </p>
 
-          <div class="grid grid-cols-2 gap-4 pt-3">
+          <div class="grid grid-cols-2 gap-4 pt-3 animate-on-scroll delay-150">
             <div class="p-5 rounded-2xl border border-line bg-card">
               <div
                 class="w-10 h-10 rounded-xl flex items-center justify-center mb-3 bg-accent-soft text-accent-soft-text">

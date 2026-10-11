@@ -5,14 +5,14 @@ const { faqs } = useSiteData()
 <template>
   <section id="faq" class="py-20 md:py-28 lg:py-32 bg-surface">
     <div class="max-w-3xl mx-auto px-4 md:px-8">
-      <div class="text-center mb-10 md:mb-14 animate-on-scroll">
-        <span class="text-sm font-semibold text-accent uppercase tracking-wider">
+      <div class="text-center mb-10 md:mb-14">
+        <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wider animate-on-scroll">
           常见问题
         </span>
-        <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display">
+        <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display animate-on-scroll delay-50">
           你可能想知道
         </h2>
-        <p class="mt-4 text-base text-muted">
+        <p class="mt-4 text-base text-muted animate-on-scroll delay-100">
           关于拍摄流程、成片交付与异地差旅的常见解答。
         </p>
       </div>

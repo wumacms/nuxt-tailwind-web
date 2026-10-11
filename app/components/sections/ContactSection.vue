@@ -56,18 +56,18 @@ const handleSubmit = async () => {
     <AppContainer>
       <div class="grid md:grid-cols-2 gap-10 md:gap-12 lg:gap-20">
         <!-- 左侧联系信息 -->
-        <div class="animate-on-scroll delay-100">
-          <span class="text-sm font-semibold text-accent uppercase tracking-wider">
+        <div>
+          <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wider animate-on-scroll">
             联系我们
           </span>
-          <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display">
+          <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display animate-on-scroll delay-50">
             让我们聊聊你的拍摄想法
           </h2>
-          <p class="mt-4 text-base md:text-lg text-muted leading-relaxed">
+          <p class="mt-4 text-base md:text-lg text-muted leading-relaxed animate-on-scroll delay-100">
             无论是产品商业广告、私人肖像记录还是品牌长期合作，我们的顾问团队都将在 1 个工作日内给予细致回复。
           </p>
 
-          <div class="mt-8 md:mt-10 space-y-6">
+          <div class="mt-8 md:mt-10 space-y-6 animate-on-scroll delay-150">
             <div class="flex items-start gap-4">
               <div
                 class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 bg-accent-soft text-accent"

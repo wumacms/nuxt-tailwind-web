@@ -1,14 +1,14 @@
 <template>
   <section class="py-16 md:py-24 bg-canvas">
     <AppContainer>
-      <div class="max-w-3xl mx-auto text-center mb-10 md:mb-14 animate-on-scroll">
-        <span class="text-sm font-semibold text-accent uppercase tracking-wider">
+      <div class="max-w-3xl mx-auto text-center mb-10 md:mb-14">
+        <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wider animate-on-scroll">
           精选作品
         </span>
-        <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display">
+        <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display animate-on-scroll delay-50">
           每一帧，都是故事
         </h2>
-        <p class="mt-4 text-base md:text-lg text-muted">
+        <p class="mt-4 text-base md:text-lg text-muted animate-on-scroll delay-100">
           从人像到风景，从商业到纪实，我们持续用影像记录这个时代的体温与灵魂。
         </p>
       </div>

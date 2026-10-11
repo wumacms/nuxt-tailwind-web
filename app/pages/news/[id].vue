@@ -50,11 +50,13 @@ const paragraphs = computed(() => {
         <!-- 渐变暗层叠加确保文字清晰 -->
         <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/75 to-black/40"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-gray-950/80 via-transparent to-transparent"></div>
+        <!-- 柔和环境光晕：同首页 Hero 一致的艺术氛围呼吸光 -->
+        <div class="absolute -top-1/4 -right-10 w-[500px] h-[500px] rounded-full blur-3xl animate-pulse-glow [background:radial-gradient(circle,var(--color-accent)_0%,transparent_70%)] opacity-25"></div>
       </div>
 
       <AppContainer class="relative z-10 w-full">
         <!-- 面包屑 -->
-        <nav aria-label="Breadcrumb" class="mb-5">
+        <nav aria-label="Breadcrumb" class="mb-5 animate-on-scroll">
           <ol class="flex items-center space-x-2 text-xs md:text-sm text-gray-300">
             <li>
               <NuxtLink to="/" class="hover:text-accent transition-colors">首页</NuxtLink>
@@ -70,7 +72,7 @@ const paragraphs = computed(() => {
 
         <div class="max-w-4xl">
           <!-- 标签与元数据 -->
-          <div class="flex flex-wrap items-center gap-3 mb-4">
+          <div class="flex flex-wrap items-center gap-3 mb-4 animate-on-scroll delay-50">
             <span
               class="text-xs font-semibold px-3 py-1 rounded-full bg-accent text-on-accent uppercase tracking-wider">
               {{ currentArticle.categoryLabel }}
@@ -88,13 +90,13 @@ const paragraphs = computed(() => {
 
           <!-- 文章大标题 -->
           <h1
-            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-display tracking-tight leading-tight text-white mb-6">
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-display tracking-tight leading-tight text-white mb-6 animate-on-scroll delay-100">
             {{ currentArticle.title }}
           </h1>
 
           <!-- 导言摘要 -->
           <p
-            class="text-base sm:text-lg md:text-xl text-gray-200/90 leading-relaxed font-light border-l-2 border-accent pl-4 py-1 italic max-w-3xl">
+            class="text-base sm:text-lg md:text-xl text-gray-200/90 leading-relaxed font-light border-l-2 border-accent pl-4 py-1 italic max-w-3xl animate-on-scroll delay-150">
             {{ currentArticle.summary }}
           </p>
         </div>
@@ -151,7 +153,7 @@ const paragraphs = computed(() => {
         </article>
 
         <!-- 底部必须有：上一篇和下一篇导航组件 -->
-        <div class="mt-12 grid sm:grid-cols-2 gap-6">
+        <div class="mt-12 grid sm:grid-cols-2 gap-6 animate-on-scroll delay-100">
           <!-- 上一篇 -->
           <div v-if="prevArticle"
             class="group p-6 rounded-2xl border border-line bg-card hover:shadow-lg hover:border-accent transition">

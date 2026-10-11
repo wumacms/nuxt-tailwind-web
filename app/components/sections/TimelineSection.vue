@@ -5,14 +5,14 @@ const { timeline } = useSiteData()
 <template>
   <section class="py-20 md:py-28 lg:py-32 bg-canvas">
     <div class="max-w-5xl mx-auto px-4 md:px-8">
-      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16 animate-on-scroll">
-        <span class="text-sm font-semibold text-accent uppercase tracking-wider">
+      <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+        <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wider animate-on-scroll">
           发展历程
         </span>
-        <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display">
+        <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display animate-on-scroll delay-50">
           用镜头记录时间
         </h2>
-        <p class="mt-4 text-base text-muted">
+        <p class="mt-4 text-base text-muted animate-on-scroll delay-100">
           从独立暗房到跨界视觉先锋，Aperture 始终坚守光影美学底色。
         </p>
       </div>

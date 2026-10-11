@@ -8,7 +8,7 @@
     <AppContainer class="py-16 md:py-24 grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center">
       <!-- 左侧文案与行动号召 -->
       <div class="space-y-6 md:space-y-7">
-        <span class="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full bg-accent-soft text-accent-soft-text border border-accent-soft/30 animate-on-scroll delay-100">
+        <span class="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full bg-accent-soft text-accent-soft-text border border-accent-soft/30 animate-on-scroll">
           <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
             <circle cx="12" cy="13" r="4" />
@@ -16,16 +16,16 @@
           全新视觉叙事系列 · 2025
         </span>
 
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-main leading-[1.05] font-display animate-on-scroll delay-200">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-main leading-[1.05] font-display animate-on-scroll delay-50">
           让每一帧<br />
           <span class="text-accent">成为永恒</span>
         </h1>
 
-        <p class="text-base sm:text-lg md:text-xl text-muted max-w-lg leading-relaxed animate-on-scroll delay-300">
+        <p class="text-base sm:text-lg md:text-xl text-muted max-w-lg leading-relaxed animate-on-scroll delay-100">
           Aperture 专注于商业摄影、人像与品牌视觉叙事。我们用光影捕捉情绪，让画面替你说话。
         </p>
 
-        <div class="flex flex-wrap gap-3 pt-2 animate-on-scroll delay-400">
+        <div class="flex flex-wrap gap-3 pt-2 animate-on-scroll delay-150">
           <AppButton to="/about#contact" size="lg" class="shadow-lg shadow-accent/20">
             预约拍摄
             <span class="ml-1 text-base">&rarr;</span>
@@ -39,7 +39,7 @@
         </div>
 
         <!-- 客户信赖统计堆叠 -->
-        <div class="flex flex-wrap items-center gap-4 pt-4 animate-on-scroll delay-500">
+        <div class="flex flex-wrap items-center gap-4 pt-4 animate-on-scroll delay-200">
           <div class="flex -space-x-2 flex-shrink-0">
             <img
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=faces"
@@ -77,7 +77,7 @@
 
       <!-- 右侧画廊卡片 -->
       <div class="relative">
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-line bg-card animate-on-scroll delay-300">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-line bg-card animate-on-scroll delay-100">
           <div class="flex items-center gap-1.5 px-4 py-3 border-b border-line bg-subtle">
             <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>

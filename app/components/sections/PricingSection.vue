@@ -1,14 +1,14 @@
 <template>
   <section id="pricing" class="py-20 md:py-28 lg:py-32 bg-surface">
     <AppContainer>
-      <div class="max-w-2xl mx-auto text-center mb-10 md:mb-14 animate-on-scroll">
-        <span class="text-sm font-semibold text-accent uppercase tracking-wider">
+      <div class="max-w-2xl mx-auto text-center mb-10 md:mb-14">
+        <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wider animate-on-scroll">
           拍摄套餐
         </span>
-        <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display">
+        <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display animate-on-scroll delay-50">
           简单透明的价格
         </h2>
-        <p class="mt-4 text-base md:text-lg text-muted">
+        <p class="mt-4 text-base md:text-lg text-muted animate-on-scroll delay-100">
           按需选择标准套餐，亦可根据品牌要求量身定制。
         </p>
       </div>

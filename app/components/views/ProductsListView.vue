@@ -77,7 +77,7 @@ const tabs = computed(() =>
     <section class="py-16 md:py-24 bg-canvas">
       <AppContainer>
         <!-- 分类筛选条件（静态超链接 Tab） -->
-        <div class="mb-10 flex flex-wrap items-center justify-between gap-4">
+        <div class="mb-10 flex flex-wrap items-center justify-between gap-4 animate-on-scroll">
           <AppTabs v-model="currentTab" :tabs="tabs" />
           <div class="text-xs text-caption">
             共找到 <span class="font-bold text-accent">{{ total }}</span> 件严选商品
@@ -92,10 +92,13 @@ const tabs = computed(() =>
         <!-- 商品网格列表 -->
         <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <NuxtLink
-            v-for="product in products"
+            v-for="(product, idx) in products"
             :key="product.id"
             :to="`/products/${product.id}`"
-            class="group flex flex-col rounded-2xl border border-line bg-card overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            :class="[
+              'group flex flex-col rounded-2xl border border-line bg-card overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-on-scroll',
+              (idx % 3 === 0) ? 'delay-50' : (idx % 3 === 1) ? 'delay-100' : 'delay-150'
+            ]"
           >
             <div class="relative aspect-[16/10] overflow-hidden bg-subtle">
               <img

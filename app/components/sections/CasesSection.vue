@@ -19,19 +19,19 @@ const displayedCases = computed<CaseItem[]>(() => casesList.value.slice(0, props
 <template>
   <section id="cases" class="py-20 md:py-28 lg:py-32 bg-canvas">
     <AppContainer>
-      <div class="flex flex-wrap items-end justify-between gap-6 mb-10 md:mb-12 animate-on-scroll">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-10 md:mb-12">
         <div class="max-w-xl">
-          <span class="text-sm font-semibold text-accent uppercase tracking-wider">
+          <span class="inline-block text-sm font-semibold text-accent uppercase tracking-wider animate-on-scroll">
             客户故事
           </span>
-          <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display">
+          <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-main tracking-tight font-display animate-on-scroll delay-50">
             他们选择了 Aperture
           </h2>
         </div>
         <NuxtLink
           v-if="showViewAll"
           to="/cases"
-          class="text-accent font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
+          class="text-accent font-medium inline-flex items-center gap-1 hover:gap-2 transition-all animate-on-scroll delay-100"
         >
           查看全部案例 &rarr;
         </NuxtLink>
