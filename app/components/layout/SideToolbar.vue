@@ -76,18 +76,23 @@ onUnmounted(() => {
       <button type="button" aria-label="切换浅色/深色模式"
         class="w-12 h-12 flex items-center justify-center text-gray-300 hover:text-on-accent hover:bg-accent transition-colors cursor-pointer"
         @click="toggleTheme">
-        <!-- 太阳（深色模式显示） -->
-        <Icon name="lucide:sun" class="w-5 h-5 text-gray-300 group-hover:text-white transition-colors hidden dark:block" />
-
-        <!-- 月亮（浅色模式显示） -->
-        <Icon name="lucide:moon" class="w-5 h-5 text-gray-300 group-hover:text-white transition-colors block dark:hidden" />
+        <ClientOnly>
+          <Icon :name="colorMode.value === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
+          <template #fallback>
+            <span class="w-5 h-5 inline-block" />
+          </template>
+        </ClientOnly>
       </button>
 
       <!-- Tooltip -->
       <div
         class="absolute right-full mr-3 top-1/2 -translate-y-1/2 hidden group-hover:block px-2.5 py-1 bg-main text-canvas text-xs font-medium rounded-lg shadow-xl whitespace-nowrap pointer-events-none transition-all">
-        <span class="hidden dark:inline">切换为浅色模式</span>
-        <span class="inline dark:hidden">切换为深色模式</span>
+        <ClientOnly>
+          <span>{{ colorMode.value === 'dark' ? '切换为浅色模式' : '切换为深色模式' }}</span>
+          <template #fallback>
+            <span>切换主题</span>
+          </template>
+        </ClientOnly>
         <div class="absolute -right-1 top-1/2 -translate-y-1/2 w-2 h-2 bg-main rotate-45"></div>
       </div>
     </div>

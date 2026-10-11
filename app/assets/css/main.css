@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* 适配 @nuxtjs/color-mode 类名切换深色模式 */
+@variant dark (&:where(.dark, .dark *));
+
 /* 1. 主题变量 */
 @import "./themes/base.css";
 @import "./themes/obsidian.css";

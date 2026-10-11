@@ -91,10 +91,12 @@ const isActive = (path: string) => {
         <button type="button" aria-label="切换明暗主题"
           class="w-10 h-10 rounded-xl text-muted hover:text-main flex items-center justify-center transition hover:bg-subtle cursor-pointer"
           @click="toggleTheme">
-          <!-- 太阳图标（深色模式下显示） -->
-          <Icon name="lucide:sun" class="hidden dark:block w-5 h-5 text-muted" />
-          <!-- 月亮图标（浅色模式下显示） -->
-          <Icon name="lucide:moon" class="block dark:hidden w-5 h-5 text-muted" />
+          <ClientOnly>
+            <Icon :name="colorMode.value === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="w-5 h-5 text-muted hover:text-main transition-colors" />
+            <template #fallback>
+              <span class="w-5 h-5 inline-block" />
+            </template>
+          </ClientOnly>
         </button>
 
         <!-- 预约咨询 CTA (跳转关于页 #contact) -->
