@@ -107,6 +107,7 @@ export default defineNuxtConfig({
   },
   modules: ["@nuxtjs/color-mode", "@nuxt/icon"],
   icon: {
+    mode: "svg", // 启用原生矢量 SVG 渲染
     clientBundle: {
       scan: true,
     },
