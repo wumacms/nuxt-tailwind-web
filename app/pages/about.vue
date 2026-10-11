@@ -9,10 +9,10 @@ useSeoMeta({
 const breadcrumbs = [{ label: '关于我们' }]
 
 const studioSpecs = [
-  { label: '主机系统', value: '哈苏 H6D-100c & 索尼 α1 双全画幅 / 中画幅矩阵' },
-  { label: '灯光设备', value: '瑞士布朗（Broncolor）Scoro 3200 电箱与控光附件' },
-  { label: '色彩管理', value: '日本艺卓（EIZO）ColorEdge 4K 硬件校准工作站' },
-  { label: '摄影空间', value: 'M50 艺术区 800㎡ 挑高 6 米专业无影摄影棚与自然光房' },
+  { label: '主机系统', value: '哈苏 H6D-100c & 索尼 α1 双全画幅 / 中画幅矩阵', icon: 'lucide:camera' },
+  { label: '灯光设备', value: '瑞士布朗（Broncolor）Scoro 3200 电箱与控光附件', icon: 'lucide:zap' },
+  { label: '色彩管理', value: '日本艺卓（EIZO）ColorEdge 4K 硬件校准工作站', icon: 'lucide:monitor' },
+  { label: '摄影空间', value: 'M50 艺术区 800㎡ 挑高 6 米专业无影摄影棚与自然光房', icon: 'lucide:building-2' },
 ]
 </script>
 
@@ -92,7 +92,10 @@ const studioSpecs = [
               idx === 0 ? 'delay-50' : idx === 1 ? 'delay-100' : idx === 2 ? 'delay-150' : 'delay-200'
             ]"
           >
-            <div class="text-xs font-semibold text-accent mb-2 uppercase tracking-wide">
+            <div class="w-9 h-9 rounded-xl bg-accent-soft text-accent flex items-center justify-center mb-4">
+              <Icon :name="spec.icon" class="w-5 h-5" />
+            </div>
+            <div class="text-xs font-semibold text-accent mb-1.5 uppercase tracking-wide">
               {{ spec.label }}
             </div>
             <div class="text-sm font-medium text-main leading-relaxed">

@@ -36,11 +36,7 @@
           <div
             class="inline-flex items-center justify-center w-11 h-11 rounded-xl mb-3 bg-accent-soft text-accent-soft-text"
           >
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="12 2 2 7 12 12 22 7 12 2" />
-              <polyline points="2 17 12 22 22 17" />
-              <polyline points="2 12 12 17 22 12" />
-            </svg>
+            <Icon name="lucide:layers" class="w-5 h-5" />
           </div>
           <div class="font-bold text-base text-main">统一风格</div>
           <p class="mt-1.5 text-sm text-muted leading-relaxed">
@@ -52,10 +48,7 @@
           <div
             class="inline-flex items-center justify-center w-11 h-11 rounded-xl mb-3 bg-accent-soft text-accent-soft-text"
           >
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 14 14" />
-            </svg>
+            <Icon name="lucide:clock" class="w-5 h-5" />
           </div>
           <div class="font-bold text-base text-main">快速交付</div>
           <p class="mt-1.5 text-sm text-muted leading-relaxed">
@@ -67,13 +60,7 @@
           <div
             class="inline-flex items-center justify-center w-11 h-11 rounded-xl mb-3 bg-accent-soft text-accent-soft-text"
           >
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="18" cy="5" r="3" />
-              <circle cx="6" cy="12" r="3" />
-              <circle cx="18" cy="19" r="3" />
-              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-            </svg>
+            <Icon name="lucide:share-2" class="w-5 h-5" />
           </div>
           <div class="font-bold text-base text-main">全平台适配</div>
           <p class="mt-1.5 text-sm text-muted leading-relaxed">

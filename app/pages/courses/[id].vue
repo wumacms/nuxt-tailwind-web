@@ -88,7 +88,10 @@ const isEnrollModalOpen = ref(false)
                       {{ chap }}
                     </span>
                   </div>
-                  <span class="text-xs text-caption">视频实操</span>
+                  <span class="text-xs text-caption inline-flex items-center gap-1">
+                    <Icon name="lucide:play-circle" class="w-3.5 h-3.5 text-accent" />
+                    视频实操
+                  </span>
                 </div>
               </div>
             </div>
@@ -104,17 +107,26 @@ const isEnrollModalOpen = ref(false)
                 <span v-if="!currentCourse.isFree" class="text-xs text-caption">限时优惠</span>
               </div>
 
-              <div class="text-xs text-caption space-y-2">
-                <div class="flex justify-between">
-                  <span>总课时数：</span>
+              <div class="text-xs text-caption space-y-2.5">
+                <div class="flex justify-between items-center">
+                  <span class="inline-flex items-center gap-1.5">
+                    <Icon name="lucide:book-open" class="w-3.5 h-3.5 text-accent" />
+                    总课时数：
+                  </span>
                   <span class="font-semibold text-main">{{ currentCourse.lessonsCount }} 节精讲</span>
                 </div>
-                <div class="flex justify-between">
-                  <span>视频总时长：</span>
+                <div class="flex justify-between items-center">
+                  <span class="inline-flex items-center gap-1.5">
+                    <Icon name="lucide:clock" class="w-3.5 h-3.5 text-accent" />
+                    视频总时长：
+                  </span>
                   <span class="font-semibold text-main">{{ currentCourse.duration }}</span>
                 </div>
-                <div class="flex justify-between">
-                  <span>学习有效期：</span>
+                <div class="flex justify-between items-center">
+                  <span class="inline-flex items-center gap-1.5">
+                    <Icon name="lucide:shield-check" class="w-3.5 h-3.5 text-accent" />
+                    学习有效期：
+                  </span>
                   <span class="font-semibold text-main">永久回放 + 配套工程 RAW</span>
                 </div>
               </div>

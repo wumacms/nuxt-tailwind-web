@@ -89,7 +89,7 @@ const tabs = computed(() =>
 
         <!-- 加载中微状态提示 -->
         <div v-if="status === 'pending'" class="py-12 text-center text-sm text-caption">
-          <span class="inline-block animate-spin mr-2">◌</span> 正在加载课程列表...
+          <Icon name="lucide:loader-2" class="inline-block animate-spin mr-2 w-4 h-4 align-middle" /> 正在加载课程列表...
         </div>
 
         <!-- 课程网格列表 -->
@@ -134,9 +134,18 @@ const tabs = computed(() =>
                 </p>
 
                 <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-caption">
-                  <span>⏱ {{ course.duration }}</span>
-                  <span>👥 {{ course.studentsCount }}人学习</span>
-                  <span>✦ 原盘RAW</span>
+                  <span class="inline-flex items-center gap-1">
+                    <Icon name="lucide:clock" class="w-3.5 h-3.5 text-accent" />
+                    {{ course.duration }}
+                  </span>
+                  <span class="inline-flex items-center gap-1">
+                    <Icon name="lucide:users" class="w-3.5 h-3.5 text-accent" />
+                    {{ course.studentsCount }}人学习
+                  </span>
+                  <span class="inline-flex items-center gap-1">
+                    <Icon name="lucide:sparkles" class="w-3.5 h-3.5 text-accent" />
+                    原盘RAW
+                  </span>
                 </div>
               </div>
 

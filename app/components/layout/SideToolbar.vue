@@ -51,20 +51,7 @@ onUnmounted(() => {
     <div class="relative group">
       <button type="button" aria-label="关注微信公众号"
         class="w-12 h-12 flex items-center justify-center text-gray-300 hover:text-on-accent hover:bg-accent rounded-tl-2xl transition-colors cursor-pointer">
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect width="5" height="5" x="3" y="3" rx="1" />
-          <rect width="5" height="5" x="16" y="3" rx="1" />
-          <rect width="5" height="5" x="3" y="16" rx="1" />
-          <path d="M21 16h-3a2 2 0 0 0-2 2v3" />
-          <path d="M21 21v.01" />
-          <path d="M12 7v3a2 2 0 0 1-2 2H7" />
-          <path d="M3 12h.01" />
-          <path d="M12 3h.01" />
-          <path d="M12 16v.01" />
-          <path d="M16 12h1" />
-          <path d="M21 12v.01" />
-          <path d="M12 21v-1" />
-        </svg>
+        <Icon name="lucide:qr-code" class="w-5 h-5" />
       </button>
 
       <!-- 二维码浮层卡片 -->
@@ -90,24 +77,10 @@ onUnmounted(() => {
         class="w-12 h-12 flex items-center justify-center text-gray-300 hover:text-on-accent hover:bg-accent transition-colors cursor-pointer"
         @click="toggleTheme">
         <!-- 太阳（深色模式显示） -->
-        <svg class="w-5 h-5 text-gray-300 group-hover:text-white transition-colors hidden dark:block" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="4" />
-          <path d="M12 2v2" />
-          <path d="M12 20v2" />
-          <path d="m4.93 4.93 1.41 1.41" />
-          <path d="m17.66 17.66 1.41 1.41" />
-          <path d="M2 12h2" />
-          <path d="M20 12h2" />
-          <path d="m6.34 17.66-1.41 1.41" />
-          <path d="m19.07 4.93-1.41 1.41" />
-        </svg>
+        <Icon name="lucide:sun" class="w-5 h-5 text-gray-300 group-hover:text-white transition-colors hidden dark:block" />
 
         <!-- 月亮（浅色模式显示） -->
-        <svg class="w-5 h-5 text-gray-300 group-hover:text-white transition-colors block dark:hidden"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-        </svg>
+        <Icon name="lucide:moon" class="w-5 h-5 text-gray-300 group-hover:text-white transition-colors block dark:hidden" />
       </button>
 
       <!-- Tooltip -->
@@ -127,14 +100,7 @@ onUnmounted(() => {
             ? 'bg-accent text-on-accent'
             : 'text-gray-300 hover:text-on-accent hover:bg-accent'
         ]" @click.stop="toggleThemeMenu">
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
-          <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
-          <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
-          <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
-          <path
-            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2Z" />
-        </svg>
+        <Icon name="lucide:palette" class="w-5 h-5" />
       </button>
 
       <!-- 主题选择浮层卡片 -->
@@ -160,7 +126,7 @@ onUnmounted(() => {
               <div class="flex-1 min-w-0">
                 <div class="truncate">{{ item.label }}</div>
               </div>
-              <span v-if="currentTheme === item.id" class="text-xs">✓</span>
+              <Icon v-if="currentTheme === item.id" name="lucide:check" class="w-3.5 h-3.5 text-accent" />
             </button>
           </div>
         </ClientOnly>
@@ -179,9 +145,7 @@ onUnmounted(() => {
           ? 'text-gray-300 hover:text-on-accent hover:bg-accent opacity-100'
           : 'text-gray-500 opacity-40 hover:opacity-80'
       ]" @click="scrollToTop">
-        <svg class="w-5 h-5 stroke-[2.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
+        <Icon name="lucide:arrow-up" class="w-5 h-5 stroke-[2.5]" />
       </button>
 
       <!-- 悬浮 Tooltip 提示 -->

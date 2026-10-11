@@ -33,7 +33,8 @@ const displayedCases = computed<CaseItem[]>(() => casesList.value.slice(0, props
           to="/cases"
           class="text-accent font-medium inline-flex items-center gap-1 hover:gap-2 transition-all animate-on-scroll delay-100"
         >
-          查看全部案例 &rarr;
+          <span>查看全部案例</span>
+          <Icon name="lucide:arrow-right" class="w-4 h-4" />
         </NuxtLink>
       </div>
 
@@ -70,8 +71,9 @@ const displayedCases = computed<CaseItem[]>(() => casesList.value.slice(0, props
             </p>
             <div class="mt-4 pt-4 border-t border-line flex items-center justify-between text-xs text-caption">
               <span>{{ item.client }}</span>
-              <span class="text-accent font-medium group-hover:translate-x-0.5 transition-transform">
-                查看案例 &rarr;
+              <span class="text-accent font-medium group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-1">
+                <span>查看案例</span>
+                <Icon name="lucide:arrow-right" class="w-3.5 h-3.5" />
               </span>
             </div>
           </div>

@@ -53,11 +53,7 @@ const domainServices = computed(() =>
               <div
                 class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-accent flex items-center justify-center text-on-accent mb-5 shadow-md"
               >
-                <svg class="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-                  <path d="M3 6h18" />
-                  <path d="M16 10a4 4 0 0 1-8 0" />
-                </svg>
+                <AppIcon :name="service.icon || 'camera'" size="22" class="text-on-accent" />
               </div>
 
               <h3 class="text-xl font-bold mb-3 text-main">
@@ -73,9 +69,7 @@ const domainServices = computed(() =>
                   :key="hIdx"
                   class="flex items-center gap-2"
                 >
-                  <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
+                  <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" />
                   <span>{{ item }}</span>
                 </li>
               </ul>
@@ -85,7 +79,8 @@ const domainServices = computed(() =>
               :to="`/services/${service.id}`"
               class="text-accent font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all mt-auto pt-2"
             >
-              了解详情 <span>&rarr;</span>
+              <span>了解详情</span>
+              <Icon name="lucide:arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </NuxtLink>
           </div>
         </div>

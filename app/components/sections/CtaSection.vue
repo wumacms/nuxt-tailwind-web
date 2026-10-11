@@ -4,26 +4,24 @@
       <div
         class="relative overflow-hidden rounded-3xl [background:linear-gradient(135deg,var(--color-section-accent),color-mix(in_srgb,var(--color-section-accent)_75%,black))] px-6 py-12 sm:px-8 sm:py-16 md:px-16 md:py-20 text-center text-section-on-accent shadow-2xl animate-on-scroll"
       >
-        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-section-on-accent/10 blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-section-on-accent/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-section-on-accent/10 blur-3xl pointer-events-none animate-pulse-glow"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-section-on-accent/10 blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: -2s"></div>
 
         <div class="relative max-w-3xl mx-auto">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight font-display text-section-on-accent">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight font-display text-section-on-accent animate-on-scroll delay-50">
             准备好记录你的故事了吗？
           </h2>
-          <p class="mt-5 text-base sm:text-lg text-section-on-accent/90 max-w-2xl mx-auto leading-relaxed">
+          <p class="mt-5 text-base sm:text-lg text-section-on-accent/90 max-w-2xl mx-auto leading-relaxed animate-on-scroll delay-100">
             无论是一次极具仪式感的个人写真，还是品牌年度商业视觉全案，Aperture 都能为你量身雕琢光影。
           </p>
 
-          <div class="mt-8 flex flex-wrap gap-3 justify-center">
+          <div class="mt-8 flex flex-wrap gap-3 justify-center animate-on-scroll delay-150">
             <a
               href="#contact"
-              class="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-section-on-accent text-section-accent font-semibold hover:bg-section-on-accent/90 hover:scale-[1.02] active:scale-[0.98] transition-all inline-flex items-center gap-2 shadow-lg text-sm sm:text-base cursor-pointer select-none"
+              class="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-section-on-accent text-section-accent font-semibold hover:bg-section-on-accent/90 hover:scale-[1.02] active:scale-[0.98] transition-all inline-flex items-center gap-2 shadow-lg text-sm sm:text-base cursor-pointer select-none group"
             >
-              预约拍摄
-              <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              <span>预约拍摄</span>
+              <Icon name="lucide:arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#contact"
@@ -33,10 +31,19 @@
             </a>
           </div>
 
-          <div class="mt-8 flex flex-wrap gap-x-8 gap-y-2 justify-center text-sm text-section-on-accent/90 font-medium">
-            <span class="inline-flex items-center gap-1.5">✓ 免费方案咨询</span>
-            <span class="inline-flex items-center gap-1.5">✓ 24小时极速响应</span>
-            <span class="inline-flex items-center gap-1.5">✓ 拍摄不满意承诺重拍</span>
+          <div class="mt-8 flex flex-wrap gap-x-8 gap-y-2 justify-center text-sm text-section-on-accent/90 font-medium animate-on-scroll delay-200">
+            <span class="inline-flex items-center gap-1.5">
+              <Icon name="lucide:check-circle-2" class="w-4 h-4 text-emerald-300 shrink-0" />
+              免费方案咨询
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <Icon name="lucide:check-circle-2" class="w-4 h-4 text-emerald-300 shrink-0" />
+              24小时极速响应
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <Icon name="lucide:check-circle-2" class="w-4 h-4 text-emerald-300 shrink-0" />
+              拍摄不满意承诺重拍
+            </span>
           </div>
         </div>
       </div>

@@ -33,7 +33,8 @@ const displayedCourses = computed(() => (courses.value || []).slice(0, props.lim
           to="/courses"
           class="text-accent font-medium inline-flex items-center gap-1 hover:gap-2 transition-all animate-on-scroll delay-150"
         >
-          查看全部课程 &rarr;
+          <span>查看全部课程</span>
+          <Icon name="lucide:arrow-right" class="w-4 h-4" />
         </NuxtLink>
       </div>
 
@@ -75,8 +76,14 @@ const displayedCourses = computed(() => (courses.value || []).slice(0, props.lim
                 {{ course.description }}
               </p>
               <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-caption">
-                <span>⏱ {{ course.duration }}</span>
-                <span>👥 {{ course.studentsCount }} 人在学</span>
+                <span class="inline-flex items-center gap-1">
+                  <Icon name="lucide:clock" class="w-3.5 h-3.5 text-accent" />
+                  {{ course.duration }}
+                </span>
+                <span class="inline-flex items-center gap-1">
+                  <Icon name="lucide:users" class="w-3.5 h-3.5 text-accent" />
+                  {{ course.studentsCount }} 人在学
+                </span>
               </div>
             </div>
 
@@ -87,8 +94,9 @@ const displayedCourses = computed(() => (courses.value || []).slice(0, props.lim
               >
                 {{ course.isFree ? '免费' : `¥${course.price}` }}
               </span>
-              <span class="text-accent text-sm font-medium group-hover:translate-x-1 transition-transform">
-                {{ course.isFree ? '开始学习' : '立即报名' }} &rarr;
+              <span class="text-accent text-sm font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                <span>{{ course.isFree ? '开始学习' : '立即报名' }}</span>
+                <Icon name="lucide:arrow-right" class="w-3.5 h-3.5" />
               </span>
             </div>
           </div>

@@ -19,10 +19,7 @@
           class="flex flex-col p-6 md:p-8 rounded-2xl border border-line bg-card animate-on-scroll delay-100"
         >
           <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-subtle text-muted">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-              <circle cx="12" cy="13" r="4" />
-            </svg>
+            <Icon name="lucide:camera" class="w-5 h-5" />
           </div>
           <h3 class="font-bold text-xl text-main">基础套餐</h3>
           <p class="mt-2 text-sm text-muted">适合个人写真与小型产品拍摄</p>
@@ -33,22 +30,22 @@
 
           <ul class="mt-6 md:mt-8 space-y-3.5 text-sm flex-1 text-muted">
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 2 小时拍摄
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 2 小时拍摄
             </li>
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 30 张精修成片
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 30 张精修成片
             </li>
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 1 个精选场景
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 1 个精选场景
             </li>
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 7 个工作日交付
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 7 个工作日交付
             </li>
             <li class="flex items-center gap-2.5 text-caption opacity-60">
-              <span class="font-bold">✕</span> 视频动态拍摄
+              <Icon name="lucide:x" class="w-4 h-4 shrink-0" /> 视频动态拍摄
             </li>
             <li class="flex items-center gap-2.5 text-caption opacity-60">
-              <span class="font-bold">✕</span> 专属企划团队
+              <Icon name="lucide:x" class="w-4 h-4 shrink-0" /> 专属企划团队
             </li>
           </ul>
 
@@ -62,16 +59,13 @@
           class="relative flex flex-col p-6 md:p-8 rounded-2xl bg-gray-900 dark:bg-gray-800 text-white shadow-2xl lg:-translate-y-4 border-2 border-accent animate-on-scroll delay-200"
         >
           <span
-            class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-accent text-xs font-semibold inline-flex items-center gap-1 shadow-md whitespace-nowrap text-on-accent"
+            class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-accent text-xs font-semibold inline-flex items-center gap-1.5 shadow-md whitespace-nowrap text-on-accent"
           >
-            ★ 最受欢迎
+            <Icon name="lucide:sparkles" class="w-3.5 h-3.5 text-on-accent" />
+            最受欢迎
           </span>
           <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mb-4">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <path d="m14.3 8 5.7 9.9" />
-              <path d="M9.7 8h11.5" />
-            </svg>
+            <Icon name="lucide:aperture" class="w-5 h-5 text-accent" />
           </div>
           <h3 class="font-bold text-xl">专业套餐</h3>
           <p class="mt-2 text-sm text-gray-300">适合品牌形象、电商大片与商业活动</p>
@@ -82,22 +76,22 @@
 
           <ul class="mt-6 md:mt-8 space-y-3.5 text-sm flex-1 text-gray-200">
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 全天专属拍摄（8 小时）
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 全天专属拍摄（8 小时）
             </li>
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 100 张精修大片
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 100 张精修大片
             </li>
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 3 个内景/外景场景
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 3 个内景/外景场景
             </li>
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 3 个工作日极速交付
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 3 个工作日极速交付
             </li>
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 15 秒 4K 宣传短视频
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 15 秒 4K 宣传短视频
             </li>
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 包含基础妆造搭配
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 包含基础妆造搭配
             </li>
           </ul>
 
@@ -111,11 +105,7 @@
           class="flex flex-col p-6 md:p-8 rounded-2xl border border-line bg-card animate-on-scroll delay-300"
         >
           <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-subtle text-muted">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
-              <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
-              <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
-            </svg>
+            <Icon name="lucide:building-2" class="w-5 h-5" />
           </div>
           <h3 class="font-bold text-xl text-main">企业定制</h3>
           <p class="mt-2 text-sm text-muted">适合长期合作、品牌全案与整合营销</p>
@@ -125,22 +115,22 @@
 
           <ul class="mt-6 md:mt-8 space-y-3.5 text-sm flex-1 text-muted">
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 全年战略合作框架
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 全年战略合作框架
             </li>
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 不限单次拍摄数量
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 不限单次拍摄数量
             </li>
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 首席创意团队驻场
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 首席创意团队驻场
             </li>
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 24 小时出片绿色通道
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 24 小时出片绿色通道
             </li>
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 4K/8K 电影机团队配备
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 4K/8K 电影机团队配备
             </li>
             <li class="flex items-center gap-2.5">
-              <span class="text-accent font-bold">✓</span> 季度品牌视觉复盘报告
+              <Icon name="lucide:check" class="w-4 h-4 text-accent shrink-0" /> 季度品牌视觉复盘报告
             </li>
           </ul>
 

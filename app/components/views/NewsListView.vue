@@ -86,7 +86,7 @@ const tabs = computed(() =>
 
         <!-- 加载中微状态提示 -->
         <div v-if="status === 'pending'" class="py-12 text-center text-sm text-caption">
-          <span class="inline-block animate-spin mr-2">◌</span> 正在加载数据...
+          <Icon name="lucide:loader-2" class="inline-block animate-spin mr-2 w-4 h-4 align-middle" /> 正在加载数据...
         </div>
 
         <!-- 网格列表（2列画报杂志风格） -->
@@ -138,10 +138,10 @@ const tabs = computed(() =>
             <div class="px-6 pb-6 md:px-8 md:pb-8 pt-0">
               <NuxtLink
                 :to="`/news/${item.id}`"
-                class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-hover group-hover:translate-x-1.5 transition-transform"
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-hover group-hover:translate-x-1.5 transition-transform"
               >
                 <span>阅读全文</span>
-                <span>&rarr;</span>
+                <Icon name="lucide:arrow-right" class="w-4 h-4" />
               </NuxtLink>
             </div>
           </article>

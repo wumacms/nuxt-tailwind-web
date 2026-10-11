@@ -41,10 +41,11 @@ const close = () => {
             </h3>
             <button
               type="button"
-              class="w-8 h-8 rounded-lg flex items-center justify-center text-caption hover:bg-black/5 dark:hover:bg-white/5 transition"
+              aria-label="关闭弹窗"
+              class="w-8 h-8 rounded-lg flex items-center justify-center text-caption hover:bg-black/5 dark:hover:bg-white/5 transition cursor-pointer"
               @click="close"
             >
-              ✕
+              <Icon name="lucide:x" class="w-4 h-4 text-muted hover:text-main" />
             </button>
           </div>
           <div class="text-muted text-sm leading-relaxed">

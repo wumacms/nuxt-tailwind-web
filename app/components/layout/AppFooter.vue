@@ -28,15 +28,7 @@ const legalLinks = [
           <NuxtLink to="/" class="flex items-center gap-2.5 font-bold text-lg text-white font-display">
             <span
               class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-on-accent">
-              <svg class="w-4 h-4 text-on-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <line x1="14.31" y1="8" x2="20.05" y2="17.94" />
-                <line x1="9.69" y1="8" x2="21.17" y2="8" />
-                <line x1="7.38" y1="12" x2="13.12" y2="2.06" />
-                <line x1="9.69" y1="16" x2="3.95" y2="6.06" />
-                <line x1="14.31" y1="16" x2="2.83" y2="16" />
-                <line x1="16.62" y1="12" x2="10.88" y2="21.94" />
-              </svg>
+              <Icon name="lucide:aperture" class="w-4 h-4 text-on-accent" />
             </span>
             <span class="text-xl">Aperture</span>
           </NuxtLink>
@@ -54,10 +46,7 @@ const legalLinks = [
               <span class="text-gray-400 flex-shrink-0">客服咨询热线：</span>
               <a :href="`tel:${brandInfo.phone}`"
                 class="text-accent hover:opacity-80 font-semibold tracking-wide transition inline-flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
+                <Icon name="lucide:phone" class="w-3.5 h-3.5" />
                 {{ brandInfo.phone }}
               </a>
               <span class="text-xs text-gray-400">（{{ brandInfo.hours }}）</span>
@@ -65,27 +54,17 @@ const legalLinks = [
           </div>
 
           <div class="mt-6 flex gap-3">
-            <a href="#" title="Instagram"
+            <a href="#" title="Instagram" aria-label="Instagram"
               class="w-9 h-9 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2" />
-                <circle cx="12" cy="12" r="4" stroke-width="2" />
-                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-              </svg>
+              <Icon name="simple-icons:instagram" class="w-4 h-4" />
             </a>
-            <a href="#" title="微博"
+            <a href="#" title="微博" aria-label="微博"
               class="w-9 h-9 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
+              <Icon name="simple-icons:sinaweibo" class="w-4 h-4" />
             </a>
-            <a href="#" title="小红书"
+            <a href="#" title="小红书" aria-label="小红书"
               class="w-9 h-9 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-              </svg>
+              <Icon name="simple-icons:xiaohongshu" class="w-4 h-4" />
             </a>
           </div>
         </div>

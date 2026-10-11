@@ -9,10 +9,7 @@
       <!-- 左侧文案与行动号召 -->
       <div class="space-y-6 md:space-y-7">
         <span class="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full bg-accent-soft text-accent-soft-text border border-accent-soft/30 animate-on-scroll">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-            <circle cx="12" cy="13" r="4" />
-          </svg>
+          <Icon name="lucide:camera" class="w-3.5 h-3.5" />
           全新视觉叙事系列 · 2025
         </span>
 
@@ -27,13 +24,11 @@
 
         <div class="flex flex-wrap gap-3 pt-2 animate-on-scroll delay-150">
           <AppButton to="/about#contact" size="lg" class="shadow-lg shadow-accent/20">
-            预约拍摄
-            <span class="ml-1 text-base">&rarr;</span>
+            <span>预约拍摄</span>
+            <Icon name="lucide:arrow-right" class="w-4 h-4 ml-1 inline-block" />
           </AppButton>
           <AppButton to="/#panoramic" variant="outline" size="lg" class="bg-card">
-            <svg class="w-4 h-4 mr-1 text-accent" viewBox="0 0 24 24" fill="currentColor">
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
+            <Icon name="lucide:play" class="w-4 h-4 mr-1 text-accent fill-current" />
             查看作品集
           </AppButton>
         </div>

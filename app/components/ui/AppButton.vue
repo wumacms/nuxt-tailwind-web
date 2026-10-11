@@ -56,17 +56,17 @@ const computedClasses = computed(() => [
 
 <template>
   <NuxtLink v-if="to" :to="to" :class="computedClasses">
-    <span v-if="loading" class="animate-spin mr-1.5">⟳</span>
+    <Icon v-if="loading" name="lucide:loader-2" class="w-4 h-4 animate-spin mr-1.5 shrink-0" />
     <slot />
   </NuxtLink>
 
   <a v-else-if="href" :href="href" :class="computedClasses">
-    <span v-if="loading" class="animate-spin mr-1.5">⟳</span>
+    <Icon v-if="loading" name="lucide:loader-2" class="w-4 h-4 animate-spin mr-1.5 shrink-0" />
     <slot />
   </a>
 
   <button v-else :type="type" :disabled="disabled || loading" :class="computedClasses">
-    <span v-if="loading" class="animate-spin mr-1.5">⟳</span>
+    <Icon v-if="loading" name="lucide:loader-2" class="w-4 h-4 animate-spin mr-1.5 shrink-0" />
     <slot />
   </button>
 </template>

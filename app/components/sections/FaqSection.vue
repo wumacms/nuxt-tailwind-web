@@ -29,8 +29,8 @@ const { faqs } = useSiteData()
             <span class="font-bold text-main text-base md:text-lg">
               {{ item.question }}
             </span>
-            <span class="faq-icon text-accent text-xl font-bold flex-shrink-0 transition-transform duration-250">
-              +
+            <span class="text-accent flex-shrink-0 transition-transform duration-250 group-open:rotate-45">
+              <Icon name="lucide:plus" class="w-5 h-5" />
             </span>
           </summary>
           <p class="mt-4 text-muted text-sm md:text-base leading-relaxed pt-3 border-t border-line/60">

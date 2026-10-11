@@ -105,7 +105,12 @@ export default defineNuxtConfig({
     "@/types": fileURLToPath(new URL("./types", import.meta.url)),
     "@/types/*": fileURLToPath(new URL("./types/*", import.meta.url)),
   },
-  modules: ["@nuxtjs/color-mode"],
+  modules: ["@nuxtjs/color-mode", "@nuxt/icon"],
+  icon: {
+    clientBundle: {
+      scan: true,
+    },
+  },
   colorMode: {
     preference: "system",
     fallback: "light",

@@ -86,7 +86,7 @@ const tabs = computed(() =>
 
         <!-- 加载中微状态提示 -->
         <div v-if="status === 'pending'" class="py-12 text-center text-sm text-caption">
-          <span class="inline-block animate-spin mr-2">◌</span> 正在加载商品列表...
+          <Icon name="lucide:loader-2" class="inline-block animate-spin mr-2 w-4 h-4 align-middle" /> 正在加载商品列表...
         </div>
 
         <!-- 商品网格列表 -->
@@ -132,7 +132,7 @@ const tabs = computed(() =>
                 <!-- 特色清单 -->
                 <ul v-if="product.features" class="mt-3 space-y-1 text-xs text-caption">
                   <li v-for="(feat, fIdx) in product.features.slice(0, 2)" :key="fIdx" class="flex items-center gap-1.5">
-                    <span class="text-accent font-bold">✓</span>
+                    <Icon name="lucide:check" class="w-3.5 h-3.5 text-accent shrink-0" />
                     <span class="truncate">{{ feat }}</span>
                   </li>
                 </ul>

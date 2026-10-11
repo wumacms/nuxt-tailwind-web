@@ -124,8 +124,9 @@ const isPurchasedModalOpen = ref(false)
                   <AppBadge variant="amber">
                     {{ currentProduct.categoryLabel }}
                   </AppBadge>
-                  <span v-if="currentProduct.rating" class="text-xs font-semibold text-amber-600 dark:text-amber-400">
-                    ★ {{ currentProduct.rating }} ({{ currentProduct.salesCount || 100 }}+ 已售)
+                  <span v-if="currentProduct.rating" class="text-xs font-semibold text-amber-600 dark:text-amber-400 inline-flex items-center gap-1">
+                    <Icon name="lucide:star" class="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+                    <span>{{ currentProduct.rating }} ({{ currentProduct.salesCount || 100 }}+ 已售)</span>
                   </span>
                 </div>
 
@@ -165,7 +166,7 @@ const isPurchasedModalOpen = ref(false)
                     :key="idx"
                     class="flex items-start gap-2.5 text-xs text-muted leading-relaxed"
                   >
-                    <span class="text-accent font-bold mt-0.5">✓</span>
+                    <Icon name="lucide:check" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" />
                     <span>{{ feat }}</span>
                   </li>
                 </ul>
@@ -204,8 +205,9 @@ const isPurchasedModalOpen = ref(false)
               相关商品推荐
             </h2>
           </div>
-          <NuxtLink to="/products" class="text-xs sm:text-sm font-semibold text-accent hover:underline">
-            查看全部商店商品 &rarr;
+          <NuxtLink to="/products" class="text-xs sm:text-sm font-semibold text-accent hover:underline inline-flex items-center gap-1">
+            <span>查看全部商店商品</span>
+            <Icon name="lucide:arrow-right" class="w-3.5 h-3.5" />
           </NuxtLink>
         </div>
 

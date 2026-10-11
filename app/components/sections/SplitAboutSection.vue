@@ -33,7 +33,7 @@
               <span
                 class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-accent-soft text-accent-soft-text"
               >
-                ✓
+                <Icon name="lucide:check" class="w-3.5 h-3.5" />
               </span>
               <div>
                 <div class="font-bold text-main">专业团队，全流程把控</div>
@@ -46,7 +46,7 @@
               <span
                 class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-accent-soft text-accent-soft-text"
               >
-                ✓
+                <Icon name="lucide:check" class="w-3.5 h-3.5" />
               </span>
               <div>
                 <div class="font-bold text-main">定制化方案，拒绝千篇一律</div>
@@ -59,7 +59,7 @@
               <span
                 class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-accent-soft text-accent-soft-text"
               >
-                ✓
+                <Icon name="lucide:check" class="w-3.5 h-3.5" />
               </span>
               <div>
                 <div class="font-bold text-main">高效交付，不耽误你的节奏</div>

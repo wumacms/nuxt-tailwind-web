@@ -44,21 +44,23 @@ const visiblePages = computed(() => {
     <NuxtLink
       v-if="getPageUrl && currentPage > 1"
       :to="getPageUrl(currentPage - 1)"
-      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line transition cursor-pointer bg-card text-main hover:border-accent inline-flex items-center"
+      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line transition cursor-pointer bg-card text-main hover:border-accent inline-flex items-center gap-1"
     >
-      &larr; 上一页
+      <Icon name="lucide:chevron-left" class="w-4 h-4 shrink-0" />
+      <span>上一页</span>
     </NuxtLink>
     <span
       v-else-if="getPageUrl"
-      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line opacity-40 cursor-not-allowed text-caption inline-flex items-center"
+      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line opacity-40 cursor-not-allowed text-caption inline-flex items-center gap-1"
     >
-      &larr; 上一页
+      <Icon name="lucide:chevron-left" class="w-4 h-4 shrink-0" />
+      <span>上一页</span>
     </span>
     <button
       v-else
       type="button"
       :disabled="currentPage <= 1"
-      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line transition cursor-pointer"
+      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line transition cursor-pointer inline-flex items-center gap-1"
       :class="[
         currentPage <= 1
           ? 'opacity-40 cursor-not-allowed text-caption'
@@ -66,7 +68,8 @@ const visiblePages = computed(() => {
       ]"
       @click="setPage(currentPage - 1)"
     >
-      &larr; 上一页
+      <Icon name="lucide:chevron-left" class="w-4 h-4 shrink-0" />
+      <span>上一页</span>
     </button>
 
     <!-- 页码数字 -->
@@ -109,21 +112,23 @@ const visiblePages = computed(() => {
     <NuxtLink
       v-if="getPageUrl && currentPage < totalPages"
       :to="getPageUrl(currentPage + 1)"
-      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line transition cursor-pointer bg-card text-main hover:border-accent inline-flex items-center"
+      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line transition cursor-pointer bg-card text-main hover:border-accent inline-flex items-center gap-1"
     >
-      下一页 &rarr;
+      <span>下一页</span>
+      <Icon name="lucide:chevron-right" class="w-4 h-4 shrink-0" />
     </NuxtLink>
     <span
       v-else-if="getPageUrl"
-      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line opacity-40 cursor-not-allowed text-caption inline-flex items-center"
+      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line opacity-40 cursor-not-allowed text-caption inline-flex items-center gap-1"
     >
-      下一页 &rarr;
+      <span>下一页</span>
+      <Icon name="lucide:chevron-right" class="w-4 h-4 shrink-0" />
     </span>
     <button
       v-else
       type="button"
       :disabled="currentPage >= totalPages"
-      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line transition cursor-pointer"
+      class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium border border-line transition cursor-pointer inline-flex items-center gap-1"
       :class="[
         currentPage >= totalPages
           ? 'opacity-40 cursor-not-allowed text-caption'
@@ -131,7 +136,8 @@ const visiblePages = computed(() => {
       ]"
       @click="setPage(currentPage + 1)"
     >
-      下一页 &rarr;
+      <span>下一页</span>
+      <Icon name="lucide:chevron-right" class="w-4 h-4 shrink-0" />
     </button>
   </nav>
 </template>

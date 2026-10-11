@@ -27,9 +27,7 @@ const scrollToTop = () => {
       class="fixed bottom-6 right-6 md:hidden z-40 w-11 h-11 rounded-full bg-main text-canvas shadow-2xl hover:opacity-90 transition flex items-center justify-center cursor-pointer border border-line"
       @click="scrollToTop"
     >
-      <svg class="w-5 h-5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-      </svg>
+      <Icon name="lucide:arrow-up" class="w-5 h-5 stroke-[2.5]" />
     </button>
   </Transition>
 </template>

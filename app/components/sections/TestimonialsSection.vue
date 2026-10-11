@@ -23,14 +23,12 @@ const { testimonials } = useSiteData()
         >
           <!-- 5 Stars -->
           <div aria-label="评分 5 星" class="flex gap-1 text-accent mb-4">
-            <svg
+            <Icon
               v-for="star in item.rating"
               :key="star"
+              name="lucide:star"
               class="w-4 h-4 fill-accent text-accent"
-              viewBox="0 0 24 24"
-            >
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-            </svg>
+            />
           </div>
 
           <blockquote class="flex-1 text-muted leading-relaxed text-base italic">

@@ -12,15 +12,17 @@ const { partners } = useSiteData()
         <div class="flex gap-10 md:gap-16 animate-marquee w-max">
           <!-- 走马灯一组 -->
           <div class="flex gap-10 md:gap-16 items-center text-lg md:text-2xl font-bold text-caption whitespace-nowrap font-display">
-            <span v-for="item in partners" :key="item.name" class="inline-flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-accent/60"></span>
+            <span v-for="item in partners" :key="item.name" class="inline-flex items-center gap-2.5">
+              <AppIcon v-if="item.icon" :name="item.icon" size="18" class="text-accent/80 shrink-0" />
+              <span v-else class="w-2 h-2 rounded-full bg-accent/60"></span>
               {{ item.name }}
             </span>
           </div>
           <!-- 走马灯复制组（实现无缝衔接） -->
           <div aria-hidden="true" class="flex gap-10 md:gap-16 items-center text-lg md:text-2xl font-bold text-caption whitespace-nowrap font-display">
-            <span v-for="item in partners" :key="`dup-${item.name}`" class="inline-flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-accent/60"></span>
+            <span v-for="item in partners" :key="`dup-${item.name}`" class="inline-flex items-center gap-2.5">
+              <AppIcon v-if="item.icon" :name="item.icon" size="18" class="text-accent/80 shrink-0" />
+              <span v-else class="w-2 h-2 rounded-full bg-accent/60"></span>
               {{ item.name }}
             </span>
           </div>

@@ -19,6 +19,9 @@
     "vue": "^3.5.43"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.142",
+    "@iconify-json/simple-icons": "^1.2.99",
+    "@nuxt/icon": "^2.5.1",
     "@types/node": "^26.6.4",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.3.13"
