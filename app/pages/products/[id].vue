@@ -73,25 +73,19 @@ const isPurchasedModalOpen = ref(false)
           <!-- 左侧：商品画廊 -->
           <div class="lg:col-span-7 space-y-4 animate-on-scroll delay-50">
             <div class="relative rounded-3xl overflow-hidden border border-line bg-card shadow-lg group">
-              <div class="aspect-[4/3] w-full overflow-hidden bg-subtle flex items-center justify-center">
-                <img
-                  :src="activeImage || currentProduct.coverImage"
-                  :alt="currentProduct.title"
-                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
+              <div class="aspect-4/3 w-full overflow-hidden bg-subtle flex items-center justify-center">
+                <img :src="activeImage || currentProduct.coverImage" :alt="currentProduct.title"
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" />
               </div>
 
               <!-- 浮动标签 -->
               <div class="absolute top-4 left-4 flex flex-wrap gap-2">
-                <span
-                  v-if="currentProduct.tag"
-                  class="px-3 py-1 text-xs font-bold rounded-full bg-black/60 backdrop-blur-md text-white shadow-sm tracking-wide"
-                >
+                <span v-if="currentProduct.tag"
+                  class="px-3 py-1 text-xs font-bold rounded-full bg-black/60 backdrop-blur-md text-white shadow-sm tracking-wide">
                   {{ currentProduct.tag }}
                 </span>
                 <span
-                  class="px-3 py-1 text-xs font-semibold rounded-full bg-black/60 backdrop-blur-md text-white shadow-sm"
-                >
+                  class="px-3 py-1 text-xs font-semibold rounded-full bg-black/60 backdrop-blur-md text-white shadow-sm">
                   {{ currentProduct.categoryLabel }}
                 </span>
               </div>
@@ -99,18 +93,13 @@ const isPurchasedModalOpen = ref(false)
 
             <!-- 缩略图选择器 -->
             <div v-if="galleryImages.length > 1" class="grid grid-cols-4 sm:grid-cols-5 gap-3">
-              <button
-                v-for="(img, idx) in galleryImages"
-                :key="idx"
-                type="button"
-                class="relative aspect-[4/3] rounded-xl overflow-hidden border-2 transition-all duration-200 cursor-pointer bg-card"
+              <button v-for="(img, idx) in galleryImages" :key="idx" type="button"
+                class="relative aspect-4/3 rounded-xl overflow-hidden border-2 transition-all duration-200 cursor-pointer bg-card"
                 :class="[
                   activeImage === img
                     ? 'border-accent ring-2 ring-accent/30 shadow-md scale-102'
                     : 'border-line opacity-70 hover:opacity-100',
-                ]"
-                @click="activeImage = img"
-              >
+                ]" @click="activeImage = img">
                 <img :src="img" :alt="`${currentProduct.title} 缩略图 ${idx + 1}`" class="w-full h-full object-cover" />
               </button>
             </div>
@@ -124,7 +113,8 @@ const isPurchasedModalOpen = ref(false)
                   <AppBadge variant="amber">
                     {{ currentProduct.categoryLabel }}
                   </AppBadge>
-                  <span v-if="currentProduct.rating" class="text-xs font-semibold text-amber-600 dark:text-amber-400 inline-flex items-center gap-1">
+                  <span v-if="currentProduct.rating"
+                    class="text-xs font-semibold text-amber-600 dark:text-amber-400 inline-flex items-center gap-1">
                     <Icon name="lucide:star" class="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
                     <span>{{ currentProduct.rating }} ({{ currentProduct.salesCount || 100 }}+ 已售)</span>
                   </span>
@@ -156,16 +146,14 @@ const isPurchasedModalOpen = ref(false)
               </div>
 
               <!-- 核心特色清单 -->
-              <div v-if="currentProduct.features && currentProduct.features.length > 0" class="pt-4 border-t border-line space-y-2">
+              <div v-if="currentProduct.features && currentProduct.features.length > 0"
+                class="pt-4 border-t border-line space-y-2">
                 <div class="text-xs font-bold uppercase tracking-wider text-caption mb-2">
                   核心功能与特色
                 </div>
                 <ul class="space-y-2">
-                  <li
-                    v-for="(feat, idx) in currentProduct.features"
-                    :key="idx"
-                    class="flex items-start gap-2.5 text-xs text-muted leading-relaxed"
-                  >
+                  <li v-for="(feat, idx) in currentProduct.features" :key="idx"
+                    class="flex items-start gap-2.5 text-xs text-muted leading-relaxed">
                     <Icon name="lucide:check" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" />
                     <span>{{ feat }}</span>
                   </li>
@@ -205,38 +193,28 @@ const isPurchasedModalOpen = ref(false)
               相关商品推荐
             </h2>
           </div>
-          <NuxtLink to="/products" class="text-xs sm:text-sm font-semibold text-accent hover:underline inline-flex items-center gap-1">
+          <NuxtLink to="/products"
+            class="text-xs sm:text-sm font-semibold text-accent hover:underline inline-flex items-center gap-1">
             <span>查看全部商店商品</span>
             <Icon name="lucide:arrow-right" class="w-3.5 h-3.5" />
           </NuxtLink>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <NuxtLink
-            v-for="(rel, idx) in relatedProducts"
-            :key="rel.id"
-            :to="`/products/${rel.id}`"
-            :class="[
-              'group flex flex-col rounded-2xl border border-line bg-card overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-on-scroll',
-              (idx % 4 === 0) ? 'delay-50' : (idx % 4 === 1) ? 'delay-100' : (idx % 4 === 2) ? 'delay-150' : 'delay-200'
-            ]"
-          >
-            <div class="relative aspect-[16/10] overflow-hidden bg-subtle">
-              <img
-                :src="rel.coverImage"
-                :alt="rel.title"
+          <NuxtLink v-for="(rel, idx) in relatedProducts" :key="rel.id" :to="`/products/${rel.id}`" :class="[
+            'group flex flex-col rounded-2xl border border-line bg-card overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-on-scroll',
+            (idx % 4 === 0) ? 'delay-50' : (idx % 4 === 1) ? 'delay-100' : (idx % 4 === 2) ? 'delay-150' : 'delay-200'
+          ]">
+            <div class="relative aspect-16/10 overflow-hidden bg-subtle">
+              <img :src="rel.coverImage" :alt="rel.title"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-              />
-              <span
-                v-if="rel.tag"
-                class="absolute top-2.5 left-2.5 text-[10px] font-bold px-2 py-0.5 rounded-full bg-accent text-white shadow-xs"
-              >
+                loading="lazy" />
+              <span v-if="rel.tag"
+                class="absolute top-2.5 left-2.5 text-[10px] font-bold px-2 py-0.5 rounded-full bg-accent text-white shadow-xs">
                 {{ rel.tag }}
               </span>
               <span
-                class="absolute top-2.5 right-2.5 text-[10px] font-medium px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-xs text-white"
-              >
+                class="absolute top-2.5 right-2.5 text-[10px] font-medium px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-xs text-white">
                 {{ rel.categoryLabel }}
               </span>
             </div>

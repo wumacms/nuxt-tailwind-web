@@ -46,7 +46,8 @@ const isEnrollModalOpen = ref(false)
               {{ currentCourse.levelLabel }}阶段课程
             </AppBadge>
           </div>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-main font-display animate-on-scroll delay-100">
+          <h1
+            class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-main font-display animate-on-scroll delay-100">
             {{ currentCourse.title }}
           </h1>
           <p class="text-base sm:text-lg text-muted mt-3 leading-relaxed animate-on-scroll delay-150">
@@ -63,11 +64,8 @@ const isEnrollModalOpen = ref(false)
           <!-- 左侧课程大纲 -->
           <div class="space-y-8">
             <div class="rounded-3xl overflow-hidden border border-line shadow-xl">
-              <img
-                :src="currentCourse.coverImage"
-                :alt="currentCourse.title"
-                class="w-full h-auto object-cover max-h-[480px]"
-              />
+              <img :src="currentCourse.coverImage" :alt="currentCourse.title"
+                class="w-full h-auto object-cover max-h-120" />
             </div>
 
             <div class="bg-card p-6 md:p-8 rounded-2xl border border-line space-y-5">
@@ -75,13 +73,11 @@ const isEnrollModalOpen = ref(false)
                 课程章节与实践项目
               </h2>
               <div class="space-y-3">
-                <div
-                  v-for="(chap, idx) in currentCourse.syllabus"
-                  :key="idx"
-                  class="p-4 rounded-xl border border-line flex items-center justify-between"
-                >
+                <div v-for="(chap, idx) in currentCourse.syllabus" :key="idx"
+                  class="p-4 rounded-xl border border-line flex items-center justify-between">
                   <div class="flex items-center gap-3">
-                    <span class="w-7 h-7 rounded-lg bg-accent-soft text-accent-soft-text font-bold text-xs flex items-center justify-center">
+                    <span
+                      class="w-7 h-7 rounded-lg bg-accent-soft text-accent-soft-text font-bold text-xs flex items-center justify-center">
                       0{{ idx + 1 }}
                     </span>
                     <span class="font-medium text-sm text-main">
@@ -131,12 +127,7 @@ const isEnrollModalOpen = ref(false)
                 </div>
               </div>
 
-              <AppButton
-                size="lg"
-                block
-                class="shadow-md"
-                @click="isEnrollModalOpen = true"
-              >
+              <AppButton size="lg" block class="shadow-md" @click="isEnrollModalOpen = true">
                 {{ currentCourse.isFree ? '立即开始免费学习' : '立即报名大师班' }}
               </AppButton>
               <AppButton to="/courses" variant="outline" size="md" block>

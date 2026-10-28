@@ -42,16 +42,17 @@ const paragraphs = computed(() => {
 <template>
   <div>
     <!-- 头部：使用文章封面作为全景大图背景 -->
-    <section
-      class="relative min-h-[460px] md:min-h-[540px] flex items-end pb-16 pt-24 text-white overflow-hidden bg-gray-950">
+    <section class="relative min-h-115 md:min-h-135 flex items-end pb-16 pt-24 text-white overflow-hidden bg-gray-950">
       <div class="absolute inset-0 pointer-events-none select-none">
         <img :src="currentArticle.coverImage" :alt="currentArticle.title"
           class="w-full h-full object-cover object-center scale-105 transition-transform duration-1000 brightness-90" />
         <!-- 渐变暗层叠加确保文字清晰 -->
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/75 to-black/40"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-gray-950/80 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-linear-to-t from-gray-950 via-gray-950/75 to-black/40"></div>
+        <div class="absolute inset-0 bg-linear-to-r from-gray-950/80 via-transparent to-transparent"></div>
         <!-- 柔和环境光晕：同首页 Hero 一致的艺术氛围呼吸光 -->
-        <div class="absolute -top-1/4 -right-10 w-[500px] h-[500px] rounded-full blur-3xl animate-pulse-glow [background:radial-gradient(circle,var(--color-accent)_0%,transparent_70%)] opacity-25"></div>
+        <div
+          class="absolute -top-1/4 -right-10 w-125 h-125 rounded-full blur-3xl animate-pulse-glow [background:radial-gradient(circle,var(--color-accent)_0%,transparent_70%)] opacity-25">
+        </div>
       </div>
 
       <AppContainer class="relative z-10 w-full">
@@ -124,7 +125,7 @@ const paragraphs = computed(() => {
             <!-- 无序列表项 -->
             <div v-else-if="para.startsWith('- ')"
               class="flex items-start gap-3 pl-2 text-base text-muted leading-relaxed">
-              <span class="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0"></span>
+              <span class="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
               <span>{{ para.replace('- ', '') }}</span>
             </div>
 

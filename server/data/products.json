@@ -26,11 +26,23 @@
     "detailDescription": "Aperture 实验室历时 18 个月，对数十种停产及现行经典胶卷（如 Kodak Portra 160/400/800、Fuji Pro 400H、Tri-X 400 等）在自然光与影棚光环境下的光谱响应进行了精密采样。通过非破坏性色调曲线重构、高光滚降优化与自适应颗粒算法，让数码 RAW 文件也能轻松获得胶片特有的呼吸感与温润质感。预设内置智能曝光平衡，即使面对复杂光比也能一键得到电影级色彩。",
     "specs": [
       { "label": "支持格式", "value": ".xmp (桌面端) / .dng (移动端)" },
-      { "label": "兼容软件", "value": "Lightroom Classic 7.3+ / LR CC / PS ACR / LR Mobile" },
-      { "label": "适用机型", "value": "Sony / Canon / Nikon / Fuji / Leica / Apple ProRAW 全系列" },
-      { "label": "交付方式", "value": "支付后系统自动发送网盘下载链接至注册邮箱" },
+      {
+        "label": "兼容软件",
+        "value": "Lightroom Classic 7.3+ / LR CC / PS ACR / LR Mobile"
+      },
+      {
+        "label": "适用机型",
+        "value": "Sony / Canon / Nikon / Fuji / Leica / Apple ProRAW 全系列"
+      },
+      {
+        "label": "交付方式",
+        "value": "支付后系统自动发送网盘下载链接至注册邮箱"
+      },
       { "label": "商用授权", "value": "单人终身个人与商业拍摄授权" },
-      { "label": "售后支持", "value": "终身免费小版本调优更新 + 微信社群技术答疑" }
+      {
+        "label": "售后支持",
+        "value": "终身免费小版本调优更新 + 微信社群技术答疑"
+      }
     ],
     "highlights": [
       {
@@ -107,9 +119,15 @@
     "specs": [
       { "label": "外部尺寸", "value": "38cm × 16cm × 27cm (长×宽×高)" },
       { "label": "自重重量", "value": "约 1.25 kg" },
-      { "label": "主面料", "value": "16oz 重磅油蜡防水棉质帆布 + 意大利植鞣牛皮" },
+      {
+        "label": "主面料",
+        "value": "16oz 重磅油蜡防水棉质帆布 + 意大利植鞣牛皮"
+      },
       { "label": "五金件", "value": "实心做旧复古黄铜合金扣具 + YKK 防水拉链" },
-      { "label": "容纳容量", "value": "1机3镜 + 14英寸 MacBook Pro + 水杯/三脚架侧绑" },
+      {
+        "label": "容纳容量",
+        "value": "1机3镜 + 14英寸 MacBook Pro + 水杯/三脚架侧绑"
+      },
       { "label": "质保服务", "value": "非人为损坏 2 年免费换新与终身保修" }
     ],
     "highlights": [
@@ -187,8 +205,14 @@
       { "label": "开本尺寸", "value": "240mm × 310mm (大 16 开超大画幅)" },
       { "label": "页数规格", "value": "268 页精装全彩" },
       { "label": "印刷工艺", "value": "德国海德堡六色调频高精网点印刷" },
-      { "label": "纸张材质", "value": "170g 进口王子超感特种艺术纸 + 荷兰布面精装" },
-      { "label": "限量发行", "value": "全球限量 2000 册，每册附独一无二手写钢印编号" },
+      {
+        "label": "纸张材质",
+        "value": "170g 进口王子超感特种艺术纸 + 荷兰布面精装"
+      },
+      {
+        "label": "限量发行",
+        "value": "全球限量 2000 册，每册附独一无二手写钢印编号"
+      },
       { "label": "装订方式", "value": "180 度全景平摊锁线精装（跨页无缝观赏）" }
     ],
     "highlights": [
@@ -260,8 +284,14 @@
       { "label": "色温范围", "value": "2500K - 8500K (±200K 无级微调)" },
       { "label": "显色指数", "value": "CRI ≥ 98, TLCI ≥ 98" },
       { "label": "最大功率", "value": "12W (高亮恒流输出)" },
-      { "label": "电池容量", "value": "4000mAh 锂电池 (满电最高亮度续航约 2.5 小时)" },
-      { "label": "接口规格", "value": "Type-C 快充口 + 标准 1/4 螺口 + 冷靴接口" },
+      {
+        "label": "电池容量",
+        "value": "4000mAh 锂电池 (满电最高亮度续航约 2.5 小时)"
+      },
+      {
+        "label": "接口规格",
+        "value": "Type-C 快充口 + 标准 1/4 螺口 + 冷靴接口"
+      },
       { "label": "机身重量", "value": "仅重 185g (轻量化铝合金中框)" }
     ],
     "highlights": [
@@ -331,10 +361,22 @@
     ],
     "detailDescription": "由资深电影调色师根据 ARRI Alexa 胶片色彩矩阵深度打造。专门针对当前主流相机的 Log 灰片曲线（Sony S-Log3 / S-Cinetone、Canon C-Log2/3、Apple Log 等）进行阶调映射。通过精准的青橙对比色分离、高光高动态压制与阴影冷暖调分离，轻松实现好莱坞院线电影级别的厚重故事感与高级质感。",
     "specs": [
-      { "label": "文件格式", "value": ".cube (包含 33×33×33 与 65×65×65 两个版本)" },
-      { "label": "适配软件", "value": "DaVinci Resolve / Premiere Pro / Final Cut Pro / CapCut剪映 / PS" },
-      { "label": "支持设备", "value": "Sony FX/Alpha 系列, Canon EOS R 系列, iPhone 15/16 Pro Log" },
-      { "label": "色彩空间", "value": "Rec.709 / DaVinci Wide Gamut / Log 转换" },
+      {
+        "label": "文件格式",
+        "value": ".cube (包含 33×33×33 与 65×65×65 两个版本)"
+      },
+      {
+        "label": "适配软件",
+        "value": "DaVinci Resolve / Premiere Pro / Final Cut Pro / CapCut剪映 / PS"
+      },
+      {
+        "label": "支持设备",
+        "value": "Sony FX/Alpha 系列, Canon EOS R 系列, iPhone 15/16 Pro Log"
+      },
+      {
+        "label": "色彩空间",
+        "value": "Rec.709 / DaVinci Wide Gamut / Log 转换"
+      },
       { "label": "交付形式", "value": "网盘即时下载 + 永久云端更新" }
     ],
     "highlights": [
@@ -408,7 +450,10 @@
       { "label": "脚架自重", "value": "1.1 kg (含云台)" },
       { "label": "安全承重", "value": "12 kg (可稳固架设 400mm 超长焦镜头)" },
       { "label": "收纳长度", "value": "34 cm" },
-      { "label": "展开最大高度", "value": "158 cm (升中轴) / 132 cm (不升中轴)" },
+      {
+        "label": "展开最大高度",
+        "value": "158 cm (升中轴) / 132 cm (不升中轴)"
+      },
       { "label": "最低工作高度", "value": "14 cm (支持中轴倒置贴地拍摄)" }
     ],
     "highlights": [
@@ -479,8 +524,14 @@
     "detailDescription": "剥离色彩的干扰，让光影与质感直击心灵。Aperture 暗房工坊深入研究了 1960 年代至今的经典黑白银盐冲洗配方，特别调校了 18 款跨越不同反差、颗粒粗细与灰阶延展度的黑白预设。无论是森山大道式的强反差粗颗粒街头张力，还是亚当斯式的细腻分区曝光风光，都能一键生成。",
     "specs": [
       { "label": "文件格式", "value": ".xmp (桌面端) / .dng (移动端)" },
-      { "label": "适用题材", "value": "街头纪实 / 建筑线条 / 情绪黑白人像 / 舞台剧照" },
-      { "label": "兼容版本", "value": "Lightroom Classic / CC / Photoshop ACR / 移动版" },
+      {
+        "label": "适用题材",
+        "value": "街头纪实 / 建筑线条 / 情绪黑白人像 / 舞台剧照"
+      },
+      {
+        "label": "兼容版本",
+        "value": "Lightroom Classic / CC / Photoshop ACR / 移动版"
+      },
       { "label": "授权方式", "value": "终身单人商业与个人使用授权" }
     ],
     "highlights": [
@@ -550,7 +601,10 @@
       { "label": "肩带总长", "value": "95cm - 120cm (多档孔位自由调节)" },
       { "label": "肩垫宽度", "value": "3.5cm (舒适减压受力面积)" },
       { "label": "五金扣件", "value": "实心黄铜防氧化冲压扣具" },
-      { "label": "适用机型", "value": "富士、徕卡、索尼、佳能、尼康等所有带穿绳/双环孔机型" },
+      {
+        "label": "适用机型",
+        "value": "富士、徕卡、索尼、佳能、尼康等所有带穿绳/双环孔机型"
+      },
       { "label": "极限承重", "value": "静态安全拉力测试 > 25 kg" }
     ],
     "highlights": [
@@ -616,9 +670,15 @@
     ],
     "detailDescription": "针对现代高端相机感光元件 CMOS 与昂贵光学镀膜特别研发的专业无尘养护系统。气吹采用单向进气止逆阀，杜绝二次吸尘喷溅；多功能碳粉镜头笔配备天然动物软毛与活性纳米碳头，轻旋即可吸附顽固指纹与油脂；配合环保无水光学清洁液，挥发无痕，不伤纳米抗反射多层镀膜。",
     "specs": [
-      { "label": "适用对象", "value": "相机镜头 / UV 滤镜 / CMOS 传感器 / 观景窗 / 手机平板屏幕" },
+      {
+        "label": "适用对象",
+        "value": "相机镜头 / UV 滤镜 / CMOS 传感器 / 观景窗 / 手机平板屏幕"
+      },
       { "label": "气吹材质", "value": "高弹食品级环保硅胶 + 金属出风嘴" },
-      { "label": "清洁液规格", "value": "30ml 无水防静电环保配方 (无酒精无腐蚀性)" },
+      {
+        "label": "清洁液规格",
+        "value": "30ml 无水防静电环保配方 (无酒精无腐蚀性)"
+      },
       { "label": "擦镜布规格", "value": "15cm × 15cm 真空独立包装 (10片装)" },
       { "label": "安全认证", "value": "通过 RoHS 欧盟环保与光学表面无伤测试" }
     ],
@@ -687,7 +747,10 @@
     "detailDescription": "专为日出、晚霞、雪山金顶与逆光风光场景打造的色彩科学解决方案。通过对高光橙红暖调与阴影蓝紫冷调的精准分离，将数码照片中容易过曝发白的天空与死黑的前景重新注入丰富的色彩信息。预设深度适配无人机 Dlog-M 及相机超宽动态 RAW 格式，一键重现如油画般恢弘磅礴的自然风光。",
     "specs": [
       { "label": "文件格式", "value": ".xmp (桌面端) + .dng (手机移动端)" },
-      { "label": "适用场景", "value": "日落暮光 / 日出晨曦 / 雪山金顶 / 森林逆光 / 无人机航拍" },
+      {
+        "label": "适用场景",
+        "value": "日落暮光 / 日出晨曦 / 雪山金顶 / 森林逆光 / 无人机航拍"
+      },
       { "label": "兼容设备", "value": "大疆无人机、全画幅微单及 iPhone 原片" },
       { "label": "更新支持", "value": "终身免费升级与调色交流群" }
     ],
@@ -779,9 +842,7 @@
       "作者亲笔签名寄语扉页卡 × 1",
       "进口环保封套保护盒 × 1"
     ],
-    "usageGuide": [
-      "请轻柔翻阅，建议存放在阴凉干燥处，避免潮湿受热。"
-    ],
+    "usageGuide": ["请轻柔翻阅，建议存放在阴凉干燥处，避免潮湿受热。"],
     "faqs": [
       {
         "question": "画册是否全黑白？",
@@ -816,7 +877,10 @@
     "detailDescription": "专为风光、建筑及汽车摄影师打造的旗舰级磁吸偏振镜。采用德国进口肖特 B270 光学玻璃，双面 18 层双低反射增透纳米镀膜，透光率高达 99.5%。独创强磁吸附系统，告别传统螺口滤镜在寒冷或潮湿环境下卡齿滑丝的痛苦体验，一秒即贴即用，旋转滤镜环即可随心调节消光角度。",
     "specs": [
       { "label": "玻璃材质", "value": "德国肖特 B270 顶级光学玻璃" },
-      { "label": "边框厚度", "value": "3.2mm 航空级超薄铝合金 (16mm 超广角无暗角)" },
+      {
+        "label": "边框厚度",
+        "value": "3.2mm 航空级超薄铝合金 (16mm 超广角无暗角)"
+      },
       { "label": "镀膜工艺", "value": "双面 18 层抗反射防水防油纳米离子镀膜" },
       { "label": "偏振效率", "value": "99.8% 高偏光率，色彩中性无偏色" },
       { "label": "可选口径", "value": "67mm / 72mm / 77mm / 82mm / 95mm" }
@@ -866,11 +930,11 @@
     "tag": "人像热卖",
     "category": "presets",
     "categoryLabel": "调色预设",
-    "coverImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=600&fit=crop",
+    "coverImage": "https://images.unsplash.com/photo-1533657576321-7fcb6830ee45?w=800&h=600&fit=crop",
     "rating": 5.0,
     "salesCount": 2780,
     "gallery": [
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1533657576321-7fcb6830ee45?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop"
@@ -884,8 +948,14 @@
     "detailDescription": "由一线时尚大刊合作修图师联手调教。专攻人像摄影中最棘手的「肤色暗沉、泛红蜡黄、粉底发灰」等痛点。运用创新的非线性双向色调重映射算法，将高光区域锁定为通透高级的奶油白皙，中音阶调呈现自然微粉血色，暗部则保留干净利落的冷灰反差，一键修出时尚杂志封面级质感大片。",
     "specs": [
       { "label": "格式支持", "value": ".xmp / .dng" },
-      { "label": "适用场景", "value": "商业棚拍 / 户外写真 / 情绪婚纱 / 时尚大片 / 私房写真" },
-      { "label": "兼容软件", "value": "Lightroom Classic / Lightroom CC / Photoshop ACR" },
+      {
+        "label": "适用场景",
+        "value": "商业棚拍 / 户外写真 / 情绪婚纱 / 时尚大片 / 私房写真"
+      },
+      {
+        "label": "兼容软件",
+        "value": "Lightroom Classic / Lightroom CC / Photoshop ACR"
+      },
       { "label": "服务承诺", "value": "终身免费升级，支持商业交付使用" }
     ],
     "highlights": [
@@ -970,9 +1040,7 @@
       "定制黑胡桃木激光雕刻收藏盒 × 1",
       "夜景艺术微喷大海报 × 1"
     ],
-    "usageGuide": [
-      "平摊于桌面翻阅，可用紫外手电筒照射封面体验隐藏荧光光效。"
-    ],
+    "usageGuide": ["平摊于桌面翻阅，可用紫外手电筒照射封面体验隐藏荧光光效。"],
     "faqs": [
       {
         "question": "画册是否包含全国包邮？",
@@ -1009,7 +1077,10 @@
       { "label": "主体材质", "value": "6061-T6 航空铝合金 + 不锈钢机械构件" },
       { "label": "主体自重", "value": "仅 98g (轻巧无负重感)" },
       { "label": "承重极限", "value": "静态安全拉力 > 50 kg" },
-      { "label": "适配肩带", "value": "宽度 ≤ 7cm，厚度 ≤ 1.5cm 的所有双肩包或腰带" },
+      {
+        "label": "适配肩带",
+        "value": "宽度 ≤ 7cm，厚度 ≤ 1.5cm 的所有双肩包或腰带"
+      },
       { "label": "接口标准", "value": "Arca-Swiss (阿卡) 四向标准快装板" }
     ],
     "highlights": [
@@ -1072,9 +1143,18 @@
     "detailDescription": "数码相机在拍摄森林、草原与绿植时，黄绿通道极易过度饱和而呈现廉价的「数码塑料感」。本套调色方块精准重新校准了绿色与黄色的色相偏角，将刺眼的荧光绿转换为深邃优雅的青松绿、橄榄绿与高级苔藓墨绿。同时保留阳光穿透树叶的柔和漫射光影，赋予户外露营与自然风光视频极致治愈的清新电影感。",
     "specs": [
       { "label": "文件格式", "value": ".cube 3D LUT (33点 / 65点双版本)" },
-      { "label": "适用题材", "value": "户外露营 / 森林旅拍 / 草原风光 / 治愈系 Vlog / 纪录片" },
-      { "label": "支持软件", "value": "Premiere / Final Cut Pro / DaVinci Resolve / 剪映 / VN" },
-      { "label": "兼容色彩", "value": "Sony S-Log3, Canon C-Log, D-LogM, Rec.709" }
+      {
+        "label": "适用题材",
+        "value": "户外露营 / 森林旅拍 / 草原风光 / 治愈系 Vlog / 纪录片"
+      },
+      {
+        "label": "支持软件",
+        "value": "Premiere / Final Cut Pro / DaVinci Resolve / 剪映 / VN"
+      },
+      {
+        "label": "兼容色彩",
+        "value": "Sony S-Log3, Canon C-Log, D-LogM, Rec.709"
+      }
     ],
     "highlights": [
       {
